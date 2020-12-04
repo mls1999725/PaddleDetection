@@ -6,7 +6,7 @@ TrainReader:
     !COCODataSet
       image_dir: train2017
       anno_path: annotations/instances_train2017.json
-      dataset_dir: /paddle/coco
+      dataset_dir: dataset/coco
       with_background: false
   sample_transforms:
     - !DecodeImage
@@ -25,6 +25,17 @@ TrainReader:
     - !PadBox
       num_max_boxes: 50
     - !BboxXYXY2XYWH {}
+    - !RandomRotate
+      degree: 30
+    - !RandomShear
+      shear_x: 3
+      shear_y: 3
+    - !RandomTranslate
+      translate_x: 50
+      translate_y: 50
+    - !RandomScale
+      scale_x: 0.8
+      scale_y: 0.8
   batch_transforms:
   - !RandomShape
     sizes: [320, 352, 384, 416, 448, 480, 512, 544, 576, 608]
@@ -46,7 +57,7 @@ TrainReader:
               [30, 61], [62, 45], [59, 119],
               [116, 90], [156, 198], [373, 326]]
     downsample_ratios: [32, 16, 8]
-  batch_size: 1
+  batch_size: 24
   shuffle: true
   mixup_epoch: 25000
   drop_last: true
@@ -62,7 +73,7 @@ EvalReader:
     !COCODataSet
       image_dir: val2017
       anno_path: annotations/instances_val2017.json
-      dataset_dir: /paddle/coco
+      dataset_dir: dataset/coco
       with_background: false
   sample_transforms:
     - !DecodeImage
