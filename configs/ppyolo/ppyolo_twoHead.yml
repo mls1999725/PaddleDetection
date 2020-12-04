@@ -19,7 +19,7 @@ YOLOv3:
   use_fine_grained_loss: true
 
 ResNet:
-  norm_type: bn
+  norm_type: sync_bn
   freeze_at: 0
   freeze_norm: false
   norm_decay: 0.
@@ -42,9 +42,10 @@ YOLOv3Head:
   yolo_loss: YOLOv3Loss
   nms: MatrixNMS
   drop_block: true
+  second_head: true
 
 YOLOv3Loss:
-  batch_size: 12
+  batch_size: 24
   ignore_thresh: 0.7
   scale_x_y: 1.05
   label_smooth: false

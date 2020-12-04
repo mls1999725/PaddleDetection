@@ -19,7 +19,7 @@ YOLOv3:
   use_fine_grained_loss: true
 
 ResNet:
-  norm_type: bn
+  norm_type: sync_bn
   freeze_at: 0
   freeze_norm: false
   norm_decay: 0.
