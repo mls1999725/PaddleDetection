@@ -7,7 +7,7 @@ save_dir: output
 snapshot_iter: 10000
 metric: COCO
 pretrain_weights: https://paddle-imagenet-models-name.bj.bcebos.com/ResNet50_vd_ssld_pretrained.tar
-weights: output/ppyolo/model_final
+weights: output/ppyolo_resnet/model_final
 num_classes: 80
 use_fine_grained_loss: true
 use_ema: true
