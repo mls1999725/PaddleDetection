@@ -58,6 +58,7 @@ class YOLOv3(object):
         if mixed_precision_enabled:
             im = fluid.layers.cast(im, 'float16')
 
+        print(self.backbone)
         body_feats = self.backbone(im)
 
         if isinstance(body_feats, OrderedDict):

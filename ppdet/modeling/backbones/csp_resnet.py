@@ -35,24 +35,25 @@ class CSPResNet():
         self.prefix_name = weight_prefix_name
         self.feature_maps = feature_maps
 
-    def __call__(self, input, data_format="NCHW"):
+    def __call__(self, input):
         layers = self.layers
         supported_layers = [50, 101]
         assert layers in supported_layers, \
             "supported layers are {} but input layer is {}".format(
                 supported_layers, layers)
-
+        
         if layers == 50:
             depth = [3, 3, 5, 2]
         elif layers == 101:
             depth = [3, 3, 22, 2]
 
         num_filters = [64, 128, 256, 512]
+        data_format = "NCHW"
 
         conv = self.conv_bn_layer(
             input=input,
             num_filters=64,
-            filter_size=7,
+            filter_size=3,
             stride=2,
             act=self.act,
             name="conv1",
@@ -94,7 +95,7 @@ class CSPResNet():
                 name=conv_name + "_right_first_route",
                 data_format=data_format)
 
-            dvn_v2 = True if (block+2) in self.dcn_v2_stages else False
+            dcn_v2 = True if (block+2) in self.dcn_v2_stages else False
  
             for i in range(depth[block]):
                 conv_name = "res" + str(block + 2) + chr(97 + i)
@@ -251,7 +252,7 @@ class CSPResNet():
             act="leaky_relu",
             name=name + "_branch2b",
             data_format=data_format,
-            dcn_v2=True)
+            dcn_v2=dcn_v2)
         conv2 = self.conv_bn_layer(
             input=conv1,
             num_filters=num_filters * 2,

@@ -6,6 +6,7 @@ log_iter: 100
 save_dir: output
 snapshot_iter: 10000
 metric: COCO
+pretrain_weights: https://paddle-imagenet-models-name.bj.bcebos.com/CSPResNet50_leaky_pretrained.pdparams
 weights: output/ppyolo_csp_resnet/model_final
 num_classes: 80
 use_fine_grained_loss: true
@@ -17,7 +18,7 @@ YOLOv3:
   yolo_head: YOLOv3Head
   use_fine_grained_loss: true
 
-CSPResNet:
+CSPResNet50_leaky:
   dcn_v2_stages: [5]
 
 YOLOv3Head:
