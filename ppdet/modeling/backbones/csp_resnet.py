@@ -28,12 +28,14 @@ __all__ = [
 
 
 class CSPResNet():
-    def __init__(self, layers=50, act="leaky_relu", weight_prefix_name=''):
+    def __init__(self, layers=50, act="leaky_relu", feature_maps=[2, 3, 4, 5], dcn_v2_stages=[], weight_prefix_name=''):
         self.layers = layers
         self.act = act
+        self.dcn_v2_stages = self.dcn_v2_stages
         self.prefix_name = weight_prefix_name
+        self.feature_maps = feature_maps
 
-    def net(self, input, class_dim=1000, data_format="NCHW"):
+    def __call__(self, input, data_format="NCHW"):
         layers = self.layers
         supported_layers = [50, 101]
         assert layers in supported_layers, \
@@ -63,6 +65,8 @@ class CSPResNet():
             pool_type='max',
             data_format=data_format)
 
+        res_endpoints = []
+
         for block in range(len(depth)):
             conv_name = "res" + str(block + 2) + chr(97)
             if block != 0:
@@ -90,6 +94,8 @@ class CSPResNet():
                 name=conv_name + "_right_first_route",
                 data_format=data_format)
 
+            dvn_v2 = True if (block+2) in self.dcn_v2_stages else False
+ 
             for i in range(depth[block]):
                 conv_name = "res" + str(block + 2) + chr(97 + i)
 
@@ -98,7 +104,8 @@ class CSPResNet():
                     num_filters=num_filters[block],
                     stride=1,
                     name=conv_name,
-                    data_format=data_format)
+                    data_format=data_format,
+                    dcn_v2=dcn_v2)
 
             # route
             left = self.conv_bn_layer(
@@ -126,20 +133,11 @@ class CSPResNet():
                 name=conv_name + "_merged_transition",
                 data_format=data_format)
 
-        pool = fluid.layers.pool2d(
-            input=conv,
-            pool_type='avg',
-            global_pooling=True,
-            data_format=data_format)
-        stdv = 1.0 / math.sqrt(pool.shape[1] * 1.0)
-        out = fluid.layers.fc(
-            input=pool,
-            size=class_dim,
-            param_attr=fluid.param_attr.ParamAttr(
-                name="fc_0.w_0",
-                initializer=fluid.initializer.Uniform(-stdv, stdv)),
-            bias_attr=ParamAttr(name="fc_0.b_0"))
-        return out
+            if (block+2) in self.feature_maps:
+                res_endpoints.append(conv)
+
+            return OrderedDict([('res{}_sum'.format(self.feature_maps[idx]), feat)
+                                for idx, feat in enumerate(res_endpoints)])
 
     def conv_bn_layer(self,
                       input,
@@ -237,7 +235,7 @@ class CSPResNet():
         else:
             return input
 
-    def bottleneck_block(self, input, num_filters, stride, name, data_format):
+    def bottleneck_block(self, input, num_filters, stride, name, data_format, dcn_v2=False):
         conv0 = self.conv_bn_layer(
             input=input,
             num_filters=num_filters,
