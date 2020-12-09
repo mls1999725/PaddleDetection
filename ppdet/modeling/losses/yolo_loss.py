@@ -134,7 +134,7 @@ class YOLOv3Loss(object):
                 cls_loss (Variable): YOLOv3 classification loss
 
         """
-
+        print(len(outputs), len(targets))
         assert len(outputs) == len(targets), \
             "YOLOv3 output layer number not equal target number"
 

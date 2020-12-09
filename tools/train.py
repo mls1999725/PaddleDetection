@@ -105,6 +105,8 @@ def main():
     with fluid.program_guard(train_prog, startup_prog):
         with fluid.unique_name.guard():
             model = create(main_arch)
+            backbone = model.backbone
+            print("Created model!", type(backbone))
             if FLAGS.fp16:
                 assert (getattr(model.backbone, 'norm_type', None)
                         != 'affine_channel'), \

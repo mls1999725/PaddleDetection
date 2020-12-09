@@ -20,22 +20,34 @@ import math
 
 import paddle.fluid as fluid
 from paddle.fluid.param_attr import ParamAttr
+from paddle.fluid.initializer import Constant
+from collections import OrderedDict
+from ppdet.core.workspace import register, serializable
 
+__all__ = [                                                                                                                                                                                            
+    "CSPResNet"
+]
+'''
 __all__ = [
     "CSPResNet50_leaky", "CSPResNet50_mish", "CSPResNet101_leaky",
     "CSPResNet101_mish"
 ]
+'''
 
-
-class CSPResNet():
+@register
+@serializable
+class CSPResNet(object):
     def __init__(self, layers=50, act="leaky_relu", feature_maps=[2, 3, 4, 5], dcn_v2_stages=[], weight_prefix_name=''):
+        super(CSPResNet, self).__init__()
+        print("initialized!!")
         self.layers = layers
         self.act = act
-        self.dcn_v2_stages = self.dcn_v2_stages
+        self.dcn_v2_stages = dcn_v2_stages
         self.prefix_name = weight_prefix_name
         self.feature_maps = feature_maps
 
     def __call__(self, input):
+        print("Called!!")
         layers = self.layers
         supported_layers = [50, 101]
         assert layers in supported_layers, \
@@ -137,7 +149,7 @@ class CSPResNet():
             if (block+2) in self.feature_maps:
                 res_endpoints.append(conv)
 
-            return OrderedDict([('res{}_sum'.format(self.feature_maps[idx]), feat)
+        return OrderedDict([('res{}_sum'.format(self.feature_maps[idx]), feat)
                                 for idx, feat in enumerate(res_endpoints)])
 
     def conv_bn_layer(self,
@@ -218,6 +230,28 @@ class CSPResNet():
             bn = self._mish(bn)
         return bn
 
+    def _conv_offset(self,
+                     input,
+                     filter_size,
+                     stride,
+                     padding,
+                     act=None,
+                     name=None):
+        out_channel = filter_size * filter_size * 3
+        out = fluid.layers.conv2d(
+            input,
+            num_filters=out_channel,
+            filter_size=filter_size,
+            stride=stride,
+            padding=padding,
+            param_attr=ParamAttr(
+                initializer=Constant(0.0), name=name + ".w_0"),
+            bias_attr=ParamAttr(
+                initializer=Constant(0.0), name=name + ".b_0"),
+            act=act,
+            name=name)
+        return out
+
     def _mish(self, input):
         return input * fluid.layers.tanh(self._softplus(input))
 
@@ -273,7 +307,7 @@ class CSPResNet():
         ret = fluid.layers.leaky_relu(ret, alpha=0.1)
         return ret
 
-
+'''
 def CSPResNet50_leaky():
     model = CSPResNet(layers=50, act="leaky_relu")
     return model
@@ -292,3 +326,4 @@ def CSPResNet101_leaky():
 def CSPResNet101_mish():
     model = CSPResNet(layers=101, act="mish")
     return model
+'''

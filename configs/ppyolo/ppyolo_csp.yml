@@ -14,11 +14,12 @@ use_ema: true
 ema_decay: 0.9998
 
 YOLOv3:
-  backbone: CSPResNet50_leaky
+  backbone: CSPResNet
   yolo_head: YOLOv3Head
   use_fine_grained_loss: true
 
-CSPResNet50_leaky:
+CSPResNet:
+  feature_maps: [3,4,5]
   dcn_v2_stages: [5]
 
 YOLOv3Head:
