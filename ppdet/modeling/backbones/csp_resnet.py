@@ -65,7 +65,7 @@ class CSPResNet(object):
         conv = self.conv_bn_layer(
             input=input,
             num_filters=64,
-            filter_size=3,
+            filter_size=7,
             stride=2,
             act=self.act,
             name="conv1",
