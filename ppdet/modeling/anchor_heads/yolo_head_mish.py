@@ -33,7 +33,7 @@ except Exception:
     from collections import Sequence
 from ppdet.utils.check import check_version
 
-__all__ = ['YOLOv3HeadMish', 'YOLOv4Head']
+__all__ = ['YOLOv3HeadMish', 'YOLOv4HeadMish']
 
 
 @register
@@ -65,7 +65,7 @@ class YOLOv3HeadMish(object):
                  iou_aware_factor=0.4,
                  block_size=3,
                  keep_prob=0.9,
-                 act='leaky'
+                 act='leaky',
                  yolo_loss="YOLOv3Loss",
                  spp=False,
                  nms=MultiClassNMS(
@@ -195,13 +195,13 @@ class YOLOv3HeadMish(object):
         if act == 'leaky':
             out = fluid.layers.leaky_relu(x=out, alpha=0.1)
         elif act == 'mish':
-            out = self.mish(out)
+            out = self._mish(out)
 
         return out
 
     def _softplus(self, input):
         expf = fluid.layers.exp(input)
-        reture fluid.layers.log(1 + expf)
+        return fluid.layers.log(1 + expf)
 
     def _mish(self, input):
         return input * fluid.layers.tanh(self._softplus(input))
@@ -554,7 +554,7 @@ class YOLOv3HeadMish(object):
 
 
 @register
-class YOLOv4Head(YOLOv3Head):
+class YOLOv4HeadMish(YOLOv3HeadMish):
     """
     Head block for YOLOv4 network
 
@@ -589,7 +589,7 @@ class YOLOv4Head(YOLOv3Head):
                  iou_aware=False,
                  iou_aware_factor=0.4,
                  clip_bbox=False):
-        super(YOLOv4Head, self).__init__(
+        super(YOLOv4HeadMish, self).__init__(
             anchors=anchors,
             anchor_masks=anchor_masks,
             nms=nms,

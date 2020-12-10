@@ -110,12 +110,10 @@ class DecodeImage(BaseOperator):
     def __call__(self, sample, context=None):
         """ load image if 'im_file' field is not empty but 'image' is"""
         if 'image' not in sample:
-            print(sample['im_file'])
             with open(sample['im_file'], 'rb') as f:
                 sample['image'] = f.read()
 
         im = sample['image']
-        print(im)
         data = np.frombuffer(im, dtype='uint8')
         im = cv2.imdecode(data, 1)  # BGR mode, but need RGB mode
 
