@@ -39,7 +39,6 @@ __all__ = [
 class CSPResNet(object):
     def __init__(self, layers=50, act="leaky_relu", feature_maps=[2, 3, 4, 5], dcn_v2_stages=[], weight_prefix_name=''):
         super(CSPResNet, self).__init__()
-        print("initialized!!")
         self.layers = layers
         self.act = act
         self.dcn_v2_stages = dcn_v2_stages
@@ -47,7 +46,6 @@ class CSPResNet(object):
         self.feature_maps = feature_maps
 
     def __call__(self, input):
-        print("Called!!")
         layers = self.layers
         supported_layers = [50, 101]
         assert layers in supported_layers, \
