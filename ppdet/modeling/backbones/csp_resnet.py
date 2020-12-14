@@ -25,7 +25,7 @@ from collections import OrderedDict
 from ppdet.core.workspace import register, serializable
 
 __all__ = [                                                                                                                                                                                            
-    "CSPResNet"
+    "CSPResNet50vd"
 ]
 '''
 __all__ = [
@@ -36,7 +36,7 @@ __all__ = [
 
 @register
 @serializable
-class CSPResNet(object):
+class CSPResNet50vd(object):
     def __init__(self, layers=50, act="leaky_relu", feature_maps=[2, 3, 4, 5], dcn_v2_stages=[], weight_prefix_name=''):
         super(CSPResNet, self).__init__()
         self.layers = layers
@@ -53,9 +53,9 @@ class CSPResNet(object):
                 supported_layers, layers)
         
         if layers == 50:
-            depth = [3, 3, 5, 2]
+            depth = [3, 4, 6, 3]
         elif layers == 101:
-            depth = [3, 3, 22, 2]
+            depth = [3, 4, 23, 3]
 
         num_filters = [64, 128, 256, 512]
         data_format = "NCHW"
@@ -109,12 +109,14 @@ class CSPResNet(object):
  
             for i in range(depth[block]):
                 conv_name = "res" + str(block + 2) + chr(97 + i)
+                is_first = False if ((block+2) != 2) else True
 
                 right = self.bottleneck_block(
                     input=right,
                     num_filters=num_filters[block],
                     stride=1,
                     name=conv_name,
+                    is_first=is_first,
                     data_format=data_format,
                     dcn_v2=dcn_v2)
 
@@ -258,17 +260,26 @@ class CSPResNet(object):
         return fluid.layers.log(1 + expf)
 
     def shortcut(self, input, ch_out, stride, is_first, name, data_format):
-        if data_format == 'NCHW':
-            ch_in = input.shape[1]
-        else:
-            ch_in = input.shape[-1]
-        if ch_in != ch_out or stride != 1 or is_first is True:
+        max_pooling_in_short_cut = True
+        ch_in = =input.shape[1]
+
+        if ch_in != ch_out or stride != 1 or (self.layers < 50 and is_first):
+            if max_pooling_in_short_cut and not is_first:
+                input = fluid.layers.pool2d(
+                    input=input,
+                    pool_size=2,
+                    pool_stride=2,
+                    pool_padding=0,
+                    ceil_mode=True,
+                    pool_type='avg')
+                return self.conv_bn_layer(
+                input, ch_out, 1, 1, name=name, data_format=data_format)
             return self.conv_bn_layer(
                 input, ch_out, 1, stride, name=name, data_format=data_format)
         else:
             return input
 
-    def bottleneck_block(self, input, num_filters, stride, name, data_format, dcn_v2=False):
+    def bottleneck_block(self, input, num_filters, stride, name, is_first, data_format, dcn_v2=False):
         conv0 = self.conv_bn_layer(
             input=input,
             num_filters=num_filters,
@@ -287,7 +298,7 @@ class CSPResNet(object):
             dcn_v2=dcn_v2)
         conv2 = self.conv_bn_layer(
             input=conv1,
-            num_filters=num_filters * 2,
+            num_filters=num_filters * 4,
             filter_size=1,
             act=None,
             name=name + "_branch2c",
@@ -297,7 +308,7 @@ class CSPResNet(object):
             input,
             num_filters * 2,
             stride,
-            is_first=False,
+            is_first=is_first,
             name=name + "_branch1",
             data_format=data_format)
 
