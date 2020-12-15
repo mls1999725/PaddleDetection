@@ -5,7 +5,7 @@ TrainReader:
   dataset:
     !COCODataSet
       image_dir: train2017
-      anno_path: annotations/instances_train2017.json
+      anno_path: annotations/instances_minitrain2017.json
       dataset_dir: dataset/coco
       with_background: false
   sample_transforms:

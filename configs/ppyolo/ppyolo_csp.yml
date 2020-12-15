@@ -1,12 +1,12 @@
 architecture: YOLOv3
 use_gpu: true
-max_iters: 250000
+max_iters: 50000
 log_smooth_window: 100
 log_iter: 100
 save_dir: output
 snapshot_iter: 10000
 metric: COCO
-pretrain_weights: https://paddle-imagenet-models-name.bj.bcebos.com/CSPResNet50_leaky_pretrained.pdparams
+pretrain_weights: 
 weights: output/ppyolo_csp_resnet/model_final
 num_classes: 80
 use_fine_grained_loss: true
@@ -69,8 +69,8 @@ LearningRate:
   - !PiecewiseDecay
     gamma: 0.1
     milestones:
-    - 150000
-    - 200000
+    - 40000
+    - 45000
   - !LinearWarmup
     start_factor: 0.
     steps: 4000

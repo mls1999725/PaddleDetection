@@ -464,8 +464,6 @@ class YOLOv3Head(object):
             loss (Variable): The loss Variable of YOLOv3 network.
 
         """
-        print("input is ", input)
-        print("target is ", targets)
         outputs = self._get_outputs(input, is_train=True)
         losses1 = self.yolo_loss(outputs, gt_box, gt_label, gt_score, targets,
                               self.anchors, self.anchor_masks,

@@ -38,7 +38,7 @@ __all__ = [
 @serializable
 class CSPResNet50vd(object):
     def __init__(self, layers=50, act="leaky_relu", feature_maps=[2, 3, 4, 5], dcn_v2_stages=[], weight_prefix_name=''):
-        super(CSPResNet, self).__init__()
+        super(CSPResNet50vd, self).__init__()
         self.layers = layers
         self.act = act
         self.dcn_v2_stages = dcn_v2_stages
@@ -261,7 +261,7 @@ class CSPResNet50vd(object):
 
     def shortcut(self, input, ch_out, stride, is_first, name, data_format):
         max_pooling_in_short_cut = True
-        ch_in = =input.shape[1]
+        ch_in = input.shape[1]
 
         if ch_in != ch_out or stride != 1 or (self.layers < 50 and is_first):
             if max_pooling_in_short_cut and not is_first:
@@ -298,7 +298,7 @@ class CSPResNet50vd(object):
             dcn_v2=dcn_v2)
         conv2 = self.conv_bn_layer(
             input=conv1,
-            num_filters=num_filters * 4,
+            num_filters=num_filters * 2,
             filter_size=1,
             act=None,
             name=name + "_branch2c",
