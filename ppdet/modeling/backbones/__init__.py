@@ -14,6 +14,7 @@
 
 from __future__ import absolute_import
 
+from . import csp_resnet_v2
 from . import csp_resnet
 from . import resnet
 from . import resnext
@@ -36,6 +37,7 @@ from . import bifpn
 from . import cspdarknet
 from . import acfpn
 
+from .csp_resnet_v2 import *
 from .csp_resnet import *
 from .resnet import *
 from .resnext import *
