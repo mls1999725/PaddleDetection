@@ -65,6 +65,7 @@ class YOLOv3HeadPAN(object):
                  iou_aware_factor=0.4,
                  block_size=3,
                  keep_prob=0.9,
+                 spp_stage=5,
                  yolo_loss="YOLOv3Loss",
                  spp=False,
                  nms=MultiClassNMS(
@@ -93,6 +94,7 @@ class YOLOv3HeadPAN(object):
         self.block_size = block_size
         self.keep_prob = keep_prob
         self.use_spp = spp
+        self.spp_stage = spp_stage
         if isinstance(nms, dict):
             self.nms = MultiClassNMS(**nms)
         self.downsample = downsample
@@ -236,8 +238,14 @@ class YOLOv3HeadPAN(object):
                 padding=padding,
                 name='{}.{}'.format(name, i))
         return conv
+    
+    def spp_module(self, input, name=None):
+        conv = self.stack_conv(input, name=name + '.stack_conv.0')
+        spp_out = self.spp(conv)
+        conv = self.stack_conv(spp_out, name=name + '.stack_conv.1')
+        return conv
 
-    def _pan_module(self, input, filter_list, name=None):
+    def pan_module(self, input, filter_list, name=None):
         for i in range(1, len(input)):
             ch_out = input[i].shape[1] // 2
             conv_left = self._conv_bn(
@@ -286,6 +294,7 @@ class YOLOv3HeadPAN(object):
                 stride=1,
                 padding=0,
                 name='{}.{}.0'.format(name, j))
+            '''
             if self.use_spp and is_first and j == 1:
                 conv = self._spp_module(conv, name="spp")
                 conv = self._conv_bn(
@@ -295,7 +304,7 @@ class YOLOv3HeadPAN(object):
                     stride=1,
                     padding=0,
                     name='{}.{}.spp.conv'.format(name, j))
-                conv = self._pan_module(conv, name="pan")
+            '''
             conv = self._conv_bn(
                 conv,
                 channel * 2,
@@ -374,10 +383,18 @@ class YOLOv3HeadPAN(object):
         """
 
         outputs = []
-
+        filter_list = [1, 3, 1, 3, 1]
+        spp_stage = len(input) - self.spp_stage
         # get last out_layer_num blocks in reverse order
         out_layer_num = len(self.anchor_masks)
         blocks = input[-1:-out_layer_num - 1:-1]
+        blocks[spp_stage] = self.spp_module(
+            blocks[spp_stage], name=self.prefix_name + "spp_module")
+        blocks = self.pan_module(
+            blocks, filter_list=filter_list,name=self.prefix_name + "pan_module")
+
+        # reverse order back to input
+        blocks = blocks[::-1]
 
         route = None
         for i, block in enumerate(blocks):
