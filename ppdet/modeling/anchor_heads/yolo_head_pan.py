@@ -219,7 +219,51 @@ class YOLOv3HeadPAN(object):
             input=[output1, output2, output3, output4], axis=1)
         return output
 
-    # def _pan_module(self, input):
+    def stack_conv(self,
+                   input,
+                   ch_list=[512, 1024, 512],
+                   filter_list=[1, 3, 1],
+                   stride=1,
+                   name=None):
+        conv = input
+        for i, (ch_out, f_size) in enumerate(zip(ch_list, filter_list)):
+            padding = 1 if f_size == 3 else 0
+            conv = self._conv_bn(
+                conv, 
+                ch_out=ch_out,
+                filter_size=f_size,
+                stride=stride,
+                padding=padding,
+                name='{}.{}'.format(name, i))
+        return conv
+
+    def _pan_module(self, input, filter_list, name=None):
+        for i in range(1, len(input)):
+            ch_out = input[i].shape[1] // 2
+            conv_left = self._conv_bn(
+                input[i],
+                ch_out=ch_out,
+                filter_size=1,
+                stride=1,
+                padding=0,
+                name=name+'.{}.left'.format(i))
+            ch_out = input[i - 1].shape[1] // 2
+            conv_right = self._conv_bn(
+                input[i - 1],
+                ch_out=ch_out,
+                filter_size=1,
+                stride=1,
+                padding=0,
+                name=name + '.{}.right'.format(i))
+            conv_right = self._upsample(conv_right)
+            pan_out = fluid.layers.concat([conv_left, conv_right], axis=1)
+            ch_list = [pan_out.shape[1] // 2 * k for k in [1, 2, 1, 2, 1]]
+            input[i] = self.stack_conv(
+                pan_out,
+                ch_list=ch_list,
+                filter_list=filter_list,
+                name=name + '.stack_conv.{}'.format(i))
+        return input 
         
     def _detection_block(self,
                          input,
@@ -251,6 +295,7 @@ class YOLOv3HeadPAN(object):
                     stride=1,
                     padding=0,
                     name='{}.{}.spp.conv'.format(name, j))
+                conv = self._pan_module(conv, name="pan")
             conv = self._conv_bn(
                 conv,
                 channel * 2,
