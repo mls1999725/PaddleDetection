@@ -239,7 +239,7 @@ class YOLOv3HeadPAN(object):
                 name='{}.{}'.format(name, i))
         return conv
     
-    def spp_module(self, input, name=None):
+    def spp_module(self, input, channel, conv_block_num=2, is_test=True, name=None):
         conv = self.stack_conv(input, name=name + '.stack_conv.0')
         spp_out = self.spp(conv)
         conv = self.stack_conv(spp_out, name=name + '.stack_conv.1')
@@ -294,17 +294,6 @@ class YOLOv3HeadPAN(object):
                 stride=1,
                 padding=0,
                 name='{}.{}.0'.format(name, j))
-            '''
-            if self.use_spp and is_first and j == 1:
-                conv = self._spp_module(conv, name="spp")
-                conv = self._conv_bn(
-                    conv,
-                    512,
-                    filter_size=1,
-                    stride=1,
-                    padding=0,
-                    name='{}.{}.spp.conv'.format(name, j))
-            '''
             conv = self._conv_bn(
                 conv,
                 channel * 2,
@@ -383,19 +372,21 @@ class YOLOv3HeadPAN(object):
         """
 
         outputs = []
-        filter_list = [1, 3, 1, 3, 1]
         spp_stage = len(input) - self.spp_stage
         # get last out_layer_num blocks in reverse order
         out_layer_num = len(self.anchor_masks)
         blocks = input[-1:-out_layer_num - 1:-1]
+        # SPP needs to be modified
         blocks[spp_stage] = self.spp_module(
             blocks[spp_stage], name=self.prefix_name + "spp_module")
         blocks = self.pan_module(
             blocks, filter_list=filter_list,name=self.prefix_name + "pan_module")
 
+        # whether add reverse
         # reverse order back to input
         blocks = blocks[::-1]
-
+        
+        # first block should be 19x19
         route = None
         for i, block in enumerate(blocks):
             if i > 0:  # perform concat in first 2 detection_block
