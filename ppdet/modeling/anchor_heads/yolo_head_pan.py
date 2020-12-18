@@ -239,10 +239,48 @@ class YOLOv3HeadPAN(object):
                 name='{}.{}'.format(name, i))
         return conv
     
-    def spp_module(self, input, channel, conv_block_num=2, is_test=True, name=None):
-        conv = self.stack_conv(input, name=name + '.stack_conv.0')
-        spp_out = self.spp(conv)
-        conv = self.stack_conv(spp_out, name=name + '.stack_conv.1')
+    def spp_module(self, input, channel=512, conv_block_num=2, is_test=True, name=None):
+        conv = input
+        for j in range(conv_block_num):
+            conv = self._add_coord(conv, is_test=is_test)
+            conv = self._conv_bn(
+                conv,
+                channel,
+                filter_size=1,
+                stride=1,
+                padding=0,
+                name='{}.{}.0'.format(name, j))
+            if j == 1:
+                conv = self._spp_module(conv, name="spp")
+                conv = self._conv_bn(
+                    conv,
+                    512,
+                    filter_size=1,
+                    stride=1,
+                    padding=0,
+                    name='{}.{}.spp.conv'.format(name, j))
+            conv = self._conv_bn(
+                conv,
+                channel * 2,
+                filter_size=3,
+                stride=1,
+                padding=1,
+                name='{}.{}.1'.format(name, j))
+
+        if self.drop_block:
+            conv = DropBlock(
+                conv,
+                block_size=self.block_size,
+                keep_prob=self.keep_prob,
+                is_test=is_test)
+        conv = self._add_coord(conv, is_test=is_test)
+        conv = self._conv_bn(
+            conv,
+            channel,
+            filter_size=1,
+            stride=1,
+            padding=0,
+            name='{}.2'.format(name))
         return conv
 
     def pan_module(self, input, filter_list, name=None):
@@ -271,7 +309,9 @@ class YOLOv3HeadPAN(object):
                 ch_list=ch_list,
                 filter_list=filter_list,
                 name=name + '.stack_conv.{}'.format(i))
-        return input 
+        return input
+
+     
         
     def _detection_block(self,
                          input,
@@ -287,13 +327,14 @@ class YOLOv3HeadPAN(object):
         conv = input
         for j in range(conv_block_num):
             conv = self._add_coord(conv, is_test=is_test)
-            conv = self._conv_bn(
-                conv,
-                channel,
-                filter_size=1,
-                stride=1,
-                padding=0,
-                name='{}.{}.0'.format(name, j))
+            if not is_first:
+                conv = self._conv_bn(
+                    conv,
+                    channel,
+                    filter_size=1,
+                    stride=1,
+                    padding=0,
+                    name='{}.{}.0'.format(name, j))
             conv = self._conv_bn(
                 conv,
                 channel * 2,
@@ -391,14 +432,30 @@ class YOLOv3HeadPAN(object):
         route = None
         for i, block in enumerate(blocks):
             if i > 0:  # perform concat in first 2 detection_block
+                # downsample
+                route = self._conv_bn(
+                    route,
+                    ch_out=route.shape[1] * 2,
+                    filter_size=3,
+                    stride=2,
+                    padding=1,
+                    name=self.prefix_name + 'yolo_block.route.{}'.format(i))
                 block = fluid.layers.concat(input=[route, block], axis=1)
-            route, tip = self._detection_block(
+                ch_list = [block.shape[1] // 2 * k for k in [1, 2, 1, 2, 1]]
+                block = self.stack_conv(
+                    block,
+                    ch_list=ch_list,
+                    filter_size=filter_list,
+                    name=self.prefix_name + 'yolo_block.stack_conv.{}'.format(i))
+            route = block
+
+            block_out = self._conv_bn(
                 block,
-                channel=64 * (2**out_layer_num) // (2**i),
-                is_first=i == 0,
-                is_test=(not is_train),
-                conv_block_num=self.conv_block_num,
-                name=self.prefix_name + "yolo_block.{}".format(i))
+                ch_out=block.shape[1] * 2,
+                filter_size=3,
+                stride=1,
+                padding=1,
+                name=self.prefix_name + 'yolo_output.{}。conv.0'.format(i))
 
             # out channel number = mask_num * (5 + class_num)
             if self.iou_aware:
@@ -407,7 +464,7 @@ class YOLOv3HeadPAN(object):
                 num_filters = len(self.anchor_masks[i]) * (self.num_classes + 5)
             with fluid.name_scope('yolo_output'):
                 block_out = fluid.layers.conv2d(
-                    input=tip,
+                    input=block_out,
                     num_filters=num_filters,
                     filter_size=1,
                     stride=1,
@@ -415,24 +472,12 @@ class YOLOv3HeadPAN(object):
                     act=None,
                     param_attr=ParamAttr(
                         name=self.prefix_name +
-                        "yolo_output.{}.conv.weights".format(i)),
+                        "yolo_output.{}.conv.1.weights".format(i)),
                     bias_attr=ParamAttr(
                         regularizer=L2Decay(0.),
                         name=self.prefix_name +
-                        "yolo_output.{}.conv.bias".format(i)))
+                        "yolo_output.{}.conv.1.bias".format(i)))
                 outputs.append(block_out)
-
-            if i < len(blocks) - 1:
-                # do not perform upsample in the last detection_block
-                route = self._conv_bn(
-                    input=route,
-                    ch_out=256 // (2**i),
-                    filter_size=1,
-                    stride=1,
-                    padding=0,
-                    name=self.prefix_name + "yolo_transition.{}".format(i))
-                # upsample
-                route = self._upsample(route)
 
         return outputs
 
