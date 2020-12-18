@@ -311,68 +311,6 @@ class YOLOv3HeadPAN(object):
                 name=name + '.stack_conv.{}'.format(i))
         return input
 
-     
-        
-    def _detection_block(self,
-                         input,
-                         channel,
-                         conv_block_num=2,
-                         is_first=False,
-                         is_test=True,
-                         name=None):
-        assert channel % 2 == 0, \
-            "channel {} cannot be divided by 2 in detection block {}" \
-            .format(channel, name)
-
-        conv = input
-        for j in range(conv_block_num):
-            conv = self._add_coord(conv, is_test=is_test)
-            if not is_first:
-                conv = self._conv_bn(
-                    conv,
-                    channel,
-                    filter_size=1,
-                    stride=1,
-                    padding=0,
-                    name='{}.{}.0'.format(name, j))
-            conv = self._conv_bn(
-                conv,
-                channel * 2,
-                filter_size=3,
-                stride=1,
-                padding=1,
-                name='{}.{}.1'.format(name, j))
-            if self.drop_block and j == 0 and not is_first:
-                conv = DropBlock(
-                    conv,
-                    block_size=self.block_size,
-                    keep_prob=self.keep_prob,
-                    is_test=is_test)
-
-        if self.drop_block and is_first:
-            conv = DropBlock(
-                conv,
-                block_size=self.block_size,
-                keep_prob=self.keep_prob,
-                is_test=is_test)
-        conv = self._add_coord(conv, is_test=is_test)
-        route = self._conv_bn(
-            conv,
-            channel,
-            filter_size=1,
-            stride=1,
-            padding=0,
-            name='{}.2'.format(name))
-        new_route = self._add_coord(route, is_test=is_test)
-        tip = self._conv_bn(
-            new_route,
-            channel * 2,
-            filter_size=3,
-            stride=1,
-            padding=1,
-            name='{}.tip'.format(name))
-        return route, tip
-
     def _upsample(self, input, scale=2, name=None):
         out = fluid.layers.resize_nearest(
             input=input, scale=float(scale), name=name)
