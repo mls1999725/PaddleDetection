@@ -383,7 +383,7 @@ class YOLOv3HeadPAN(object):
                 block = self.stack_conv(
                     block,
                     ch_list=ch_list,
-                    filter_size=filter_list,
+                    filter_list=filter_list,
                     name=self.prefix_name + 'yolo_block.stack_conv.{}'.format(i))
             route = block
 
@@ -393,7 +393,7 @@ class YOLOv3HeadPAN(object):
                 filter_size=3,
                 stride=1,
                 padding=1,
-                name=self.prefix_name + 'yolo_output.{}。conv.0'.format(i))
+                name=self.prefix_name + 'yolo_output.{}.conv.0'.format(i))
 
             # out channel number = mask_num * (5 + class_num)
             if self.iou_aware:
@@ -416,6 +416,7 @@ class YOLOv3HeadPAN(object):
                         name=self.prefix_name +
                         "yolo_output.{}.conv.1.bias".format(i)))
                 outputs.append(block_out)
+
 
         return outputs
 
