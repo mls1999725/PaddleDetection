@@ -372,6 +372,7 @@ class YOLOv3HeadPAN(object):
         """
 
         outputs = []
+        filter_list = [1, 3, 1, 3, 1]
         spp_stage = len(input) - self.spp_stage
         # get last out_layer_num blocks in reverse order
         out_layer_num = len(self.anchor_masks)
