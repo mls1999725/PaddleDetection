@@ -77,7 +77,7 @@ class YOLOv3(object):
             num_output_layer = len(self.yolo_head.anchor_masks)
             targets = []
             for i in range(num_output_layer):
-                k = 'target{}'.format(2 - i)
+                k = 'target{}'.format(i)
                 if k in feed_vars:
                     targets.append(feed_vars[k])
 

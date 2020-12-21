@@ -417,7 +417,7 @@ class YOLOv3HeadPAN(object):
                         "yolo_output.{}.conv.1.bias".format(i)))
                 outputs.append(block_out)
 
-
+        outputs = outputs[::-1]
         return outputs
 
     def get_loss(self, input, gt_box, gt_label, gt_score, targets):
