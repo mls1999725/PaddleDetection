@@ -42,6 +42,7 @@ YOLOv3HeadPAN:
   yolo_loss: YOLOv3Loss
   nms: MatrixNMS
   drop_block: true
+  spp_stage: 0
 
 YOLOv3Loss:
   ignore_thresh: 0.7

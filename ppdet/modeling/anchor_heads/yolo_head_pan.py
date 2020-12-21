@@ -242,7 +242,6 @@ class YOLOv3HeadPAN(object):
     def spp_module(self, input, channel=512, conv_block_num=2, is_test=True, name=None):
         conv = input
         for j in range(conv_block_num):
-            conv = self._add_coord(conv, is_test=is_test)
             conv = self._conv_bn(
                 conv,
                 channel,
@@ -267,13 +266,6 @@ class YOLOv3HeadPAN(object):
                 padding=1,
                 name='{}.{}.1'.format(name, j))
 
-        if self.drop_block:
-            conv = DropBlock(
-                conv,
-                block_size=self.block_size,
-                keep_prob=self.keep_prob,
-                is_test=is_test)
-        conv = self._add_coord(conv, is_test=is_test)
         conv = self._conv_bn(
             conv,
             channel,
@@ -285,7 +277,7 @@ class YOLOv3HeadPAN(object):
 
     def pan_module(self, input, filter_list, name=None):
         for i in range(1, len(input)):
-            ch_out = input[i].shape[1] // 2
+            ch_out = input[i].shape[1] // 4
             conv_left = self._conv_bn(
                 input[i],
                 ch_out=ch_out,
@@ -343,7 +335,7 @@ class YOLOv3HeadPAN(object):
         Get YOLOv3 head output
 
         Args:
-            input (list): List of Variables, output of backbone stages
+            input (list): List of Variables, output of backbonxe stages
             is_train (bool): whether in train or test mode
 
         Returns:
@@ -352,7 +344,8 @@ class YOLOv3HeadPAN(object):
 
         outputs = []
         filter_list = [1, 3, 1, 3, 1]
-        spp_stage = len(input) - self.spp_stage
+        spp_stage = self.spp_stage
+        # spp_stage = len(input) - self.spp_stage
         # get last out_layer_num blocks in reverse order
         out_layer_num = len(self.anchor_masks)
         blocks = input[-1:-out_layer_num - 1:-1]
