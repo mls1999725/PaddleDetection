@@ -237,6 +237,20 @@ class YOLOv3HeadPAN(object):
                 stride=stride,
                 padding=padding,
                 name='{}.{}'.format(name, i))
+            if i == 0:
+                short = conv
+            if i == 2:
+                residual = conv
+                conv = fluid.layers.add(
+                    x=short,
+                    y=residual,
+                    name='{}.{}.add'.format(name, 1))
+                short = conv
+        residual = conv
+        conv = fluid.layers.add(
+            x=short,
+            y=residual,
+            name='{}.{}.add'.format(name, 2))
         return conv
     
     def spp_module(self, input, channel=512, conv_block_num=2, is_test=True, name=None):
@@ -249,7 +263,14 @@ class YOLOv3HeadPAN(object):
                 stride=1,
                 padding=0,
                 name='{}.{}.0'.format(name, j))
+            if j == 0:
+                short = conv
             if j == 1:
+                residual = conv
+                conv = fluid.layers.elementwise_add(
+                    x=short,
+                    y=residual,
+                    name='{}.{}.add'.format(name, 1))
                 conv = self._spp_module(conv, name="spp")
                 conv = self._conv_bn(
                     conv,
@@ -258,6 +279,7 @@ class YOLOv3HeadPAN(object):
                     stride=1,
                     padding=0,
                     name='{}.{}.spp.conv'.format(name, j))
+                short = conv
             conv = self._conv_bn(
                 conv,
                 channel * 2,
@@ -273,18 +295,23 @@ class YOLOv3HeadPAN(object):
             stride=1,
             padding=0,
             name='{}.2'.format(name))
+        residual = conv
+        conv = fluid.layers.elementwise_add(
+            x=short,
+            y=residual,
+            name='{}.{}.add'.format(name, 2))
         return conv
 
     def pan_module(self, input, filter_list, name=None):
         for i in range(1, len(input)):
-            ch_out = input[i].shape[1] // 4
-            conv_left = self._conv_bn(
-                input[i],
-                ch_out=ch_out,
-                filter_size=1,
-                stride=1,
-                padding=0,
-                name=name+'.{}.left'.format(i))
+             # ch_out = input[i].shape[1] // 4
+             # conv_left = self._conv_bn(
+             #   input[i],
+             #   ch_out=ch_out,
+             #   filter_size=1,
+             #   stride=1,
+             #   padding=0,
+             #   name=name+'.{}.left'.format(i))
             ch_out = input[i - 1].shape[1] // 2
             conv_right = self._conv_bn(
                 input[i - 1],
