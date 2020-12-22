@@ -242,13 +242,14 @@ class YOLOv3HeadPAN(object):
     def spp_module(self, input, channel=512, conv_block_num=2, is_test=True, name=None):
         conv = input
         for j in range(conv_block_num):
-            conv = self._conv_bn(
-                conv,
-                channel,
-                filter_size=1,
-                stride=1,
-                padding=0,
-                name='{}.{}.0'.format(name, j))
+            if j == 0:
+                conv = self._conv_bn(
+                    conv,
+                    channel,
+                    filter_size=1,
+                    stride=1,
+                    padding=0,
+                    name='{}.{}.0'.format(name, j))
             if j == 1:
                 conv = self._spp_module(conv, name="spp")
                 conv = self._conv_bn(
@@ -258,13 +259,13 @@ class YOLOv3HeadPAN(object):
                     stride=1,
                     padding=0,
                     name='{}.{}.spp.conv'.format(name, j))
-            conv = self._conv_bn(
-                conv,
-                channel * 2,
-                filter_size=3,
-                stride=1,
-                padding=1,
-                name='{}.{}.1'.format(name, j))
+                conv = self._conv_bn(
+                    conv,
+                    channel * 2,
+                    filter_size=3,
+                    stride=1,
+                    padding=1,
+                    name='{}.{}.1'.format(name, j))
 
         conv = self._conv_bn(
             conv,
@@ -295,7 +296,7 @@ class YOLOv3HeadPAN(object):
                 name=name + '.{}.right'.format(i))
             conv_right = self._upsample(conv_right)
             pan_out = fluid.layers.concat([conv_left, conv_right], axis=1)
-            ch_list = [pan_out.shape[1] // 2 * k for k in [1, 2, 1, 2, 1]]
+            ch_list = [pan_out.shape[1] // 2 * k for k in [1, 2, 1]]
             input[i] = self.stack_conv(
                 pan_out,
                 ch_list=ch_list,
@@ -343,7 +344,7 @@ class YOLOv3HeadPAN(object):
         """
 
         outputs = []
-        filter_list = [1, 3, 1, 3, 1]
+        filter_list = [1, 3, 1]
         spp_stage = self.spp_stage
         # spp_stage = len(input) - self.spp_stage
         # get last out_layer_num blocks in reverse order
@@ -372,7 +373,7 @@ class YOLOv3HeadPAN(object):
                     padding=1,
                     name=self.prefix_name + 'yolo_block.route.{}'.format(i))
                 block = fluid.layers.concat(input=[route, block], axis=1)
-                ch_list = [block.shape[1] // 2 * k for k in [1, 2, 1, 2, 1]]
+                ch_list = [block.shape[1] // 2 * k for k in [1, 2, 1]]
                 block = self.stack_conv(
                     block,
                     ch_list=ch_list,
