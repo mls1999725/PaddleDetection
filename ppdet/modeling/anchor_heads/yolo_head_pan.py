@@ -241,13 +241,13 @@ class YOLOv3HeadPAN(object):
                 short = conv
             if i == 2:
                 residual = conv
-                conv = fluid.layers.add(
+                conv = fluid.layers.elementwise_add(
                     x=short,
                     y=residual,
                     name='{}.{}.add'.format(name, 1))
                 short = conv
         residual = conv
-        conv = fluid.layers.add(
+        conv = fluid.layers.elementwise_add(
             x=short,
             y=residual,
             name='{}.{}.add'.format(name, 2))
@@ -304,6 +304,7 @@ class YOLOv3HeadPAN(object):
 
     def pan_module(self, input, filter_list, name=None):
         for i in range(1, len(input)):
+            conv_left = input[i]
              # ch_out = input[i].shape[1] // 4
              # conv_left = self._conv_bn(
              #   input[i],
@@ -322,7 +323,7 @@ class YOLOv3HeadPAN(object):
                 name=name + '.{}.right'.format(i))
             conv_right = self._upsample(conv_right)
             pan_out = fluid.layers.concat([conv_left, conv_right], axis=1)
-            ch_list = [pan_out.shape[1] // 2 * k for k in [1, 2, 1, 2, 1]]
+            ch_list = [ch_out * k for k in [1, 2, 1, 2, 1]]
             input[i] = self.stack_conv(
                 pan_out,
                 ch_list=ch_list,
