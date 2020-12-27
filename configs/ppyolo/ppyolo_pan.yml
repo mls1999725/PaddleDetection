@@ -56,6 +56,7 @@ IouLoss:
   loss_weight: 2.5
   max_height: 608
   max_width: 608
+  ciou_term: true
 
 IouAwareLoss:
   loss_weight: 1.0
