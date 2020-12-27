@@ -1,13 +1,13 @@
 architecture: YOLOv3
 use_gpu: true
-max_iters: 50000
+max_iters: 250000
 log_smooth_window: 100
 log_iter: 100
 save_dir: output
 snapshot_iter: 2000
 metric: COCO
 pretrain_weights: https://paddle-imagenet-models-name.bj.bcebos.com/ResNet50_vd_ssld_pretrained.tar
-weights: output/ppyolo_pan_v3/model_final
+weights: output/ppyolo_full/model_final
 num_classes: 80
 use_fine_grained_loss: true
 use_ema: true
@@ -39,6 +39,7 @@ YOLOv3HeadPAN:
   iou_aware_factor: 0.4
   scale_x_y: 1.05
   spp: true
+  act: 'mish'
   yolo_loss: YOLOv3Loss
   nms: MatrixNMS
   drop_block: true
@@ -76,14 +77,14 @@ LearningRate:
   - !PiecewiseDecay
     gamma: 0.1
     milestones:
-    - 40000
-    - 45000
+    - 150000
+    - 200000
   - !LinearWarmup
     start_factor: 0.
     steps: 4000
 
 OptimizerBuilder:
-  clip_grad_by_norm: 10.
+  clip_grad_by_norm: 35.
   optimizer:
     momentum: 0.9
     type: Momentum
