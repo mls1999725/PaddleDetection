@@ -1,0 +1,82 @@
+/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/paddle/fluid/clip.py:779: UserWarning: Caution! 'set_gradient_clip' is not recommended and may be deprecated in future! We recommend a new strategy: set 'grad_clip' when initializing the 'optimizer'. This method can reduce the mistakes, please refer to documention of 'optimizer'.
+  warnings.warn("Caution! 'set_gradient_clip' is not recommended "
+2020-12-25 11:59:07,444-INFO: If regularizer of a Parameter has been set by 'fluid.ParamAttr' or 'fluid.WeightNormParamAttr' already. The Regularization[L2Decay, regularization_coeff=0.000500] in Optimizer will not take effect, and it will only be applied to other Parameters!
+/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/paddle/fluid/clip.py:779: UserWarning: Caution! 'set_gradient_clip' is not recommended and may be deprecated in future! We recommend a new strategy: set 'grad_clip' when initializing the 'optimizer'. This method can reduce the mistakes, please refer to documention of 'optimizer'.
+  warnings.warn("Caution! 'set_gradient_clip' is not recommended "
+2020-12-25 12:00:44,738-INFO: If regularizer of a Parameter has been set by 'fluid.ParamAttr' or 'fluid.WeightNormParamAttr' already. The Regularization[L2Decay, regularization_coeff=0.000500] in Optimizer will not take effect, and it will only be applied to other Parameters!
+2020-12-25 12:00:50,011-ERROR: Config dataset_dir dataset/coco is not exits!
+2020-12-25 12:00:50,011-WARNING: Config annotation dataset/coco/annotations/instances_val2017.json is not a file, dataset config is not valid
+2020-12-25 12:00:50,012-INFO: Dataset /root/paddlejob/workspace/ppyolo/PaddleDetection/dataset/coco is not valid for reason above, try searching /root/.cache/paddle/dataset or downloading dataset...
+2020-12-25 12:00:50,012-INFO: Downloading train2017.zip from http://images.cocodataset.org/zips/train2017.zip
+Traceback (most recent call last):
+  File "tools/train.py", line 372, in <module>
+    main()
+  File "tools/train.py", line 148, in main
+    eval_reader = create_reader(cfg.EvalReader, devices_num=1)
+  File "/root/paddlejob/workspace/ppyolo/PaddleDetection/ppdet/data/reader.py", line 441, in create_reader
+    reader = Reader(**cfg)()
+  File "/root/paddlejob/workspace/ppyolo/PaddleDetection/ppdet/data/reader.py", line 210, in __init__
+    self._roidbs = self._dataset.get_roidb()
+  File "/root/paddlejob/workspace/ppyolo/PaddleDetection/ppdet/data/source/dataset.py", line 65, in get_roidb
+    self.image_dir)
+  File "/root/paddlejob/workspace/ppyolo/PaddleDetection/ppdet/utils/download.py", line 142, in get_dataset_path
+    get_path(url, data_dir, md5sum, check_exist)
+  File "/root/paddlejob/workspace/ppyolo/PaddleDetection/ppdet/utils/download.py", line 212, in get_path
+    fullname = _download(url, root_dir, md5sum)
+  File "/root/paddlejob/workspace/ppyolo/PaddleDetection/ppdet/utils/download.py", line 288, in _download
+    req = requests.get(url, stream=True)
+  File "/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/requests/api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='images.cocodataset.org', port=80): Max retries exceeded with url: /zips/train2017.zip (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb343e88a50>: Failed to establish a new connection: [Errno 110] Connection timed out',))
+/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/paddle/fluid/clip.py:779: UserWarning: Caution! 'set_gradient_clip' is not recommended and may be deprecated in future! We recommend a new strategy: set 'grad_clip' when initializing the 'optimizer'. This method can reduce the mistakes, please refer to documention of 'optimizer'.
+  warnings.warn("Caution! 'set_gradient_clip' is not recommended "
+2020-12-25 12:02:35,417-INFO: If regularizer of a Parameter has been set by 'fluid.ParamAttr' or 'fluid.WeightNormParamAttr' already. The Regularization[L2Decay, regularization_coeff=0.000500] in Optimizer will not take effect, and it will only be applied to other Parameters!
+loading annotations into memory...
+Done (t=0.88s)
+creating index...
+index created!
+2020-12-25 12:02:42,555-INFO: places would be ommited when DataLoader is not iterable
+
+
+API is deprecated since 2.0.0 Please use FleetAPI instead.
+WIKI: https://github.com/PaddlePaddle/Fleet/blob/develop/markdown_doc/transpiler
+
+        
+W1225 12:02:42.771535 39106 device_context.cc:252] Please NOTE: device: 1, CUDA Capability: 70, Driver API Version: 10.2, Runtime API Version: 10.0
+W1225 12:02:42.777729 39106 device_context.cc:260] device: 1, cuDNN Version: 7.6.
+I1225 12:02:46.074113 39281 grpc_server.cc:477] Server listening on 127.0.0.1:31968 successful, selected port: 31968
+/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/paddle/fluid/clip.py:779: UserWarning: Caution! 'set_gradient_clip' is not recommended and may be deprecated in future! We recommend a new strategy: set 'grad_clip' when initializing the 'optimizer'. This method can reduce the mistakes, please refer to documention of 'optimizer'.
+  warnings.warn("Caution! 'set_gradient_clip' is not recommended "
+2020-12-25 12:05:19,221-INFO: If regularizer of a Parameter has been set by 'fluid.ParamAttr' or 'fluid.WeightNormParamAttr' already. The Regularization[L2Decay, regularization_coeff=0.000500] in Optimizer will not take effect, and it will only be applied to other Parameters!
+loading annotations into memory...
+Done (t=0.87s)
+creating index...
+index created!
+2020-12-25 12:05:26,346-INFO: places would be ommited when DataLoader is not iterable
+
+
+API is deprecated since 2.0.0 Please use FleetAPI instead.
+WIKI: https://github.com/PaddlePaddle/Fleet/blob/develop/markdown_doc/transpiler
+
+        
+W1225 12:05:26.562973 39450 device_context.cc:252] Please NOTE: device: 1, CUDA Capability: 70, Driver API Version: 10.2, Runtime API Version: 10.0
+W1225 12:05:26.568696 39450 device_context.cc:260] device: 1, cuDNN Version: 7.6.
+I1225 12:05:29.848553 39629 grpc_server.cc:477] Server listening on 127.0.0.1:31079 successful, selected port: 31079
+2020-12-25 12:05:35,651-WARNING: /root/.cache/paddle/weights/ResNet50_vd_ssld_pretrained.pdparams not found, try to load model file saved with [ save_params, save_persistables, save_vars ]
+/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/paddle/fluid/io.py:1998: UserWarning: This list is not set, Because of Paramerter not found in program. There are: fc_0.b_0 fc_0.w_0
+  format(" ".join(unused_para_list)))
+loading annotations into memory...
+Done (t=5.25s)
+creating index...
+index created!
+2020-12-25 12:05:49,889-INFO: places would be ommited when DataLoader is not iterable
+I1225 12:05:51.968936 39450 build_strategy.cc:361] set enable_sequential_execution:1
+W1225 12:05:53.084085 39450 fuse_all_reduce_op_pass.cc:74] Find all_reduce operators: 276. To make the speed faster, some all_reduce ops are fused during training, after fusion, the number of all_reduce ops is 172.

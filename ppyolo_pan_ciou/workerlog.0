@@ -1,0 +1,1542 @@
+/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/paddle/fluid/clip.py:779: UserWarning: Caution! 'set_gradient_clip' is not recommended and may be deprecated in future! We recommend a new strategy: set 'grad_clip' when initializing the 'optimizer'. This method can reduce the mistakes, please refer to documention of 'optimizer'.
+  warnings.warn("Caution! 'set_gradient_clip' is not recommended "
+2020-12-25 11:59:07,428-INFO: If regularizer of a Parameter has been set by 'fluid.ParamAttr' or 'fluid.WeightNormParamAttr' already. The Regularization[L2Decay, regularization_coeff=0.000500] in Optimizer will not take effect, and it will only be applied to other Parameters!
+/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/paddle/fluid/clip.py:779: UserWarning: Caution! 'set_gradient_clip' is not recommended and may be deprecated in future! We recommend a new strategy: set 'grad_clip' when initializing the 'optimizer'. This method can reduce the mistakes, please refer to documention of 'optimizer'.
+  warnings.warn("Caution! 'set_gradient_clip' is not recommended "
+2020-12-25 12:00:44,721-INFO: If regularizer of a Parameter has been set by 'fluid.ParamAttr' or 'fluid.WeightNormParamAttr' already. The Regularization[L2Decay, regularization_coeff=0.000500] in Optimizer will not take effect, and it will only be applied to other Parameters!
+2020-12-25 12:00:50,112-ERROR: Config dataset_dir dataset/coco is not exits!
+2020-12-25 12:00:50,113-WARNING: Config annotation dataset/coco/annotations/instances_val2017.json is not a file, dataset config is not valid
+2020-12-25 12:00:50,113-INFO: Dataset /root/paddlejob/workspace/ppyolo/PaddleDetection/dataset/coco is not valid for reason above, try searching /root/.cache/paddle/dataset or downloading dataset...
+2020-12-25 12:00:50,113-INFO: Downloading train2017.zip from http://images.cocodataset.org/zips/train2017.zip
+Traceback (most recent call last):
+  File "tools/train.py", line 372, in <module>
+    main()
+  File "tools/train.py", line 148, in main
+    eval_reader = create_reader(cfg.EvalReader, devices_num=1)
+  File "/root/paddlejob/workspace/ppyolo/PaddleDetection/ppdet/data/reader.py", line 441, in create_reader
+    reader = Reader(**cfg)()
+  File "/root/paddlejob/workspace/ppyolo/PaddleDetection/ppdet/data/reader.py", line 210, in __init__
+    self._roidbs = self._dataset.get_roidb()
+  File "/root/paddlejob/workspace/ppyolo/PaddleDetection/ppdet/data/source/dataset.py", line 65, in get_roidb
+    self.image_dir)
+  File "/root/paddlejob/workspace/ppyolo/PaddleDetection/ppdet/utils/download.py", line 142, in get_dataset_path
+    get_path(url, data_dir, md5sum, check_exist)
+  File "/root/paddlejob/workspace/ppyolo/PaddleDetection/ppdet/utils/download.py", line 212, in get_path
+    fullname = _download(url, root_dir, md5sum)
+  File "/root/paddlejob/workspace/ppyolo/PaddleDetection/ppdet/utils/download.py", line 288, in _download
+    req = requests.get(url, stream=True)
+  File "/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/requests/api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='images.cocodataset.org', port=80): Max retries exceeded with url: /zips/train2017.zip (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f43de637a50>: Failed to establish a new connection: [Errno 110] Connection timed out',))
+/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/paddle/fluid/clip.py:779: UserWarning: Caution! 'set_gradient_clip' is not recommended and may be deprecated in future! We recommend a new strategy: set 'grad_clip' when initializing the 'optimizer'. This method can reduce the mistakes, please refer to documention of 'optimizer'.
+  warnings.warn("Caution! 'set_gradient_clip' is not recommended "
+2020-12-25 12:02:35,529-INFO: If regularizer of a Parameter has been set by 'fluid.ParamAttr' or 'fluid.WeightNormParamAttr' already. The Regularization[L2Decay, regularization_coeff=0.000500] in Optimizer will not take effect, and it will only be applied to other Parameters!
+loading annotations into memory...
+Done (t=0.92s)
+creating index...
+index created!
+2020-12-25 12:02:42,776-INFO: places would be ommited when DataLoader is not iterable
+
+
+API is deprecated since 2.0.0 Please use FleetAPI instead.
+WIKI: https://github.com/PaddlePaddle/Fleet/blob/develop/markdown_doc/transpiler
+
+        
+server not ready, wait 3 sec to retry...
+not ready endpoints:['127.0.0.1:31968', '127.0.0.1:11906', '127.0.0.1:22861', '127.0.0.1:31312', '127.0.0.1:27317', '127.0.0.1:11735', '127.0.0.1:30750']
+server not ready, wait 3 sec to retry...
+not ready endpoints:['127.0.0.1:31968', '127.0.0.1:11906', '127.0.0.1:22861', '127.0.0.1:31312', '127.0.0.1:27317', '127.0.0.1:11735', '127.0.0.1:30750']
+server not ready, wait 3 sec to retry...
+not ready endpoints:['127.0.0.1:11735']
+server not ready, wait 3 sec to retry...
+not ready endpoints:['127.0.0.1:11735']
+server not ready, wait 3 sec to retry...
+not ready endpoints:['127.0.0.1:11735']
+/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/paddle/fluid/clip.py:779: UserWarning: Caution! 'set_gradient_clip' is not recommended and may be deprecated in future! We recommend a new strategy: set 'grad_clip' when initializing the 'optimizer'. This method can reduce the mistakes, please refer to documention of 'optimizer'.
+  warnings.warn("Caution! 'set_gradient_clip' is not recommended "
+2020-12-25 12:05:19,089-INFO: If regularizer of a Parameter has been set by 'fluid.ParamAttr' or 'fluid.WeightNormParamAttr' already. The Regularization[L2Decay, regularization_coeff=0.000500] in Optimizer will not take effect, and it will only be applied to other Parameters!
+loading annotations into memory...
+Done (t=0.87s)
+creating index...
+index created!
+2020-12-25 12:05:26,345-INFO: places would be ommited when DataLoader is not iterable
+
+
+API is deprecated since 2.0.0 Please use FleetAPI instead.
+WIKI: https://github.com/PaddlePaddle/Fleet/blob/develop/markdown_doc/transpiler
+
+        
+server not ready, wait 3 sec to retry...
+not ready endpoints:['127.0.0.1:31079', '127.0.0.1:26346', '127.0.0.1:24971', '127.0.0.1:30039', '127.0.0.1:11739', '127.0.0.1:11901', '127.0.0.1:15102']
+server not ready, wait 3 sec to retry...
+not ready endpoints:['127.0.0.1:31079', '127.0.0.1:26346', '127.0.0.1:24971', '127.0.0.1:30039', '127.0.0.1:11739', '127.0.0.1:11901', '127.0.0.1:15102']
+W1225 12:05:32.566447 39448 device_context.cc:252] Please NOTE: device: 0, CUDA Capability: 70, Driver API Version: 10.2, Runtime API Version: 10.0
+W1225 12:05:32.572257 39448 device_context.cc:260] device: 0, cuDNN Version: 7.6.
+2020-12-25 12:05:35,580-WARNING: /root/.cache/paddle/weights/ResNet50_vd_ssld_pretrained.pdparams not found, try to load model file saved with [ save_params, save_persistables, save_vars ]
+/opt/_internal/cpython-2.7.15-ucs4/lib/python2.7/site-packages/paddle/fluid/io.py:1998: UserWarning: This list is not set, Because of Paramerter not found in program. There are: fc_0.b_0 fc_0.w_0
+  format(" ".join(unused_para_list)))
+loading annotations into memory...
+Done (t=5.21s)
+creating index...
+index created!
+2020-12-25 12:05:49,697-INFO: places would be ommited when DataLoader is not iterable
+I1225 12:05:51.968884 39448 build_strategy.cc:361] set enable_sequential_execution:1
+W1225 12:05:52.977296 39448 fuse_all_reduce_op_pass.cc:74] Find all_reduce operators: 276. To make the speed faster, some all_reduce ops are fused during training, after fusion, the number of all_reduce ops is 172.
+2020-12-25 12:06:19,752-INFO: iter: 0, lr: 0.000000, 'loss': '4138.208008', 'loss_cls': '268.350281', 'loss_xy': '4.977291', 'loss_iou': '18.273964', 'loss_iou_aware': '15.511620', 'loss_wh': '15.818306', 'loss_obj': '3815.276367', time: 0.003, eta: 0:02:17
+2020-12-25 12:07:42,968-INFO: iter: 100, lr: 0.000125, 'loss': '7776.020508', 'loss_cls': '334.938629', 'loss_xy': '5.787632', 'loss_iou': '21.982679', 'loss_iou_aware': '30.381174', 'loss_wh': '20.777313', 'loss_obj': '7336.338379', time: 1.125, eta: 15:35:27
+2020-12-25 12:09:03,892-INFO: iter: 200, lr: 0.000250, 'loss': '2607.633789', 'loss_cls': '325.340332', 'loss_xy': '5.631100', 'loss_iou': '21.995289', 'loss_iou_aware': '29.310247', 'loss_wh': '18.983490', 'loss_obj': '2150.426758', time: 0.809, eta: 11:11:08
+2020-12-25 12:10:24,244-INFO: iter: 300, lr: 0.000375, 'loss': '796.418518', 'loss_cls': '334.632843', 'loss_xy': '5.992158', 'loss_iou': '23.868073', 'loss_iou_aware': '28.155247', 'loss_wh': '18.510010', 'loss_obj': '355.583832', time: 0.803, eta: 11:04:49
+2020-12-25 12:11:45,065-INFO: iter: 400, lr: 0.000500, 'loss': '517.380127', 'loss_cls': '313.811981', 'loss_xy': '5.955173', 'loss_iou': '22.897556', 'loss_iou_aware': '24.436554', 'loss_wh': '16.427746', 'loss_obj': '123.374039', time: 0.810, eta: 11:09:29
+2020-12-25 12:13:05,104-INFO: iter: 500, lr: 0.000625, 'loss': '436.552765', 'loss_cls': '284.212463', 'loss_xy': '5.634569', 'loss_iou': '21.575531', 'loss_iou_aware': '21.824116', 'loss_wh': '15.159828', 'loss_obj': '80.292923', time: 0.800, eta: 11:00:06
+2020-12-25 12:14:24,330-INFO: iter: 600, lr: 0.000750, 'loss': '359.311340', 'loss_cls': '245.156235', 'loss_xy': '5.790825', 'loss_iou': '21.963985', 'loss_iou_aware': '13.668379', 'loss_wh': '12.772836', 'loss_obj': '56.191360', time: 0.792, eta: 10:51:47
+2020-12-25 12:15:44,709-INFO: iter: 700, lr: 0.000875, 'loss': '272.273987', 'loss_cls': '176.883118', 'loss_xy': '6.142142', 'loss_iou': '21.634796', 'loss_iou_aware': '8.655035', 'loss_wh': '10.260258', 'loss_obj': '47.642727', time: 0.805, eta: 11:01:10
+2020-12-25 12:17:03,868-INFO: iter: 800, lr: 0.001000, 'loss': '162.633606', 'loss_cls': '82.847885', 'loss_xy': '5.357035', 'loss_iou': '19.665504', 'loss_iou_aware': '3.802617', 'loss_wh': '8.531644', 'loss_obj': '40.006351', time: 0.792, eta: 10:49:05
+2020-12-25 12:18:24,177-INFO: iter: 900, lr: 0.001125, 'loss': '117.974373', 'loss_cls': '47.956150', 'loss_xy': '5.213257', 'loss_iou': '19.048653', 'loss_iou_aware': '1.878827', 'loss_wh': '7.461831', 'loss_obj': '35.240105', time: 0.803, eta: 10:57:00
+2020-12-25 12:19:44,017-INFO: iter: 1000, lr: 0.001250, 'loss': '108.865341', 'loss_cls': '36.799896', 'loss_xy': '5.605636', 'loss_iou': '19.633972', 'loss_iou_aware': '1.112242', 'loss_wh': '7.332979', 'loss_obj': '36.475662', time: 0.798, eta: 10:52:00
+2020-12-25 12:21:04,619-INFO: iter: 1100, lr: 0.001375, 'loss': '93.642914', 'loss_cls': '30.739317', 'loss_xy': '4.701364', 'loss_iou': '16.692001', 'loss_iou_aware': '0.645494', 'loss_wh': '6.257774', 'loss_obj': '31.382229', time: 0.807, eta: 10:57:23
+2020-12-25 12:22:24,369-INFO: iter: 1200, lr: 0.001500, 'loss': '84.685219', 'loss_cls': '26.366100', 'loss_xy': '4.719143', 'loss_iou': '16.791809', 'loss_iou_aware': '0.361431', 'loss_wh': '5.882254', 'loss_obj': '30.355038', time: 0.797, eta: 10:48:22
+2020-12-25 12:23:45,411-INFO: iter: 1300, lr: 0.001625, 'loss': '86.581429', 'loss_cls': '26.315519', 'loss_xy': '4.848613', 'loss_iou': '17.319031', 'loss_iou_aware': '0.289916', 'loss_wh': '5.972301', 'loss_obj': '31.907516', time: 0.810, eta: 10:57:10
+2020-12-25 12:25:05,740-INFO: iter: 1400, lr: 0.001750, 'loss': '76.621063', 'loss_cls': '22.839600', 'loss_xy': '4.361063', 'loss_iou': '16.007999', 'loss_iou_aware': '0.204802', 'loss_wh': '5.436583', 'loss_obj': '28.567989', time: 0.804, eta: 10:51:06
+2020-12-25 12:26:26,036-INFO: iter: 1500, lr: 0.001875, 'loss': '80.235779', 'loss_cls': '23.585968', 'loss_xy': '4.542643', 'loss_iou': '16.203012', 'loss_iou_aware': '0.158992', 'loss_wh': '5.423590', 'loss_obj': '28.752777', time: 0.804, eta: 10:49:46
+2020-12-25 12:27:46,050-INFO: iter: 1600, lr: 0.002000, 'loss': '78.001801', 'loss_cls': '22.666527', 'loss_xy': '4.484771', 'loss_iou': '16.108728', 'loss_iou_aware': '0.123944', 'loss_wh': '5.495868', 'loss_obj': '28.458969', time: 0.799, eta: 10:44:34
+2020-12-25 12:29:05,958-INFO: iter: 1700, lr: 0.002125, 'loss': '76.390450', 'loss_cls': '22.469574', 'loss_xy': '4.541848', 'loss_iou': '15.872665', 'loss_iou_aware': '0.105205', 'loss_wh': '5.435726', 'loss_obj': '28.059515', time: 0.799, eta: 10:43:28
+2020-12-25 12:30:26,728-INFO: iter: 1800, lr: 0.002250, 'loss': '70.600754', 'loss_cls': '20.574505', 'loss_xy': '4.108570', 'loss_iou': '14.740038', 'loss_iou_aware': '0.088107', 'loss_wh': '4.912326', 'loss_obj': '26.893984', time: 0.807, eta: 10:47:58
+2020-12-25 12:31:46,234-INFO: iter: 1900, lr: 0.002375, 'loss': '76.005302', 'loss_cls': '21.512733', 'loss_xy': '4.445905', 'loss_iou': '15.949599', 'loss_iou_aware': '0.076002', 'loss_wh': '5.166735', 'loss_obj': '27.598438', time: 0.796, eta: 10:38:09
+2020-12-25 12:33:05,659-INFO: iter: 2000, lr: 0.002500, 'loss': '72.850281', 'loss_cls': '21.019934', 'loss_xy': '4.294169', 'loss_iou': '15.451403', 'loss_iou_aware': '0.057741', 'loss_wh': '5.150241', 'loss_obj': '26.653690', time: 0.794, eta: 10:35:22
+2020-12-25 12:33:06,130-INFO: Save model to output/ppyolo_pan/2000.
+2020-12-25 12:33:10,188-INFO: Test iter 0
+2020-12-25 12:33:24,561-INFO: Test iter 100
+2020-12-25 12:33:38,497-INFO: Test iter 200
+2020-12-25 12:33:52,419-INFO: Test iter 300
+2020-12-25 12:34:06,389-INFO: Test iter 400
+2020-12-25 12:34:20,306-INFO: Test iter 500
+2020-12-25 12:34:34,191-INFO: Test iter 600
+2020-12-25 12:34:37,529-INFO: Test finish iter 625
+2020-12-25 12:34:37,529-INFO: Total number of images: 5000, inference time: 56.8738115588 fps.
+loading annotations into memory...
+Done (t=1.83s)
+creating index...
+index created!
+2020-12-25 12:34:50,608-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=6.14s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=52.15s).
+Accumulating evaluation results...
+DONE (t=6.20s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.002
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.007
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.001
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.001
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.005
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.003
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.009
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.011
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.013
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.013
+2020-12-25 12:35:57,126-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 12:36:00,291-INFO: Best test box ap: 0.00238736359788, in iter: 2000
+2020-12-25 12:37:24,911-INFO: iter: 2100, lr: 0.002625, 'loss': '78.338425', 'loss_cls': '22.055454', 'loss_xy': '4.548105', 'loss_iou': '16.618864', 'loss_iou_aware': '0.050616', 'loss_wh': '5.543693', 'loss_obj': '28.347607', time: 2.592, eta: 1 day, 10:29:34
+2020-12-25 12:38:44,500-INFO: iter: 2200, lr: 0.002750, 'loss': '72.334854', 'loss_cls': '21.012846', 'loss_xy': '4.198217', 'loss_iou': '14.858749', 'loss_iou_aware': '0.047126', 'loss_wh': '5.365831', 'loss_obj': '26.587421', time: 0.794, eta: 10:32:23
+2020-12-25 12:40:04,540-INFO: iter: 2300, lr: 0.002875, 'loss': '68.474525', 'loss_cls': '19.779167', 'loss_xy': '4.035874', 'loss_iou': '14.708410', 'loss_iou_aware': '0.041948', 'loss_wh': '5.115089', 'loss_obj': '26.146273', time: 0.802, eta: 10:37:37
+2020-12-25 12:41:25,198-INFO: iter: 2400, lr: 0.003000, 'loss': '78.118988', 'loss_cls': '22.008156', 'loss_xy': '4.433640', 'loss_iou': '16.990025', 'loss_iou_aware': '0.041841', 'loss_wh': '5.739273', 'loss_obj': '27.649677', time: 0.807, eta: 10:40:02
+2020-12-25 12:42:45,160-INFO: iter: 2500, lr: 0.003125, 'loss': '76.897171', 'loss_cls': '21.570694', 'loss_xy': '4.490120', 'loss_iou': '16.791412', 'loss_iou_aware': '0.035982', 'loss_wh': '5.928725', 'loss_obj': '28.537424', time: 0.801, eta: 10:34:04
+2020-12-25 12:44:05,458-INFO: iter: 2600, lr: 0.003250, 'loss': '70.570648', 'loss_cls': '19.861969', 'loss_xy': '4.120689', 'loss_iou': '15.637568', 'loss_iou_aware': '0.030985', 'loss_wh': '5.306489', 'loss_obj': '25.995598', time: 0.802, eta: 10:33:43
+2020-12-25 12:45:26,285-INFO: iter: 2700, lr: 0.003375, 'loss': '72.391586', 'loss_cls': '19.982653', 'loss_xy': '4.210840', 'loss_iou': '15.200250', 'loss_iou_aware': '0.030330', 'loss_wh': '5.148069', 'loss_obj': '27.390110', time: 0.806, eta: 10:35:26
+2020-12-25 12:46:46,823-INFO: iter: 2800, lr: 0.003500, 'loss': '73.510834', 'loss_cls': '19.980175', 'loss_xy': '4.306825', 'loss_iou': '16.138418', 'loss_iou_aware': '0.028296', 'loss_wh': '5.663007', 'loss_obj': '26.728828', time: 0.808, eta: 10:35:14
+2020-12-25 12:48:06,523-INFO: iter: 2900, lr: 0.003625, 'loss': '72.844864', 'loss_cls': '19.485924', 'loss_xy': '4.245934', 'loss_iou': '15.903511', 'loss_iou_aware': '0.027352', 'loss_wh': '5.220885', 'loss_obj': '27.326458', time: 0.797, eta: 10:25:28
+2020-12-25 12:49:26,740-INFO: iter: 3000, lr: 0.003750, 'loss': '71.389610', 'loss_cls': '20.174526', 'loss_xy': '4.256499', 'loss_iou': '15.791943', 'loss_iou_aware': '0.024616', 'loss_wh': '5.218709', 'loss_obj': '26.805832', time: 0.803, eta: 10:28:43
+2020-12-25 12:50:47,413-INFO: iter: 3100, lr: 0.003875, 'loss': '71.140549', 'loss_cls': '19.572521', 'loss_xy': '4.194567', 'loss_iou': '15.760847', 'loss_iou_aware': '0.022303', 'loss_wh': '5.593327', 'loss_obj': '26.583500', time: 0.806, eta: 10:30:14
+2020-12-25 12:52:07,218-INFO: iter: 3200, lr: 0.004000, 'loss': '70.336555', 'loss_cls': '19.187424', 'loss_xy': '4.160358', 'loss_iou': '15.622169', 'loss_iou_aware': '0.021341', 'loss_wh': '5.277370', 'loss_obj': '26.438848', time: 0.798, eta: 10:22:28
+2020-12-25 12:53:26,752-INFO: iter: 3300, lr: 0.004125, 'loss': '69.586868', 'loss_cls': '18.841053', 'loss_xy': '4.005622', 'loss_iou': '15.554224', 'loss_iou_aware': '0.020147', 'loss_wh': '5.098420', 'loss_obj': '25.034563', time: 0.796, eta: 10:19:37
+2020-12-25 12:54:46,793-INFO: iter: 3400, lr: 0.004250, 'loss': '71.999336', 'loss_cls': '19.424795', 'loss_xy': '4.253365', 'loss_iou': '16.032610', 'loss_iou_aware': '0.020339', 'loss_wh': '5.444091', 'loss_obj': '27.150852', time: 0.800, eta: 10:21:40
+2020-12-25 12:56:06,674-INFO: iter: 3500, lr: 0.004375, 'loss': '69.293503', 'loss_cls': '18.302074', 'loss_xy': '4.126909', 'loss_iou': '15.317513', 'loss_iou_aware': '0.017695', 'loss_wh': '5.230264', 'loss_obj': '26.650255', time: 0.799, eta: 10:19:16
+2020-12-25 12:57:27,271-INFO: iter: 3600, lr: 0.004500, 'loss': '66.851013', 'loss_cls': '18.733778', 'loss_xy': '3.931928', 'loss_iou': '15.355841', 'loss_iou_aware': '0.016472', 'loss_wh': '5.155941', 'loss_obj': '25.379667', time: 0.805, eta: 10:22:29
+2020-12-25 12:58:48,552-INFO: iter: 3700, lr: 0.004625, 'loss': '74.241943', 'loss_cls': '19.747046', 'loss_xy': '4.349349', 'loss_iou': '16.512203', 'loss_iou_aware': '0.017363', 'loss_wh': '5.439830', 'loss_obj': '27.259590', time: 0.813, eta: 10:27:28
+2020-12-25 13:00:07,437-INFO: iter: 3800, lr: 0.004750, 'loss': '71.376160', 'loss_cls': '18.267487', 'loss_xy': '4.139783', 'loss_iou': '15.833891', 'loss_iou_aware': '0.015927', 'loss_wh': '5.313942', 'loss_obj': '27.159840', time: 0.788, eta: 10:06:53
+2020-12-25 13:01:28,165-INFO: iter: 3900, lr: 0.004875, 'loss': '70.019440', 'loss_cls': '18.540649', 'loss_xy': '4.149000', 'loss_iou': '15.771431', 'loss_iou_aware': '0.015498', 'loss_wh': '5.212946', 'loss_obj': '27.728134', time: 0.808, eta: 10:21:00
+2020-12-25 13:02:48,336-INFO: iter: 4000, lr: 0.005000, 'loss': '70.888962', 'loss_cls': '18.271940', 'loss_xy': '4.269847', 'loss_iou': '16.512272', 'loss_iou_aware': '0.014888', 'loss_wh': '5.510259', 'loss_obj': '25.538555', time: 0.801, eta: 10:13:47
+2020-12-25 13:02:48,754-INFO: Save model to output/ppyolo_pan/4000.
+2020-12-25 13:02:52,133-INFO: Test iter 0
+2020-12-25 13:03:06,298-INFO: Test iter 100
+2020-12-25 13:03:20,282-INFO: Test iter 200
+2020-12-25 13:03:34,104-INFO: Test iter 300
+2020-12-25 13:03:47,973-INFO: Test iter 400
+2020-12-25 13:04:01,781-INFO: Test iter 500
+2020-12-25 13:04:15,641-INFO: Test iter 600
+2020-12-25 13:04:18,975-INFO: Test finish iter 625
+2020-12-25 13:04:18,975-INFO: Total number of images: 5000, inference time: 57.4225145219 fps.
+loading annotations into memory...
+Done (t=2.29s)
+creating index...
+index created!
+2020-12-25 13:04:35,098-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.11s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=60.90s).
+Accumulating evaluation results...
+DONE (t=7.90s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.037
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.081
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.028
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.011
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.043
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.046
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.073
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.118
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.125
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.031
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.106
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.167
+2020-12-25 13:05:53,665-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 13:05:56,585-INFO: Best test box ap: 0.0367845516253, in iter: 4000
+2020-12-25 13:07:15,837-INFO: iter: 4100, lr: 0.005000, 'loss': '67.864250', 'loss_cls': '17.129093', 'loss_xy': '4.090005', 'loss_iou': '15.437526', 'loss_iou_aware': '0.013445', 'loss_wh': '5.185251', 'loss_obj': '25.920979', time: 2.675, eta: 1 day, 10:06:39
+2020-12-25 13:08:40,173-INFO: iter: 4200, lr: 0.005000, 'loss': '67.240738', 'loss_cls': '17.143641', 'loss_xy': '3.958541', 'loss_iou': '15.366827', 'loss_iou_aware': '0.013243', 'loss_wh': '5.111032', 'loss_obj': '24.897438', time: 0.844, eta: 10:44:21
+2020-12-25 13:10:00,374-INFO: iter: 4300, lr: 0.005000, 'loss': '70.685883', 'loss_cls': '17.950047', 'loss_xy': '4.176529', 'loss_iou': '16.130747', 'loss_iou_aware': '0.013636', 'loss_wh': '5.146074', 'loss_obj': '27.064339', time: 0.801, eta: 10:10:13
+2020-12-25 13:11:21,544-INFO: iter: 4400, lr: 0.005000, 'loss': '68.904007', 'loss_cls': '17.264824', 'loss_xy': '4.024229', 'loss_iou': '16.019684', 'loss_iou_aware': '0.013077', 'loss_wh': '5.349265', 'loss_obj': '26.113533', time: 0.812, eta: 10:17:02
+2020-12-25 13:12:41,744-INFO: iter: 4500, lr: 0.005000, 'loss': '66.103210', 'loss_cls': '16.498901', 'loss_xy': '3.925828', 'loss_iou': '15.384944', 'loss_iou_aware': '0.011855', 'loss_wh': '5.508784', 'loss_obj': '25.875954', time: 0.801, eta: 10:07:24
+2020-12-25 13:14:00,952-INFO: iter: 4600, lr: 0.005000, 'loss': '67.226212', 'loss_cls': '16.512207', 'loss_xy': '3.985240', 'loss_iou': '15.340151', 'loss_iou_aware': '0.011674', 'loss_wh': '5.311186', 'loss_obj': '25.267715', time: 0.793, eta: 10:00:19
+2020-12-25 13:15:20,715-INFO: iter: 4700, lr: 0.005000, 'loss': '68.393204', 'loss_cls': '17.418030', 'loss_xy': '4.054070', 'loss_iou': '15.644590', 'loss_iou_aware': '0.011384', 'loss_wh': '5.302833', 'loss_obj': '26.304214', time: 0.798, eta: 10:02:15
+2020-12-25 13:16:40,895-INFO: iter: 4800, lr: 0.005000, 'loss': '68.631500', 'loss_cls': '17.342157', 'loss_xy': '4.154518', 'loss_iou': '15.345848', 'loss_iou_aware': '0.010914', 'loss_wh': '5.352338', 'loss_obj': '26.167021', time: 0.802, eta: 10:04:06
+2020-12-25 13:18:00,522-INFO: iter: 4900, lr: 0.005000, 'loss': '65.651009', 'loss_cls': '15.785841', 'loss_xy': '3.876604', 'loss_iou': '14.865911', 'loss_iou_aware': '0.010922', 'loss_wh': '4.893774', 'loss_obj': '25.557030', time: 0.796, eta: 9:58:41
+2020-12-25 13:19:20,305-INFO: iter: 5000, lr: 0.005000, 'loss': '62.740326', 'loss_cls': '15.177759', 'loss_xy': '3.778884', 'loss_iou': '14.926141', 'loss_iou_aware': '0.010136', 'loss_wh': '4.834440', 'loss_obj': '24.406591', time: 0.796, eta: 9:57:05
+2020-12-25 13:20:39,385-INFO: iter: 5100, lr: 0.005000, 'loss': '62.400494', 'loss_cls': '15.265547', 'loss_xy': '3.732815', 'loss_iou': '14.537739', 'loss_iou_aware': '0.009995', 'loss_wh': '4.680883', 'loss_obj': '24.890987', time: 0.793, eta: 9:53:12
+2020-12-25 13:21:59,006-INFO: iter: 5200, lr: 0.005000, 'loss': '66.096542', 'loss_cls': '16.513359', 'loss_xy': '4.016369', 'loss_iou': '15.375347', 'loss_iou_aware': '0.009431', 'loss_wh': '5.116231', 'loss_obj': '25.750954', time: 0.796, eta: 9:54:37
+2020-12-25 13:23:18,472-INFO: iter: 5300, lr: 0.005000, 'loss': '66.558990', 'loss_cls': '16.099312', 'loss_xy': '3.987190', 'loss_iou': '15.655890', 'loss_iou_aware': '0.009823', 'loss_wh': '5.189285', 'loss_obj': '25.138538', time: 0.793, eta: 9:50:54
+2020-12-25 13:24:37,975-INFO: iter: 5400, lr: 0.005000, 'loss': '69.469330', 'loss_cls': '16.141249', 'loss_xy': '4.201455', 'loss_iou': '16.716021', 'loss_iou_aware': '0.009593', 'loss_wh': '5.416758', 'loss_obj': '26.426058', time: 0.795, eta: 9:51:14
+2020-12-25 13:25:58,114-INFO: iter: 5500, lr: 0.005000, 'loss': '68.009926', 'loss_cls': '16.101238', 'loss_xy': '4.025288', 'loss_iou': '16.032227', 'loss_iou_aware': '0.008738', 'loss_wh': '5.608036', 'loss_obj': '25.141525', time: 0.802, eta: 9:54:27
+2020-12-25 13:27:18,579-INFO: iter: 5600, lr: 0.005000, 'loss': '63.361526', 'loss_cls': '15.623381', 'loss_xy': '3.901134', 'loss_iou': '14.779293', 'loss_iou_aware': '0.009404', 'loss_wh': '4.896623', 'loss_obj': '24.781994', time: 0.805, eta: 9:55:33
+2020-12-25 13:28:37,437-INFO: iter: 5700, lr: 0.005000, 'loss': '67.830154', 'loss_cls': '15.504946', 'loss_xy': '4.006434', 'loss_iou': '15.463402', 'loss_iou_aware': '0.009926', 'loss_wh': '5.224086', 'loss_obj': '26.014317', time: 0.789, eta: 9:42:27
+2020-12-25 13:29:57,992-INFO: iter: 5800, lr: 0.005000, 'loss': '62.930779', 'loss_cls': '15.154777', 'loss_xy': '3.893142', 'loss_iou': '14.096394', 'loss_iou_aware': '0.008607', 'loss_wh': '4.799211', 'loss_obj': '24.301075', time: 0.806, eta: 9:53:42
+2020-12-25 13:31:18,214-INFO: iter: 5900, lr: 0.005000, 'loss': '67.020050', 'loss_cls': '15.574280', 'loss_xy': '4.148983', 'loss_iou': '16.166733', 'loss_iou_aware': '0.008924', 'loss_wh': '5.353189', 'loss_obj': '26.313988', time: 0.802, eta: 9:49:33
+2020-12-25 13:32:38,447-INFO: iter: 6000, lr: 0.005000, 'loss': '66.340042', 'loss_cls': '15.611668', 'loss_xy': '4.076194', 'loss_iou': '15.574801', 'loss_iou_aware': '0.009283', 'loss_wh': '5.474535', 'loss_obj': '25.510410', time: 0.802, eta: 9:47:53
+2020-12-25 13:32:38,837-INFO: Save model to output/ppyolo_pan/6000.
+2020-12-25 13:32:42,077-INFO: Test iter 0
+2020-12-25 13:32:56,204-INFO: Test iter 100
+2020-12-25 13:33:10,181-INFO: Test iter 200
+2020-12-25 13:33:24,066-INFO: Test iter 300
+2020-12-25 13:33:37,963-INFO: Test iter 400
+2020-12-25 13:33:51,858-INFO: Test iter 500
+2020-12-25 13:34:05,737-INFO: Test iter 600
+2020-12-25 13:34:09,090-INFO: Test finish iter 625
+2020-12-25 13:34:09,090-INFO: Total number of images: 5000, inference time: 57.302696306 fps.
+loading annotations into memory...
+Done (t=0.64s)
+creating index...
+index created!
+2020-12-25 13:34:25,004-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.24s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=66.92s).
+Accumulating evaluation results...
+DONE (t=8.47s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.098
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.197
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.089
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.031
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.104
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.131
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.130
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.223
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.242
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.076
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.233
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.318
+2020-12-25 13:35:50,531-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 13:35:53,583-INFO: Best test box ap: 0.0984029780176, in iter: 6000
+2020-12-25 13:37:12,282-INFO: iter: 6100, lr: 0.005000, 'loss': '64.569733', 'loss_cls': '15.203812', 'loss_xy': '3.911023', 'loss_iou': '14.858150', 'loss_iou_aware': '0.008449', 'loss_wh': '5.034874', 'loss_obj': '24.599443', time: 2.739, eta: 1 day, 9:23:56
+2020-12-25 13:38:32,050-INFO: iter: 6200, lr: 0.005000, 'loss': '63.742943', 'loss_cls': '14.403815', 'loss_xy': '4.000517', 'loss_iou': '15.342740', 'loss_iou_aware': '0.008247', 'loss_wh': '5.142492', 'loss_obj': '24.334358', time: 0.797, eta: 9:41:42
+2020-12-25 13:39:56,572-INFO: iter: 6300, lr: 0.005000, 'loss': '65.776802', 'loss_cls': '15.151972', 'loss_xy': '4.039529', 'loss_iou': '15.613432', 'loss_iou_aware': '0.007928', 'loss_wh': '5.152599', 'loss_obj': '25.489931', time: 0.846, eta: 10:15:59
+2020-12-25 13:41:17,430-INFO: iter: 6400, lr: 0.005000, 'loss': '65.814896', 'loss_cls': '15.423748', 'loss_xy': '4.001428', 'loss_iou': '15.758291', 'loss_iou_aware': '0.008220', 'loss_wh': '5.262522', 'loss_obj': '25.267014', time: 0.808, eta: 9:47:20
+2020-12-25 13:42:37,627-INFO: iter: 6500, lr: 0.005000, 'loss': '62.826637', 'loss_cls': '14.352597', 'loss_xy': '3.973445', 'loss_iou': '14.957111', 'loss_iou_aware': '0.007329', 'loss_wh': '4.803814', 'loss_obj': '23.913883', time: 0.802, eta: 9:41:42
+2020-12-25 13:43:57,112-INFO: iter: 6600, lr: 0.005000, 'loss': '63.267960', 'loss_cls': '14.599113', 'loss_xy': '3.918643', 'loss_iou': '15.266756', 'loss_iou_aware': '0.007415', 'loss_wh': '4.913341', 'loss_obj': '23.876432', time: 0.795, eta: 9:35:07
+2020-12-25 13:45:16,335-INFO: iter: 6700, lr: 0.005000, 'loss': '61.911781', 'loss_cls': '14.324363', 'loss_xy': '3.874756', 'loss_iou': '14.800615', 'loss_iou_aware': '0.008090', 'loss_wh': '4.858931', 'loss_obj': '24.546032', time: 0.792, eta: 9:31:17
+2020-12-25 13:46:36,770-INFO: iter: 6800, lr: 0.005000, 'loss': '62.274864', 'loss_cls': '14.396360', 'loss_xy': '3.859568', 'loss_iou': '14.877928', 'loss_iou_aware': '0.007285', 'loss_wh': '5.110036', 'loss_obj': '24.365358', time: 0.805, eta: 9:39:22
+2020-12-25 13:47:56,577-INFO: iter: 6900, lr: 0.005000, 'loss': '61.021141', 'loss_cls': '13.697708', 'loss_xy': '3.708555', 'loss_iou': '14.397720', 'loss_iou_aware': '0.007049', 'loss_wh': '5.018803', 'loss_obj': '23.765182', time: 0.798, eta: 9:33:23
+2020-12-25 13:49:16,918-INFO: iter: 7000, lr: 0.005000, 'loss': '65.208466', 'loss_cls': '14.709629', 'loss_xy': '4.066061', 'loss_iou': '15.834448', 'loss_iou_aware': '0.007933', 'loss_wh': '5.006399', 'loss_obj': '25.457085', time: 0.803, eta: 9:35:16
+2020-12-25 13:50:36,612-INFO: iter: 7100, lr: 0.005000, 'loss': '62.526585', 'loss_cls': '13.797303', 'loss_xy': '3.849834', 'loss_iou': '15.340944', 'loss_iou_aware': '0.007379', 'loss_wh': '5.377485', 'loss_obj': '24.065502', time: 0.797, eta: 9:30:03
+2020-12-25 13:51:56,562-INFO: iter: 7200, lr: 0.005000, 'loss': '68.383453', 'loss_cls': '14.695282', 'loss_xy': '4.234897', 'loss_iou': '16.510027', 'loss_iou_aware': '0.008049', 'loss_wh': '5.396658', 'loss_obj': '27.658516', time: 0.800, eta: 9:30:58
+2020-12-25 13:53:16,638-INFO: iter: 7300, lr: 0.005000, 'loss': '63.930984', 'loss_cls': '14.984045', 'loss_xy': '4.044216', 'loss_iou': '15.535568', 'loss_iou_aware': '0.007492', 'loss_wh': '5.116757', 'loss_obj': '25.335306', time: 0.800, eta: 9:29:34
+2020-12-25 13:54:37,191-INFO: iter: 7400, lr: 0.005000, 'loss': '64.976295', 'loss_cls': '14.485776', 'loss_xy': '3.948855', 'loss_iou': '15.210093', 'loss_iou_aware': '0.007258', 'loss_wh': '4.889153', 'loss_obj': '25.157722', time: 0.805, eta: 9:31:23
+2020-12-25 13:55:56,741-INFO: iter: 7500, lr: 0.005000, 'loss': '60.375839', 'loss_cls': '13.280607', 'loss_xy': '3.797170', 'loss_iou': '14.414487', 'loss_iou_aware': '0.006636', 'loss_wh': '4.661805', 'loss_obj': '23.827133', time: 0.797, eta: 9:24:22
+2020-12-25 13:57:16,034-INFO: iter: 7600, lr: 0.005000, 'loss': '62.869064', 'loss_cls': '14.619711', 'loss_xy': '3.894315', 'loss_iou': '15.729811', 'loss_iou_aware': '0.007011', 'loss_wh': '5.298568', 'loss_obj': '24.554554', time: 0.794, eta: 9:21:02
+2020-12-25 13:58:35,774-INFO: iter: 7700, lr: 0.005000, 'loss': '66.153061', 'loss_cls': '14.454737', 'loss_xy': '4.090037', 'loss_iou': '16.041988', 'loss_iou_aware': '0.007127', 'loss_wh': '5.213217', 'loss_obj': '25.747379', time: 0.795, eta: 9:20:24
+2020-12-25 13:59:55,503-INFO: iter: 7800, lr: 0.005000, 'loss': '62.702621', 'loss_cls': '14.049591', 'loss_xy': '3.933657', 'loss_iou': '15.702832', 'loss_iou_aware': '0.007091', 'loss_wh': '5.363953', 'loss_obj': '25.597488', time: 0.798, eta: 9:20:57
+2020-12-25 14:01:17,632-INFO: iter: 7900, lr: 0.005000, 'loss': '63.540756', 'loss_cls': '13.393652', 'loss_xy': '3.901572', 'loss_iou': '14.820425', 'loss_iou_aware': '0.007032', 'loss_wh': '5.003474', 'loss_obj': '25.746254', time: 0.820, eta: 9:35:21
+2020-12-25 14:02:38,025-INFO: iter: 8000, lr: 0.005000, 'loss': '62.196423', 'loss_cls': '13.495706', 'loss_xy': '3.825294', 'loss_iou': '14.677271', 'loss_iou_aware': '0.006762', 'loss_wh': '4.898501', 'loss_obj': '24.629805', time: 0.805, eta: 9:23:33
+2020-12-25 14:02:38,420-INFO: Save model to output/ppyolo_pan/8000.
+2020-12-25 14:02:41,695-INFO: Test iter 0
+2020-12-25 14:02:55,817-INFO: Test iter 100
+2020-12-25 14:03:09,792-INFO: Test iter 200
+2020-12-25 14:03:23,787-INFO: Test iter 300
+2020-12-25 14:03:37,762-INFO: Test iter 400
+2020-12-25 14:03:51,629-INFO: Test iter 500
+2020-12-25 14:04:05,556-INFO: Test iter 600
+2020-12-25 14:04:08,884-INFO: Test finish iter 625
+2020-12-25 14:04:08,884-INFO: Total number of images: 5000, inference time: 57.1590640809 fps.
+loading annotations into memory...
+Done (t=0.77s)
+creating index...
+index created!
+2020-12-25 14:04:24,032-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.36s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=67.93s).
+Accumulating evaluation results...
+DONE (t=8.36s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.148
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.283
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.140
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.053
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.157
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.196
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.166
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.288
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.315
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.116
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.320
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.410
+2020-12-25 14:05:50,596-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 14:05:53,567-INFO: Best test box ap: 0.147584452459, in iter: 8000
+2020-12-25 14:07:12,882-INFO: iter: 8100, lr: 0.005000, 'loss': '60.551235', 'loss_cls': '13.272924', 'loss_xy': '3.633995', 'loss_iou': '13.930061', 'loss_iou_aware': '0.006088', 'loss_wh': '4.513928', 'loss_obj': '23.756153', time: 2.749, eta: 1 day, 7:59:23
+2020-12-25 14:08:32,842-INFO: iter: 8200, lr: 0.005000, 'loss': '64.339653', 'loss_cls': '14.665388', 'loss_xy': '4.028465', 'loss_iou': '15.677240', 'loss_iou_aware': '0.006784', 'loss_wh': '5.287516', 'loss_obj': '24.527693', time: 0.800, eta: 9:17:18
+2020-12-25 14:09:52,326-INFO: iter: 8300, lr: 0.005000, 'loss': '58.486248', 'loss_cls': '13.559161', 'loss_xy': '3.565251', 'loss_iou': '14.032722', 'loss_iou_aware': '0.005835', 'loss_wh': '4.689084', 'loss_obj': '22.589455', time: 0.795, eta: 9:12:26
+2020-12-25 14:11:17,011-INFO: iter: 8400, lr: 0.005000, 'loss': '62.988792', 'loss_cls': '13.114994', 'loss_xy': '3.990358', 'loss_iou': '15.533182', 'loss_iou_aware': '0.006301', 'loss_wh': '5.088637', 'loss_obj': '25.061409', time: 0.847, eta: 9:47:28
+2020-12-25 14:12:38,200-INFO: iter: 8500, lr: 0.005000, 'loss': '60.835499', 'loss_cls': '12.881330', 'loss_xy': '3.925929', 'loss_iou': '15.540886', 'loss_iou_aware': '0.006239', 'loss_wh': '4.985495', 'loss_obj': '24.010242', time: 0.811, eta: 9:21:05
+2020-12-25 14:13:58,109-INFO: iter: 8600, lr: 0.005000, 'loss': '60.905594', 'loss_cls': '12.957212', 'loss_xy': '3.796872', 'loss_iou': '14.857028', 'loss_iou_aware': '0.006112', 'loss_wh': '5.061909', 'loss_obj': '23.648306', time: 0.799, eta: 9:11:34
+2020-12-25 14:15:18,671-INFO: iter: 8700, lr: 0.005000, 'loss': '61.566856', 'loss_cls': '13.002913', 'loss_xy': '3.856098', 'loss_iou': '15.062909', 'loss_iou_aware': '0.005840', 'loss_wh': '4.794265', 'loss_obj': '24.526051', time: 0.805, eta: 9:14:19
+2020-12-25 14:16:38,194-INFO: iter: 8800, lr: 0.005000, 'loss': '62.512459', 'loss_cls': '13.834074', 'loss_xy': '3.888970', 'loss_iou': '14.925131', 'loss_iou_aware': '0.005975', 'loss_wh': '4.858494', 'loss_obj': '24.519241', time: 0.795, eta: 9:05:44
+2020-12-25 14:17:58,160-INFO: iter: 8900, lr: 0.005000, 'loss': '63.401482', 'loss_cls': '14.031268', 'loss_xy': '3.959764', 'loss_iou': '15.300058', 'loss_iou_aware': '0.006204', 'loss_wh': '5.010266', 'loss_obj': '25.575199', time: 0.800, eta: 9:07:52
+2020-12-25 14:19:17,591-INFO: iter: 9000, lr: 0.005000, 'loss': '58.545197', 'loss_cls': '13.151470', 'loss_xy': '3.672758', 'loss_iou': '13.654581', 'loss_iou_aware': '0.005720', 'loss_wh': '4.743731', 'loss_obj': '22.986631', time: 0.795, eta: 9:03:04
+2020-12-25 14:20:37,414-INFO: iter: 9100, lr: 0.005000, 'loss': '58.997742', 'loss_cls': '12.556896', 'loss_xy': '3.711666', 'loss_iou': '14.132216', 'loss_iou_aware': '0.005664', 'loss_wh': '4.649363', 'loss_obj': '23.646475', time: 0.798, eta: 9:04:09
+2020-12-25 14:21:56,842-INFO: iter: 9200, lr: 0.005000, 'loss': '63.347805', 'loss_cls': '13.724964', 'loss_xy': '4.044615', 'loss_iou': '16.490715', 'loss_iou_aware': '0.006496', 'loss_wh': '5.092801', 'loss_obj': '25.717289', time: 0.794, eta: 9:00:08
+2020-12-25 14:23:16,195-INFO: iter: 9300, lr: 0.005000, 'loss': '60.508286', 'loss_cls': '12.945362', 'loss_xy': '3.776975', 'loss_iou': '14.661553', 'loss_iou_aware': '0.005782', 'loss_wh': '4.660215', 'loss_obj': '23.526428', time: 0.794, eta: 8:58:40
+2020-12-25 14:24:35,700-INFO: iter: 9400, lr: 0.005000, 'loss': '61.969814', 'loss_cls': '13.312426', 'loss_xy': '3.931473', 'loss_iou': '15.539708', 'loss_iou_aware': '0.005890', 'loss_wh': '5.023381', 'loss_obj': '24.976280', time: 0.793, eta: 8:56:54
+2020-12-25 14:25:54,668-INFO: iter: 9500, lr: 0.005000, 'loss': '62.087215', 'loss_cls': '12.807442', 'loss_xy': '4.012971', 'loss_iou': '15.026706', 'loss_iou_aware': '0.005787', 'loss_wh': '4.944892', 'loss_obj': '24.162571', time: 0.791, eta: 8:53:48
+2020-12-25 14:27:14,539-INFO: iter: 9600, lr: 0.005000, 'loss': '60.848824', 'loss_cls': '12.538118', 'loss_xy': '3.800066', 'loss_iou': '14.768856', 'loss_iou_aware': '0.005566', 'loss_wh': '4.607528', 'loss_obj': '24.035301', time: 0.798, eta: 8:57:37
+2020-12-25 14:28:34,814-INFO: iter: 9700, lr: 0.005000, 'loss': '61.004688', 'loss_cls': '12.436933', 'loss_xy': '3.837512', 'loss_iou': '15.730151', 'loss_iou_aware': '0.005730', 'loss_wh': '5.014347', 'loss_obj': '24.309576', time: 0.803, eta: 8:59:17
+2020-12-25 14:29:54,680-INFO: iter: 9800, lr: 0.005000, 'loss': '59.934711', 'loss_cls': '12.745255', 'loss_xy': '3.786669', 'loss_iou': '14.206419', 'loss_iou_aware': '0.005817', 'loss_wh': '4.663117', 'loss_obj': '23.675953', time: 0.799, eta: 8:55:32
+2020-12-25 14:31:15,969-INFO: iter: 9900, lr: 0.005000, 'loss': '60.115372', 'loss_cls': '12.534692', 'loss_xy': '3.729483', 'loss_iou': '14.615442', 'loss_iou_aware': '0.005576', 'loss_wh': '4.876585', 'loss_obj': '23.501310', time: 0.812, eta: 9:02:47
+2020-12-25 14:32:36,078-INFO: iter: 10000, lr: 0.005000, 'loss': '61.635201', 'loss_cls': '12.584512', 'loss_xy': '3.839880', 'loss_iou': '14.744592', 'loss_iou_aware': '0.006011', 'loss_wh': '4.817809', 'loss_obj': '24.106836', time: 0.802, eta: 8:54:21
+2020-12-25 14:32:36,500-INFO: Save model to output/ppyolo_pan/10000.
+2020-12-25 14:32:39,701-INFO: Test iter 0
+2020-12-25 14:32:53,759-INFO: Test iter 100
+2020-12-25 14:33:07,674-INFO: Test iter 200
+2020-12-25 14:33:21,707-INFO: Test iter 300
+2020-12-25 14:33:35,696-INFO: Test iter 400
+2020-12-25 14:33:49,594-INFO: Test iter 500
+2020-12-25 14:34:03,566-INFO: Test iter 600
+2020-12-25 14:34:06,894-INFO: Test finish iter 625
+2020-12-25 14:34:06,895-INFO: Total number of images: 5000, inference time: 57.1905075362 fps.
+loading annotations into memory...
+Done (t=0.66s)
+creating index...
+index created!
+2020-12-25 14:34:22,397-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.25s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=69.78s).
+Accumulating evaluation results...
+DONE (t=8.34s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.184
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.341
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.182
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.068
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.196
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.244
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.189
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.329
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.362
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.144
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.374
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.466
+2020-12-25 14:35:50,750-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 14:35:53,744-INFO: Best test box ap: 0.183635492946, in iter: 10000
+2020-12-25 14:37:13,368-INFO: iter: 10100, lr: 0.005000, 'loss': '62.674950', 'loss_cls': '13.419573', 'loss_xy': '3.967933', 'loss_iou': '15.453806', 'loss_iou_aware': '0.005706', 'loss_wh': '4.978858', 'loss_obj': '24.540749', time: 2.772, eta: 1 day, 6:43:14
+2020-12-25 14:38:34,270-INFO: iter: 10200, lr: 0.005000, 'loss': '61.729057', 'loss_cls': '12.862833', 'loss_xy': '3.887915', 'loss_iou': '15.086079', 'loss_iou_aware': '0.006049', 'loss_wh': '4.733006', 'loss_obj': '25.041512', time: 0.810, eta: 8:57:09
+2020-12-25 14:39:54,499-INFO: iter: 10300, lr: 0.005000, 'loss': '58.883350', 'loss_cls': '12.551842', 'loss_xy': '3.649587', 'loss_iou': '14.280237', 'loss_iou_aware': '0.005596', 'loss_wh': '4.774760', 'loss_obj': '23.126617', time: 0.802, eta: 8:50:42
+2020-12-25 14:41:19,540-INFO: iter: 10400, lr: 0.005000, 'loss': '60.689548', 'loss_cls': '12.447584', 'loss_xy': '3.895002', 'loss_iou': '15.121880', 'loss_iou_aware': '0.005346', 'loss_wh': '4.919348', 'loss_obj': '24.092819', time: 0.850, eta: 9:20:52
+2020-12-25 14:42:40,680-INFO: iter: 10500, lr: 0.005000, 'loss': '57.162029', 'loss_cls': '12.040274', 'loss_xy': '3.570066', 'loss_iou': '14.094218', 'loss_iou_aware': '0.005829', 'loss_wh': '4.372404', 'loss_obj': '23.058510', time: 0.811, eta: 8:53:47
+2020-12-25 14:44:01,050-INFO: iter: 10600, lr: 0.005000, 'loss': '56.852589', 'loss_cls': '11.824812', 'loss_xy': '3.655972', 'loss_iou': '14.294159', 'loss_iou_aware': '0.004918', 'loss_wh': '4.672390', 'loss_obj': '22.806219', time: 0.804, eta: 8:47:55
+2020-12-25 14:45:21,264-INFO: iter: 10700, lr: 0.005000, 'loss': '59.975201', 'loss_cls': '12.069324', 'loss_xy': '3.730408', 'loss_iou': '14.362409', 'loss_iou_aware': '0.005442', 'loss_wh': '4.530581', 'loss_obj': '24.003544', time: 0.803, eta: 8:46:08
+2020-12-25 14:46:41,079-INFO: iter: 10800, lr: 0.005000, 'loss': '57.236004', 'loss_cls': '12.035425', 'loss_xy': '3.543968', 'loss_iou': '13.821918', 'loss_iou_aware': '0.005346', 'loss_wh': '4.401690', 'loss_obj': '22.839706', time: 0.798, eta: 8:41:02
+2020-12-25 14:48:00,788-INFO: iter: 10900, lr: 0.005000, 'loss': '59.545578', 'loss_cls': '12.821829', 'loss_xy': '3.742130', 'loss_iou': '14.763399', 'loss_iou_aware': '0.005610', 'loss_wh': '4.750408', 'loss_obj': '23.827812', time: 0.798, eta: 8:39:55
+2020-12-25 14:49:22,251-INFO: iter: 11000, lr: 0.005000, 'loss': '58.332703', 'loss_cls': '11.814709', 'loss_xy': '3.696238', 'loss_iou': '14.170788', 'loss_iou_aware': '0.005447', 'loss_wh': '4.478200', 'loss_obj': '23.464888', time: 0.813, eta: 8:48:35
+2020-12-25 14:50:42,412-INFO: iter: 11100, lr: 0.005000, 'loss': '61.706474', 'loss_cls': '12.975851', 'loss_xy': '3.853138', 'loss_iou': '15.092474', 'loss_iou_aware': '0.005733', 'loss_wh': '4.963171', 'loss_obj': '24.300936', time: 0.803, eta: 8:40:28
+2020-12-25 14:52:01,758-INFO: iter: 11200, lr: 0.005000, 'loss': '61.241482', 'loss_cls': '12.521497', 'loss_xy': '3.889286', 'loss_iou': '15.174923', 'loss_iou_aware': '0.005656', 'loss_wh': '4.920039', 'loss_obj': '25.598902', time: 0.794, eta: 8:33:10
+2020-12-25 14:53:22,119-INFO: iter: 11300, lr: 0.005000, 'loss': '60.303860', 'loss_cls': '12.063446', 'loss_xy': '3.708498', 'loss_iou': '14.522964', 'loss_iou_aware': '0.005499', 'loss_wh': '4.967000', 'loss_obj': '23.593258', time: 0.803, eta: 8:38:06
+2020-12-25 14:54:42,704-INFO: iter: 11400, lr: 0.005000, 'loss': '58.055511', 'loss_cls': '11.957832', 'loss_xy': '3.677380', 'loss_iou': '14.157244', 'loss_iou_aware': '0.005655', 'loss_wh': '4.538673', 'loss_obj': '24.033005', time: 0.805, eta: 8:38:02
+2020-12-25 14:56:03,525-INFO: iter: 11500, lr: 0.005000, 'loss': '61.685936', 'loss_cls': '12.421043', 'loss_xy': '3.888284', 'loss_iou': '15.221169', 'loss_iou_aware': '0.005696', 'loss_wh': '4.774260', 'loss_obj': '24.191053', time: 0.809, eta: 8:39:12
+2020-12-25 14:57:23,431-INFO: iter: 11600, lr: 0.005000, 'loss': '57.868435', 'loss_cls': '12.078836', 'loss_xy': '3.579086', 'loss_iou': '13.657890', 'loss_iou_aware': '0.005197', 'loss_wh': '4.492753', 'loss_obj': '22.438560', time: 0.799, eta: 8:31:22
+2020-12-25 14:58:43,499-INFO: iter: 11700, lr: 0.005000, 'loss': '59.376709', 'loss_cls': '11.919846', 'loss_xy': '3.857934', 'loss_iou': '14.256429', 'loss_iou_aware': '0.005480', 'loss_wh': '4.727036', 'loss_obj': '23.214672', time: 0.801, eta: 8:31:07
+2020-12-25 15:00:02,853-INFO: iter: 11800, lr: 0.005000, 'loss': '60.989037', 'loss_cls': '12.612131', 'loss_xy': '3.986753', 'loss_iou': '15.215872', 'loss_iou_aware': '0.005467', 'loss_wh': '4.755646', 'loss_obj': '24.914597', time: 0.793, eta: 8:24:50
+2020-12-25 15:01:23,618-INFO: iter: 11900, lr: 0.005000, 'loss': '63.686897', 'loss_cls': '12.671939', 'loss_xy': '3.883224', 'loss_iou': '15.114050', 'loss_iou_aware': '0.005323', 'loss_wh': '5.109235', 'loss_obj': '24.675840', time: 0.808, eta: 8:33:10
+2020-12-25 15:02:43,141-INFO: iter: 12000, lr: 0.005000, 'loss': '58.293411', 'loss_cls': '12.028220', 'loss_xy': '3.687995', 'loss_iou': '14.340940', 'loss_iou_aware': '0.005379', 'loss_wh': '4.689098', 'loss_obj': '23.664660', time: 0.795, eta: 8:23:27
+2020-12-25 15:02:43,556-INFO: Save model to output/ppyolo_pan/12000.
+2020-12-25 15:02:46,847-INFO: Test iter 0
+2020-12-25 15:03:01,017-INFO: Test iter 100
+2020-12-25 15:03:15,033-INFO: Test iter 200
+2020-12-25 15:03:29,088-INFO: Test iter 300
+2020-12-25 15:03:43,212-INFO: Test iter 400
+2020-12-25 15:03:57,086-INFO: Test iter 500
+2020-12-25 15:04:11,138-INFO: Test iter 600
+2020-12-25 15:04:14,461-INFO: Test finish iter 625
+2020-12-25 15:04:14,461-INFO: Total number of images: 5000, inference time: 56.9217892322 fps.
+loading annotations into memory...
+Done (t=0.79s)
+creating index...
+index created!
+2020-12-25 15:04:28,864-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.02s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=70.94s).
+Accumulating evaluation results...
+DONE (t=8.20s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.209
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.380
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.210
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.082
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.221
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.274
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.203
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.354
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.392
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.171
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.408
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.502
+2020-12-25 15:05:57,858-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 15:06:00,916-INFO: Best test box ap: 0.208673493519, in iter: 12000
+2020-12-25 15:07:21,248-INFO: iter: 12100, lr: 0.005000, 'loss': '59.947140', 'loss_cls': '12.046104', 'loss_xy': '3.843124', 'loss_iou': '14.910112', 'loss_iou_aware': '0.005219', 'loss_wh': '4.690107', 'loss_obj': '24.004522', time: 2.782, eta: 1 day, 5:17:06
+2020-12-25 15:08:41,586-INFO: iter: 12200, lr: 0.005000, 'loss': '56.132568', 'loss_cls': '11.663613', 'loss_xy': '3.592808', 'loss_iou': '14.150143', 'loss_iou_aware': '0.004985', 'loss_wh': '4.525434', 'loss_obj': '22.770126', time: 0.804, eta: 8:26:15
+2020-12-25 15:10:02,006-INFO: iter: 12300, lr: 0.005000, 'loss': '61.150673', 'loss_cls': '12.328399', 'loss_xy': '3.973579', 'loss_iou': '15.290855', 'loss_iou_aware': '0.005147', 'loss_wh': '4.667683', 'loss_obj': '24.286427', time: 0.804, eta: 8:25:08
+2020-12-25 15:11:21,659-INFO: iter: 12400, lr: 0.005000, 'loss': '56.126770', 'loss_cls': '11.833929', 'loss_xy': '3.563965', 'loss_iou': '13.629053', 'loss_iou_aware': '0.005310', 'loss_wh': '4.379779', 'loss_obj': '22.284554', time: 0.796, eta: 8:18:42
+2020-12-25 15:12:46,872-INFO: iter: 12500, lr: 0.005000, 'loss': '60.446270', 'loss_cls': '12.631521', 'loss_xy': '3.727729', 'loss_iou': '14.905202', 'loss_iou_aware': '0.005593', 'loss_wh': '4.792617', 'loss_obj': '23.429638', time: 0.851, eta: 8:52:04
+2020-12-25 15:14:06,372-INFO: iter: 12600, lr: 0.005000, 'loss': '60.858589', 'loss_cls': '11.964965', 'loss_xy': '3.880327', 'loss_iou': '15.358758', 'loss_iou_aware': '0.005458', 'loss_wh': '4.771466', 'loss_obj': '24.365765', time: 0.796, eta: 8:16:21
+2020-12-25 15:15:26,471-INFO: iter: 12700, lr: 0.005000, 'loss': '62.638519', 'loss_cls': '12.354930', 'loss_xy': '3.945921', 'loss_iou': '15.267973', 'loss_iou_aware': '0.005044', 'loss_wh': '4.960748', 'loss_obj': '24.371586', time: 0.800, eta: 8:17:35
+2020-12-25 15:16:46,927-INFO: iter: 12800, lr: 0.005000, 'loss': '60.006916', 'loss_cls': '11.912024', 'loss_xy': '3.845700', 'loss_iou': '15.235666', 'loss_iou_aware': '0.005556', 'loss_wh': '4.860580', 'loss_obj': '23.791435', time: 0.806, eta: 8:19:48
+2020-12-25 15:18:06,180-INFO: iter: 12900, lr: 0.005000, 'loss': '59.974857', 'loss_cls': '11.952304', 'loss_xy': '3.792113', 'loss_iou': '15.006855', 'loss_iou_aware': '0.005379', 'loss_wh': '4.860638', 'loss_obj': '24.253162', time: 0.791, eta: 8:09:23
+2020-12-25 15:19:26,458-INFO: iter: 13000, lr: 0.005000, 'loss': '59.376957', 'loss_cls': '12.115498', 'loss_xy': '3.760414', 'loss_iou': '14.812479', 'loss_iou_aware': '0.005437', 'loss_wh': '5.000193', 'loss_obj': '23.490589', time: 0.803, eta: 8:14:55
+2020-12-25 15:20:46,025-INFO: iter: 13100, lr: 0.005000, 'loss': '61.525330', 'loss_cls': '12.413210', 'loss_xy': '3.973209', 'loss_iou': '15.423672', 'loss_iou_aware': '0.005824', 'loss_wh': '5.040149', 'loss_obj': '24.755028', time: 0.796, eta: 8:09:30
+2020-12-25 15:22:06,218-INFO: iter: 13200, lr: 0.005000, 'loss': '57.069740', 'loss_cls': '11.026147', 'loss_xy': '3.616140', 'loss_iou': '14.767774', 'loss_iou_aware': '0.004858', 'loss_wh': '4.555167', 'loss_obj': '22.545847', time: 0.802, eta: 8:11:50
+2020-12-25 15:23:25,533-INFO: iter: 13300, lr: 0.005000, 'loss': '56.090370', 'loss_cls': '11.700987', 'loss_xy': '3.543275', 'loss_iou': '14.020046', 'loss_iou_aware': '0.004979', 'loss_wh': '4.347157', 'loss_obj': '22.318510', time: 0.793, eta: 8:05:05
+2020-12-25 15:24:45,500-INFO: iter: 13400, lr: 0.005000, 'loss': '58.885132', 'loss_cls': '11.500750', 'loss_xy': '3.757169', 'loss_iou': '14.791716', 'loss_iou_aware': '0.005045', 'loss_wh': '4.933782', 'loss_obj': '23.641768', time: 0.799, eta: 8:07:38
+2020-12-25 15:26:04,547-INFO: iter: 13500, lr: 0.005000, 'loss': '58.748238', 'loss_cls': '11.631882', 'loss_xy': '3.754981', 'loss_iou': '14.923529', 'loss_iou_aware': '0.005098', 'loss_wh': '4.793285', 'loss_obj': '23.513378', time: 0.792, eta: 8:01:37
+2020-12-25 15:27:24,357-INFO: iter: 13600, lr: 0.005000, 'loss': '58.134018', 'loss_cls': '11.911264', 'loss_xy': '3.681735', 'loss_iou': '14.188850', 'loss_iou_aware': '0.004968', 'loss_wh': '4.620215', 'loss_obj': '22.889797', time: 0.798, eta: 8:03:51
+2020-12-25 15:28:44,174-INFO: iter: 13700, lr: 0.005000, 'loss': '59.636234', 'loss_cls': '11.968275', 'loss_xy': '3.802542', 'loss_iou': '15.151070', 'loss_iou_aware': '0.005048', 'loss_wh': '4.916945', 'loss_obj': '22.970798', time: 0.798, eta: 8:02:36
+2020-12-25 15:30:04,839-INFO: iter: 13800, lr: 0.005000, 'loss': '57.685062', 'loss_cls': '11.492411', 'loss_xy': '3.748532', 'loss_iou': '14.461553', 'loss_iou_aware': '0.005152', 'loss_wh': '4.627339', 'loss_obj': '23.605474', time: 0.806, eta: 8:06:13
+2020-12-25 15:31:26,188-INFO: iter: 13900, lr: 0.005000, 'loss': '61.156944', 'loss_cls': '11.969813', 'loss_xy': '3.963126', 'loss_iou': '15.275157', 'loss_iou_aware': '0.005279', 'loss_wh': '4.808957', 'loss_obj': '25.157013', time: 0.815, eta: 8:10:27
+2020-12-25 15:32:45,873-INFO: iter: 14000, lr: 0.005000, 'loss': '60.744598', 'loss_cls': '11.767421', 'loss_xy': '3.751853', 'loss_iou': '14.919754', 'loss_iou_aware': '0.005410', 'loss_wh': '4.782360', 'loss_obj': '24.610189', time: 0.797, eta: 7:58:23
+2020-12-25 15:32:46,308-INFO: Save model to output/ppyolo_pan/14000.
+2020-12-25 15:32:49,600-INFO: Test iter 0
+2020-12-25 15:33:03,728-INFO: Test iter 100
+2020-12-25 15:33:17,729-INFO: Test iter 200
+2020-12-25 15:33:31,720-INFO: Test iter 300
+2020-12-25 15:33:45,769-INFO: Test iter 400
+2020-12-25 15:33:59,705-INFO: Test iter 500
+2020-12-25 15:34:13,691-INFO: Test iter 600
+2020-12-25 15:34:17,000-INFO: Test finish iter 625
+2020-12-25 15:34:17,000-INFO: Total number of images: 5000, inference time: 57.0523344484 fps.
+loading annotations into memory...
+Done (t=0.67s)
+creating index...
+index created!
+2020-12-25 15:34:30,117-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.59s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=70.30s).
+Accumulating evaluation results...
+DONE (t=8.11s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.228
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.409
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.235
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.095
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.241
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.299
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.375
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.416
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.191
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.437
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.528
+2020-12-25 15:35:59,080-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 15:36:02,158-INFO: Best test box ap: 0.22835659317, in iter: 14000
+2020-12-25 15:37:21,976-INFO: iter: 14100, lr: 0.005000, 'loss': '59.735035', 'loss_cls': '11.488705', 'loss_xy': '3.917580', 'loss_iou': '15.164862', 'loss_iou_aware': '0.005626', 'loss_wh': '4.720015', 'loss_obj': '24.408381', time: 2.760, eta: 1 day, 3:31:13
+2020-12-25 15:38:41,766-INFO: iter: 14200, lr: 0.005000, 'loss': '58.377094', 'loss_cls': '11.469797', 'loss_xy': '3.827887', 'loss_iou': '14.953458', 'loss_iou_aware': '0.004921', 'loss_wh': '4.707003', 'loss_obj': '23.168249', time: 0.799, eta: 7:56:39
+2020-12-25 15:40:01,416-INFO: iter: 14300, lr: 0.005000, 'loss': '58.847126', 'loss_cls': '11.501639', 'loss_xy': '3.927572', 'loss_iou': '15.057579', 'loss_iou_aware': '0.005595', 'loss_wh': '4.833217', 'loss_obj': '24.061905', time: 0.795, eta: 7:53:12
+2020-12-25 15:41:21,941-INFO: iter: 14400, lr: 0.005000, 'loss': '57.781029', 'loss_cls': '10.820336', 'loss_xy': '3.730739', 'loss_iou': '14.258249', 'loss_iou_aware': '0.005017', 'loss_wh': '4.534391', 'loss_obj': '22.818798', time: 0.805, eta: 7:57:47
+2020-12-25 15:42:41,562-INFO: iter: 14500, lr: 0.005000, 'loss': '54.121189', 'loss_cls': '10.325153', 'loss_xy': '3.442210', 'loss_iou': '13.631161', 'loss_iou_aware': '0.004812', 'loss_wh': '4.483228', 'loss_obj': '21.996510', time: 0.796, eta: 7:51:01
+2020-12-25 15:44:05,594-INFO: iter: 14600, lr: 0.005000, 'loss': '58.244682', 'loss_cls': '11.311310', 'loss_xy': '3.725083', 'loss_iou': '13.997591', 'loss_iou_aware': '0.005134', 'loss_wh': '4.386056', 'loss_obj': '23.660126', time: 0.840, eta: 8:15:46
+2020-12-25 15:45:25,942-INFO: iter: 14700, lr: 0.005000, 'loss': '57.297913', 'loss_cls': '11.596203', 'loss_xy': '3.734257', 'loss_iou': '14.532490', 'loss_iou_aware': '0.005064', 'loss_wh': '4.758036', 'loss_obj': '23.389507', time: 0.804, eta: 7:52:57
+2020-12-25 15:46:44,869-INFO: iter: 14800, lr: 0.005000, 'loss': '59.002136', 'loss_cls': '11.270372', 'loss_xy': '3.780500', 'loss_iou': '14.655155', 'loss_iou_aware': '0.005177', 'loss_wh': '4.859811', 'loss_obj': '23.834787', time: 0.790, eta: 7:43:11
+2020-12-25 15:48:04,645-INFO: iter: 14900, lr: 0.005000, 'loss': '58.324253', 'loss_cls': '11.232380', 'loss_xy': '3.742780', 'loss_iou': '15.139608', 'loss_iou_aware': '0.004862', 'loss_wh': '4.760362', 'loss_obj': '22.847599', time: 0.797, eta: 7:46:21
+2020-12-25 15:49:24,512-INFO: iter: 15000, lr: 0.005000, 'loss': '56.632397', 'loss_cls': '11.084530', 'loss_xy': '3.675560', 'loss_iou': '13.583601', 'loss_iou_aware': '0.004967', 'loss_wh': '4.238701', 'loss_obj': '22.774990', time: 0.799, eta: 7:45:58
+2020-12-25 15:50:45,078-INFO: iter: 15100, lr: 0.005000, 'loss': '55.446060', 'loss_cls': '11.142356', 'loss_xy': '3.552149', 'loss_iou': '14.044518', 'loss_iou_aware': '0.004774', 'loss_wh': '4.491930', 'loss_obj': '22.849216', time: 0.806, eta: 7:48:34
+2020-12-25 15:52:04,812-INFO: iter: 15200, lr: 0.005000, 'loss': '57.599770', 'loss_cls': '11.826954', 'loss_xy': '3.631157', 'loss_iou': '14.163864', 'loss_iou_aware': '0.004682', 'loss_wh': '4.571038', 'loss_obj': '22.513596', time: 0.796, eta: 7:41:56
+2020-12-25 15:53:24,714-INFO: iter: 15300, lr: 0.005000, 'loss': '54.858528', 'loss_cls': '10.935181', 'loss_xy': '3.559287', 'loss_iou': '13.591381', 'loss_iou_aware': '0.004714', 'loss_wh': '4.580597', 'loss_obj': '21.705425', time: 0.800, eta: 7:42:40
+2020-12-25 15:54:43,956-INFO: iter: 15400, lr: 0.005000, 'loss': '59.591873', 'loss_cls': '11.581774', 'loss_xy': '3.908894', 'loss_iou': '14.864384', 'loss_iou_aware': '0.005169', 'loss_wh': '4.775600', 'loss_obj': '24.592546', time: 0.793, eta: 7:37:15
+2020-12-25 15:56:03,415-INFO: iter: 15500, lr: 0.005000, 'loss': '56.101746', 'loss_cls': '10.477554', 'loss_xy': '3.719593', 'loss_iou': '13.746483', 'loss_iou_aware': '0.004683', 'loss_wh': '4.383735', 'loss_obj': '23.010170', time: 0.794, eta: 7:36:26
+2020-12-25 15:57:23,408-INFO: iter: 15600, lr: 0.005000, 'loss': '57.016220', 'loss_cls': '11.463718', 'loss_xy': '3.743419', 'loss_iou': '14.406501', 'loss_iou_aware': '0.004989', 'loss_wh': '4.738113', 'loss_obj': '22.974552', time: 0.799, eta: 7:38:19
+2020-12-25 15:58:43,733-INFO: iter: 15700, lr: 0.005000, 'loss': '59.248417', 'loss_cls': '11.530788', 'loss_xy': '3.810749', 'loss_iou': '14.733576', 'loss_iou_aware': '0.004931', 'loss_wh': '4.969096', 'loss_obj': '23.380016', time: 0.803, eta: 7:39:15
+2020-12-25 16:00:03,607-INFO: iter: 15800, lr: 0.005000, 'loss': '58.712723', 'loss_cls': '11.368565', 'loss_xy': '3.857502', 'loss_iou': '14.612536', 'loss_iou_aware': '0.005070', 'loss_wh': '4.698968', 'loss_obj': '23.949505', time: 0.800, eta: 7:35:58
+2020-12-25 16:01:24,932-INFO: iter: 15900, lr: 0.005000, 'loss': '58.294273', 'loss_cls': '11.847023', 'loss_xy': '3.641917', 'loss_iou': '14.721758', 'loss_iou_aware': '0.004861', 'loss_wh': '4.785592', 'loss_obj': '22.867609', time: 0.813, eta: 7:41:59
+2020-12-25 16:02:43,987-INFO: iter: 16000, lr: 0.005000, 'loss': '55.942490', 'loss_cls': '11.196138', 'loss_xy': '3.625936', 'loss_iou': '14.339238', 'loss_iou_aware': '0.004924', 'loss_wh': '4.579285', 'loss_obj': '23.191166', time: 0.792, eta: 7:28:41
+2020-12-25 16:02:44,429-INFO: Save model to output/ppyolo_pan/16000.
+2020-12-25 16:02:47,808-INFO: Test iter 0
+2020-12-25 16:03:01,947-INFO: Test iter 100
+2020-12-25 16:03:15,931-INFO: Test iter 200
+2020-12-25 16:03:29,912-INFO: Test iter 300
+2020-12-25 16:03:43,955-INFO: Test iter 400
+2020-12-25 16:03:57,847-INFO: Test iter 500
+2020-12-25 16:04:11,857-INFO: Test iter 600
+2020-12-25 16:04:15,209-INFO: Test finish iter 625
+2020-12-25 16:04:15,210-INFO: Total number of images: 5000, inference time: 57.0640012564 fps.
+loading annotations into memory...
+Done (t=0.78s)
+creating index...
+index created!
+2020-12-25 16:04:28,036-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.55s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=70.69s).
+Accumulating evaluation results...
+DONE (t=7.97s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.242
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.429
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.249
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.104
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.255
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.315
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.224
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.390
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.432
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.203
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.456
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.551
+2020-12-25 16:05:57,102-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 16:06:00,172-INFO: Best test box ap: 0.242135055714, in iter: 16000
+2020-12-25 16:07:20,439-INFO: iter: 16100, lr: 0.005000, 'loss': '58.053707', 'loss_cls': '11.609766', 'loss_xy': '3.717078', 'loss_iou': '14.786253', 'loss_iou_aware': '0.004898', 'loss_wh': '4.772555', 'loss_obj': '23.996799', time: 2.762, eta: 1 day, 2:00:39
+2020-12-25 16:08:40,515-INFO: iter: 16200, lr: 0.005000, 'loss': '57.507828', 'loss_cls': '10.955204', 'loss_xy': '3.728019', 'loss_iou': '14.342689', 'loss_iou_aware': '0.005309', 'loss_wh': '4.496956', 'loss_obj': '23.586246', time: 0.802, eta: 7:31:38
+2020-12-25 16:10:00,496-INFO: iter: 16300, lr: 0.005000, 'loss': '59.202599', 'loss_cls': '11.446554', 'loss_xy': '3.819059', 'loss_iou': '14.705013', 'loss_iou_aware': '0.004927', 'loss_wh': '4.682530', 'loss_obj': '24.372955', time: 0.799, eta: 7:28:59
+2020-12-25 16:11:19,844-INFO: iter: 16400, lr: 0.005000, 'loss': '56.711349', 'loss_cls': '11.102453', 'loss_xy': '3.668819', 'loss_iou': '13.716860', 'loss_iou_aware': '0.004819', 'loss_wh': '4.486061', 'loss_obj': '22.902718', time: 0.793, eta: 7:24:07
+2020-12-25 16:12:38,850-INFO: iter: 16500, lr: 0.005000, 'loss': '58.113934', 'loss_cls': '11.147162', 'loss_xy': '3.781441', 'loss_iou': '14.471138', 'loss_iou_aware': '0.004972', 'loss_wh': '4.502388', 'loss_obj': '23.529345', time: 0.791, eta: 7:21:37
+2020-12-25 16:13:59,473-INFO: iter: 16600, lr: 0.005000, 'loss': '53.884941', 'loss_cls': '10.485368', 'loss_xy': '3.493119', 'loss_iou': '13.768476', 'loss_iou_aware': '0.004804', 'loss_wh': '4.420364', 'loss_obj': '22.537434', time: 0.805, eta: 7:28:22
+2020-12-25 16:15:24,069-INFO: iter: 16700, lr: 0.005000, 'loss': '59.955315', 'loss_cls': '11.008959', 'loss_xy': '3.834186', 'loss_iou': '15.039391', 'loss_iou_aware': '0.005042', 'loss_wh': '4.806273', 'loss_obj': '23.089298', time: 0.846, eta: 7:49:36
+2020-12-25 16:16:43,836-INFO: iter: 16800, lr: 0.005000, 'loss': '57.683758', 'loss_cls': '11.512426', 'loss_xy': '3.609498', 'loss_iou': '14.542454', 'loss_iou_aware': '0.004915', 'loss_wh': '4.897941', 'loss_obj': '23.607353', time: 0.798, eta: 7:21:37
+2020-12-25 16:18:04,058-INFO: iter: 16900, lr: 0.005000, 'loss': '54.406971', 'loss_cls': '10.140772', 'loss_xy': '3.604457', 'loss_iou': '14.108324', 'loss_iou_aware': '0.004992', 'loss_wh': '4.238544', 'loss_obj': '22.656033', time: 0.802, eta: 7:22:32
+2020-12-25 16:19:24,552-INFO: iter: 17000, lr: 0.005000, 'loss': '56.420624', 'loss_cls': '10.879979', 'loss_xy': '3.660080', 'loss_iou': '14.035749', 'loss_iou_aware': '0.004499', 'loss_wh': '4.470237', 'loss_obj': '22.885008', time: 0.805, eta: 7:23:01
+2020-12-25 16:20:44,957-INFO: iter: 17100, lr: 0.005000, 'loss': '55.466961', 'loss_cls': '10.721247', 'loss_xy': '3.536597', 'loss_iou': '14.093998', 'loss_iou_aware': '0.004589', 'loss_wh': '4.735274', 'loss_obj': '22.234842', time: 0.804, eta: 7:20:55
+2020-12-25 16:22:05,129-INFO: iter: 17200, lr: 0.005000, 'loss': '57.268845', 'loss_cls': '11.283289', 'loss_xy': '3.856640', 'loss_iou': '14.018064', 'loss_iou_aware': '0.005038', 'loss_wh': '4.566672', 'loss_obj': '23.472458', time: 0.801, eta: 7:17:47
+2020-12-25 16:23:25,029-INFO: iter: 17300, lr: 0.005000, 'loss': '55.890160', 'loss_cls': '10.501611', 'loss_xy': '3.609553', 'loss_iou': '14.219387', 'loss_iou_aware': '0.004683', 'loss_wh': '4.480558', 'loss_obj': '21.992229', time: 0.798, eta: 7:15:06
+2020-12-25 16:24:44,529-INFO: iter: 17400, lr: 0.005000, 'loss': '56.532600', 'loss_cls': '11.107110', 'loss_xy': '3.812374', 'loss_iou': '14.599239', 'loss_iou_aware': '0.004637', 'loss_wh': '4.590378', 'loss_obj': '23.009863', time: 0.796, eta: 7:12:30
+2020-12-25 16:26:04,627-INFO: iter: 17500, lr: 0.005000, 'loss': '57.878063', 'loss_cls': '10.932495', 'loss_xy': '3.863429', 'loss_iou': '14.186749', 'loss_iou_aware': '0.004907', 'loss_wh': '4.357759', 'loss_obj': '23.741570', time: 0.801, eta: 7:14:00
+2020-12-25 16:27:25,592-INFO: iter: 17600, lr: 0.005000, 'loss': '57.154530', 'loss_cls': '10.222975', 'loss_xy': '3.728175', 'loss_iou': '14.204484', 'loss_iou_aware': '0.004498', 'loss_wh': '4.391623', 'loss_obj': '22.960365', time: 0.808, eta: 7:16:32
+2020-12-25 16:28:45,778-INFO: iter: 17700, lr: 0.005000, 'loss': '56.238289', 'loss_cls': '10.938306', 'loss_xy': '3.650596', 'loss_iou': '14.780800', 'loss_iou_aware': '0.004650', 'loss_wh': '4.563952', 'loss_obj': '22.449903', time: 0.803, eta: 7:12:25
+2020-12-25 16:30:06,541-INFO: iter: 17800, lr: 0.005000, 'loss': '55.405869', 'loss_cls': '10.851215', 'loss_xy': '3.680334', 'loss_iou': '13.948573', 'loss_iou_aware': '0.004648', 'loss_wh': '4.554907', 'loss_obj': '22.862717', time: 0.807, eta: 7:12:54
+2020-12-25 16:31:26,824-INFO: iter: 17900, lr: 0.005000, 'loss': '60.004421', 'loss_cls': '11.556515', 'loss_xy': '3.963789', 'loss_iou': '15.398411', 'loss_iou_aware': '0.004981', 'loss_wh': '4.651961', 'loss_obj': '24.627579', time: 0.803, eta: 7:09:33
+2020-12-25 16:32:46,506-INFO: iter: 18000, lr: 0.005000, 'loss': '59.060051', 'loss_cls': '11.359960', 'loss_xy': '3.814896', 'loss_iou': '15.027185', 'loss_iou_aware': '0.004770', 'loss_wh': '4.750798', 'loss_obj': '23.569370', time: 0.798, eta: 7:05:34
+2020-12-25 16:32:46,916-INFO: Save model to output/ppyolo_pan/18000.
+2020-12-25 16:32:50,221-INFO: Test iter 0
+2020-12-25 16:33:04,333-INFO: Test iter 100
+2020-12-25 16:33:18,311-INFO: Test iter 200
+2020-12-25 16:33:32,248-INFO: Test iter 300
+2020-12-25 16:33:46,181-INFO: Test iter 400
+2020-12-25 16:34:00,075-INFO: Test iter 500
+2020-12-25 16:34:14,136-INFO: Test iter 600
+2020-12-25 16:34:17,421-INFO: Test finish iter 625
+2020-12-25 16:34:17,421-INFO: Total number of images: 5000, inference time: 57.1986927983 fps.
+loading annotations into memory...
+Done (t=0.69s)
+creating index...
+index created!
+2020-12-25 16:34:30,308-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.78s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=67.57s).
+Accumulating evaluation results...
+DONE (t=7.93s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.255
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.447
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.263
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.119
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.270
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.331
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.232
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.404
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.447
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.224
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.473
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.569
+2020-12-25 16:35:56,566-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 16:36:00,737-INFO: Best test box ap: 0.254901331411, in iter: 18000
+2020-12-25 16:37:20,560-INFO: iter: 18100, lr: 0.005000, 'loss': '57.052631', 'loss_cls': '10.550928', 'loss_xy': '3.846188', 'loss_iou': '14.806950', 'loss_iou_aware': '0.004536', 'loss_wh': '4.679081', 'loss_obj': '22.451084', time: 2.741, eta: 1 day, 0:17:23
+2020-12-25 16:38:40,290-INFO: iter: 18200, lr: 0.005000, 'loss': '55.164997', 'loss_cls': '10.603731', 'loss_xy': '3.706484', 'loss_iou': '14.157677', 'loss_iou_aware': '0.004613', 'loss_wh': '4.239468', 'loss_obj': '21.922756', time: 0.795, eta: 7:01:20
+2020-12-25 16:39:59,480-INFO: iter: 18300, lr: 0.005000, 'loss': '54.385918', 'loss_cls': '10.446445', 'loss_xy': '3.566740', 'loss_iou': '13.822395', 'loss_iou_aware': '0.004129', 'loss_wh': '4.351948', 'loss_obj': '21.522602', time: 0.793, eta: 6:58:48
+2020-12-25 16:41:20,644-INFO: iter: 18400, lr: 0.005000, 'loss': '58.694595', 'loss_cls': '11.088719', 'loss_xy': '3.763910', 'loss_iou': '15.269325', 'loss_iou_aware': '0.004891', 'loss_wh': '4.843957', 'loss_obj': '23.433413', time: 0.812, eta: 7:07:28
+2020-12-25 16:42:39,360-INFO: iter: 18500, lr: 0.005000, 'loss': '55.674561', 'loss_cls': '10.426119', 'loss_xy': '3.583104', 'loss_iou': '13.953947', 'loss_iou_aware': '0.004512', 'loss_wh': '4.330925', 'loss_obj': '23.404198', time: 0.788, eta: 6:53:26
+2020-12-25 16:43:59,029-INFO: iter: 18600, lr: 0.005000, 'loss': '52.742966', 'loss_cls': '10.248598', 'loss_xy': '3.407162', 'loss_iou': '13.022971', 'loss_iou_aware': '0.004361', 'loss_wh': '4.423366', 'loss_obj': '21.642118', time: 0.796, eta: 6:56:25
+2020-12-25 16:45:18,967-INFO: iter: 18700, lr: 0.005000, 'loss': '53.016102', 'loss_cls': '10.101845', 'loss_xy': '3.463376', 'loss_iou': '13.426257', 'loss_iou_aware': '0.004339', 'loss_wh': '4.302212', 'loss_obj': '22.055983', time: 0.799, eta: 6:56:58
+2020-12-25 16:46:45,290-INFO: iter: 18800, lr: 0.005000, 'loss': '53.371922', 'loss_cls': '10.574064', 'loss_xy': '3.472026', 'loss_iou': '13.745850', 'loss_iou_aware': '0.004703', 'loss_wh': '4.611630', 'loss_obj': '21.935432', time: 0.864, eta: 7:29:28
+2020-12-25 16:48:05,813-INFO: iter: 18900, lr: 0.005000, 'loss': '59.194920', 'loss_cls': '11.646021', 'loss_xy': '3.816946', 'loss_iou': '15.028587', 'loss_iou_aware': '0.004739', 'loss_wh': '4.746886', 'loss_obj': '23.368645', time: 0.805, eta: 6:57:08
+2020-12-25 16:49:26,586-INFO: iter: 19000, lr: 0.005000, 'loss': '55.169502', 'loss_cls': '10.305578', 'loss_xy': '3.705817', 'loss_iou': '14.330430', 'loss_iou_aware': '0.004463', 'loss_wh': '4.505535', 'loss_obj': '22.786371', time: 0.805, eta: 6:55:53
+2020-12-25 16:50:45,046-INFO: iter: 19100, lr: 0.005000, 'loss': '56.521000', 'loss_cls': '11.111657', 'loss_xy': '3.643829', 'loss_iou': '14.141172', 'loss_iou_aware': '0.004737', 'loss_wh': '4.634274', 'loss_obj': '22.696171', time: 0.788, eta: 6:45:42
+2020-12-25 16:52:04,527-INFO: iter: 19200, lr: 0.005000, 'loss': '58.555187', 'loss_cls': '11.040771', 'loss_xy': '3.890373', 'loss_iou': '15.129900', 'loss_iou_aware': '0.004720', 'loss_wh': '4.691513', 'loss_obj': '23.282080', time: 0.794, eta: 6:47:40
+2020-12-25 16:53:24,951-INFO: iter: 19300, lr: 0.005000, 'loss': '58.875713', 'loss_cls': '11.136120', 'loss_xy': '3.782357', 'loss_iou': '15.086486', 'loss_iou_aware': '0.004558', 'loss_wh': '4.665359', 'loss_obj': '22.370480', time: 0.804, eta: 6:51:32
+2020-12-25 16:54:45,201-INFO: iter: 19400, lr: 0.005000, 'loss': '53.170715', 'loss_cls': '10.462008', 'loss_xy': '3.489646', 'loss_iou': '13.297828', 'loss_iou_aware': '0.004612', 'loss_wh': '4.402268', 'loss_obj': '21.858646', time: 0.802, eta: 6:48:59
+2020-12-25 16:56:06,097-INFO: iter: 19500, lr: 0.005000, 'loss': '60.456966', 'loss_cls': '10.500816', 'loss_xy': '3.862503', 'loss_iou': '15.035858', 'loss_iou_aware': '0.005404', 'loss_wh': '4.585145', 'loss_obj': '24.271149', time: 0.809, eta: 6:51:18
+2020-12-25 16:57:27,336-INFO: iter: 19600, lr: 0.005000, 'loss': '58.638584', 'loss_cls': '11.252237', 'loss_xy': '3.897216', 'loss_iou': '14.589387', 'loss_iou_aware': '0.004920', 'loss_wh': '4.535048', 'loss_obj': '24.215933', time: 0.814, eta: 6:52:35
+2020-12-25 16:58:47,018-INFO: iter: 19700, lr: 0.005000, 'loss': '57.253677', 'loss_cls': '10.726073', 'loss_xy': '3.815567', 'loss_iou': '14.800702', 'loss_iou_aware': '0.004349', 'loss_wh': '4.724868', 'loss_obj': '23.447432', time: 0.795, eta: 6:41:26
+2020-12-25 17:00:06,489-INFO: iter: 19800, lr: 0.005000, 'loss': '54.996887', 'loss_cls': '10.724020', 'loss_xy': '3.572503', 'loss_iou': '13.547504', 'loss_iou_aware': '0.004343', 'loss_wh': '4.427134', 'loss_obj': '21.918665', time: 0.795, eta: 6:39:58
+2020-12-25 17:01:26,472-INFO: iter: 19900, lr: 0.005000, 'loss': '57.890717', 'loss_cls': '11.063661', 'loss_xy': '3.639144', 'loss_iou': '13.966281', 'loss_iou_aware': '0.004933', 'loss_wh': '4.361141', 'loss_obj': '24.059284', time: 0.801, eta: 6:41:56
+2020-12-25 17:02:45,939-INFO: iter: 20000, lr: 0.005000, 'loss': '56.467545', 'loss_cls': '10.292534', 'loss_xy': '3.785783', 'loss_iou': '14.656904', 'loss_iou_aware': '0.004629', 'loss_wh': '4.690923', 'loss_obj': '22.913162', time: 0.794, eta: 6:37:00
+2020-12-25 17:02:46,391-INFO: Save model to output/ppyolo_pan/20000.
+2020-12-25 17:02:49,865-INFO: Test iter 0
+2020-12-25 17:03:03,948-INFO: Test iter 100
+2020-12-25 17:03:17,798-INFO: Test iter 200
+2020-12-25 17:03:31,720-INFO: Test iter 300
+2020-12-25 17:03:45,777-INFO: Test iter 400
+2020-12-25 17:03:59,616-INFO: Test iter 500
+2020-12-25 17:04:13,608-INFO: Test iter 600
+2020-12-25 17:04:16,919-INFO: Test finish iter 625
+2020-12-25 17:04:16,919-INFO: Total number of images: 5000, inference time: 57.2885843048 fps.
+loading annotations into memory...
+Done (t=1.88s)
+creating index...
+index created!
+2020-12-25 17:04:33,450-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.25s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=68.59s).
+Accumulating evaluation results...
+DONE (t=7.82s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.266
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.460
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.277
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.130
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.283
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.347
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.240
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.415
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.459
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.239
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.485
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.586
+2020-12-25 17:05:59,878-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 17:06:03,054-INFO: Best test box ap: 0.26599479896, in iter: 20000
+2020-12-25 17:07:23,732-INFO: iter: 20100, lr: 0.005000, 'loss': '53.802269', 'loss_cls': '10.478655', 'loss_xy': '3.573261', 'loss_iou': '14.026802', 'loss_iou_aware': '0.004793', 'loss_wh': '4.144180', 'loss_obj': '22.541836', time: 2.778, eta: 23:04:08
+2020-12-25 17:08:43,493-INFO: iter: 20200, lr: 0.005000, 'loss': '54.781219', 'loss_cls': '10.007364', 'loss_xy': '3.498846', 'loss_iou': '13.718607', 'loss_iou_aware': '0.004837', 'loss_wh': '4.178229', 'loss_obj': '22.492434', time: 0.798, eta: 6:36:21
+2020-12-25 17:10:03,097-INFO: iter: 20300, lr: 0.005000, 'loss': '60.257248', 'loss_cls': '11.551506', 'loss_xy': '4.057030', 'loss_iou': '14.964795', 'loss_iou_aware': '0.005414', 'loss_wh': '4.751208', 'loss_obj': '24.784096', time: 0.796, eta: 6:34:06
+2020-12-25 17:11:24,651-INFO: iter: 20400, lr: 0.005000, 'loss': '54.566425', 'loss_cls': '10.403137', 'loss_xy': '3.633700', 'loss_iou': '14.285017', 'loss_iou_aware': '0.004461', 'loss_wh': '4.727892', 'loss_obj': '21.866203', time: 0.815, eta: 6:41:49
+2020-12-25 17:12:44,935-INFO: iter: 20500, lr: 0.005000, 'loss': '56.639194', 'loss_cls': '10.546328', 'loss_xy': '3.652244', 'loss_iou': '14.578148', 'loss_iou_aware': '0.004731', 'loss_wh': '4.785345', 'loss_obj': '22.783110', time: 0.803, eta: 6:34:53
+2020-12-25 17:14:05,381-INFO: iter: 20600, lr: 0.005000, 'loss': '58.377357', 'loss_cls': '11.001770', 'loss_xy': '3.819129', 'loss_iou': '14.550303', 'loss_iou_aware': '0.004963', 'loss_wh': '4.665597', 'loss_obj': '23.655966', time: 0.805, eta: 6:34:24
+2020-12-25 17:15:25,109-INFO: iter: 20700, lr: 0.005000, 'loss': '52.705063', 'loss_cls': '9.900768', 'loss_xy': '3.472932', 'loss_iou': '13.685049', 'loss_iou_aware': '0.004404', 'loss_wh': '4.457763', 'loss_obj': '21.355072', time: 0.798, eta: 6:29:39
+2020-12-25 17:16:46,565-INFO: iter: 20800, lr: 0.005000, 'loss': '59.261101', 'loss_cls': '11.080917', 'loss_xy': '3.809854', 'loss_iou': '15.003327', 'loss_iou_aware': '0.004718', 'loss_wh': '4.800046', 'loss_obj': '23.498550', time: 0.816, eta: 6:37:00
+2020-12-25 17:18:12,107-INFO: iter: 20900, lr: 0.005000, 'loss': '54.984390', 'loss_cls': '9.970631', 'loss_xy': '3.639470', 'loss_iou': '14.503185', 'loss_iou_aware': '0.004579', 'loss_wh': '4.497654', 'loss_obj': '22.089104', time: 0.853, eta: 6:53:39
+2020-12-25 17:19:31,504-INFO: iter: 21000, lr: 0.005000, 'loss': '54.166775', 'loss_cls': '10.351885', 'loss_xy': '3.581743', 'loss_iou': '14.246599', 'loss_iou_aware': '0.004586', 'loss_wh': '4.590981', 'loss_obj': '22.262463', time: 0.795, eta: 6:24:22
+2020-12-25 17:20:50,693-INFO: iter: 21100, lr: 0.005000, 'loss': '57.040554', 'loss_cls': '10.835367', 'loss_xy': '3.727459', 'loss_iou': '14.814385', 'loss_iou_aware': '0.004600', 'loss_wh': '4.563198', 'loss_obj': '23.390881', time: 0.792, eta: 6:21:30
+2020-12-25 17:22:10,737-INFO: iter: 21200, lr: 0.005000, 'loss': '55.825554', 'loss_cls': '10.534513', 'loss_xy': '3.550276', 'loss_iou': '13.865879', 'loss_iou_aware': '0.004626', 'loss_wh': '4.450727', 'loss_obj': '22.932995', time: 0.799, eta: 6:23:42
+2020-12-25 17:23:30,759-INFO: iter: 21300, lr: 0.005000, 'loss': '53.251801', 'loss_cls': '9.783465', 'loss_xy': '3.544752', 'loss_iou': '13.192355', 'loss_iou_aware': '0.004650', 'loss_wh': '4.222584', 'loss_obj': '21.846691', time: 0.800, eta: 6:22:40
+2020-12-25 17:24:50,392-INFO: iter: 21400, lr: 0.005000, 'loss': '56.452633', 'loss_cls': '10.785879', 'loss_xy': '3.637457', 'loss_iou': '14.477606', 'loss_iou_aware': '0.004531', 'loss_wh': '4.900838', 'loss_obj': '22.498219', time: 0.796, eta: 6:19:36
+2020-12-25 17:26:10,217-INFO: iter: 21500, lr: 0.005000, 'loss': '54.966393', 'loss_cls': '10.093820', 'loss_xy': '3.573013', 'loss_iou': '14.180597', 'loss_iou_aware': '0.004594', 'loss_wh': '4.321586', 'loss_obj': '22.909130', time: 0.799, eta: 6:19:30
+2020-12-25 17:27:30,281-INFO: iter: 21600, lr: 0.005000, 'loss': '57.924210', 'loss_cls': '10.405246', 'loss_xy': '3.859507', 'loss_iou': '15.539413', 'loss_iou_aware': '0.004567', 'loss_wh': '5.022118', 'loss_obj': '22.494143', time: 0.800, eta: 6:18:34
+2020-12-25 17:28:51,012-INFO: iter: 21700, lr: 0.005000, 'loss': '53.720192', 'loss_cls': '10.304064', 'loss_xy': '3.523051', 'loss_iou': '13.656564', 'loss_iou_aware': '0.004545', 'loss_wh': '4.472745', 'loss_obj': '21.805134', time: 0.807, eta: 6:20:32
+2020-12-25 17:30:12,007-INFO: iter: 21800, lr: 0.005000, 'loss': '56.777687', 'loss_cls': '10.726246', 'loss_xy': '3.730446', 'loss_iou': '14.707603', 'loss_iou_aware': '0.004685', 'loss_wh': '4.554132', 'loss_obj': '22.590576', time: 0.810, eta: 6:20:30
+2020-12-25 17:31:31,504-INFO: iter: 21900, lr: 0.005000, 'loss': '54.736961', 'loss_cls': '10.344840', 'loss_xy': '3.574834', 'loss_iou': '14.179336', 'loss_iou_aware': '0.004744', 'loss_wh': '4.425792', 'loss_obj': '22.534626', time: 0.796, eta: 6:12:55
+2020-12-25 17:32:51,666-INFO: iter: 22000, lr: 0.005000, 'loss': '53.228931', 'loss_cls': '9.987619', 'loss_xy': '3.599349', 'loss_iou': '13.416048', 'loss_iou_aware': '0.004549', 'loss_wh': '4.099665', 'loss_obj': '21.595987', time: 0.800, eta: 6:13:27
+2020-12-25 17:32:52,083-INFO: Save model to output/ppyolo_pan/22000.
+2020-12-25 17:32:55,541-INFO: Test iter 0
+2020-12-25 17:33:09,678-INFO: Test iter 100
+2020-12-25 17:33:23,593-INFO: Test iter 200
+2020-12-25 17:33:37,579-INFO: Test iter 300
+2020-12-25 17:33:51,637-INFO: Test iter 400
+2020-12-25 17:34:05,454-INFO: Test iter 500
+2020-12-25 17:34:19,466-INFO: Test iter 600
+2020-12-25 17:34:22,766-INFO: Test finish iter 625
+2020-12-25 17:34:22,766-INFO: Total number of images: 5000, inference time: 57.1648737787 fps.
+loading annotations into memory...
+Done (t=0.64s)
+creating index...
+index created!
+2020-12-25 17:34:37,035-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.27s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=68.22s).
+Accumulating evaluation results...
+DONE (t=7.92s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.275
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.471
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.289
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.134
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.294
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.360
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.245
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.422
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.467
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.245
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.496
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.598
+2020-12-25 17:36:03,279-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 17:36:06,365-INFO: Best test box ap: 0.27512864248, in iter: 22000
+2020-12-25 17:37:27,965-INFO: iter: 22100, lr: 0.005000, 'loss': '56.617798', 'loss_cls': '10.223562', 'loss_xy': '3.799326', 'loss_iou': '14.584692', 'loss_iou_aware': '0.004593', 'loss_wh': '4.553624', 'loss_obj': '23.089720', time: 2.764, eta: 21:25:17
+2020-12-25 17:38:48,963-INFO: iter: 22200, lr: 0.005000, 'loss': '53.104027', 'loss_cls': '9.869564', 'loss_xy': '3.475115', 'loss_iou': '13.647839', 'loss_iou_aware': '0.004459', 'loss_wh': '4.465238', 'loss_obj': '21.996643', time: 0.810, eta: 6:15:22
+2020-12-25 17:40:09,411-INFO: iter: 22300, lr: 0.005000, 'loss': '57.789722', 'loss_cls': '10.692780', 'loss_xy': '3.656224', 'loss_iou': '14.680864', 'loss_iou_aware': '0.005063', 'loss_wh': '4.706141', 'loss_obj': '22.830811', time: 0.805, eta: 6:11:36
+2020-12-25 17:41:29,880-INFO: iter: 22400, lr: 0.005000, 'loss': '56.142414', 'loss_cls': '10.311654', 'loss_xy': '3.616406', 'loss_iou': '14.262207', 'loss_iou_aware': '0.004577', 'loss_wh': '4.602439', 'loss_obj': '23.189289', time: 0.805, eta: 6:10:13
+2020-12-25 17:42:49,476-INFO: iter: 22500, lr: 0.005000, 'loss': '51.948414', 'loss_cls': '9.310043', 'loss_xy': '3.398586', 'loss_iou': '13.638748', 'loss_iou_aware': '0.004232', 'loss_wh': '4.352632', 'loss_obj': '21.641745', time: 0.796, eta: 6:04:51
+2020-12-25 17:44:08,849-INFO: iter: 22600, lr: 0.005000, 'loss': '54.787926', 'loss_cls': '10.261150', 'loss_xy': '3.601758', 'loss_iou': '14.054565', 'loss_iou_aware': '0.004573', 'loss_wh': '4.423877', 'loss_obj': '22.329185', time: 0.793, eta: 6:02:13
+2020-12-25 17:45:29,037-INFO: iter: 22700, lr: 0.005000, 'loss': '57.080784', 'loss_cls': '10.005538', 'loss_xy': '3.838537', 'loss_iou': '14.819037', 'loss_iou_aware': '0.004448', 'loss_wh': '4.673031', 'loss_obj': '23.731571', time: 0.802, eta: 6:04:52
+2020-12-25 17:46:50,021-INFO: iter: 22800, lr: 0.005000, 'loss': '55.725777', 'loss_cls': '10.595317', 'loss_xy': '3.517144', 'loss_iou': '14.250106', 'loss_iou_aware': '0.004515', 'loss_wh': '4.409185', 'loss_obj': '22.253738', time: 0.810, eta: 6:07:11
+2020-12-25 17:48:13,838-INFO: iter: 22900, lr: 0.005000, 'loss': '55.284531', 'loss_cls': '10.000363', 'loss_xy': '3.496996', 'loss_iou': '14.082480', 'loss_iou_aware': '0.004334', 'loss_wh': '4.581533', 'loss_obj': '22.188778', time: 0.838, eta: 6:18:19
+2020-12-25 17:49:33,243-INFO: iter: 23000, lr: 0.005000, 'loss': '56.730762', 'loss_cls': '10.394289', 'loss_xy': '3.744226', 'loss_iou': '14.775544', 'loss_iou_aware': '0.004486', 'loss_wh': '4.594452', 'loss_obj': '22.892994', time: 0.794, eta: 5:57:25
+2020-12-25 17:50:52,789-INFO: iter: 23100, lr: 0.005000, 'loss': '61.300369', 'loss_cls': '11.415291', 'loss_xy': '3.989288', 'loss_iou': '16.021135', 'loss_iou_aware': '0.004614', 'loss_wh': '5.205212', 'loss_obj': '23.712532', time: 0.795, eta: 5:56:37
+2020-12-25 17:52:13,401-INFO: iter: 23200, lr: 0.005000, 'loss': '55.720142', 'loss_cls': '10.389064', 'loss_xy': '3.695856', 'loss_iou': '13.985283', 'loss_iou_aware': '0.004404', 'loss_wh': '4.595701', 'loss_obj': '22.954321', time: 0.806, eta: 5:59:50
+2020-12-25 17:53:34,478-INFO: iter: 23300, lr: 0.005000, 'loss': '53.317383', 'loss_cls': '10.098507', 'loss_xy': '3.507343', 'loss_iou': '14.060935', 'loss_iou_aware': '0.004394', 'loss_wh': '4.621166', 'loss_obj': '21.808945', time: 0.811, eta: 6:00:46
+2020-12-25 17:54:54,249-INFO: iter: 23400, lr: 0.005000, 'loss': '52.367676', 'loss_cls': '9.537574', 'loss_xy': '3.465385', 'loss_iou': '13.117953', 'loss_iou_aware': '0.004506', 'loss_wh': '4.084515', 'loss_obj': '21.100597', time: 0.798, eta: 5:53:47
+2020-12-25 17:56:15,426-INFO: iter: 23500, lr: 0.005000, 'loss': '54.779331', 'loss_cls': '10.002153', 'loss_xy': '3.671909', 'loss_iou': '14.079019', 'loss_iou_aware': '0.004569', 'loss_wh': '4.441433', 'loss_obj': '22.843391', time: 0.812, eta: 5:58:26
+2020-12-25 17:57:37,117-INFO: iter: 23600, lr: 0.005000, 'loss': '53.547272', 'loss_cls': '10.357730', 'loss_xy': '3.581005', 'loss_iou': '13.613647', 'loss_iou_aware': '0.004515', 'loss_wh': '4.373914', 'loss_obj': '21.844637', time: 0.817, eta: 5:59:41
+2020-12-25 17:58:57,350-INFO: iter: 23700, lr: 0.005000, 'loss': '52.136692', 'loss_cls': '9.762062', 'loss_xy': '3.545026', 'loss_iou': '13.367403', 'loss_iou_aware': '0.004632', 'loss_wh': '4.513447', 'loss_obj': '21.855709', time: 0.802, eta: 5:51:32
+2020-12-25 18:00:17,376-INFO: iter: 23800, lr: 0.005000, 'loss': '55.336216', 'loss_cls': '10.504491', 'loss_xy': '3.571118', 'loss_iou': '13.919970', 'loss_iou_aware': '0.004444', 'loss_wh': '4.507246', 'loss_obj': '22.237740', time: 0.800, eta: 5:49:32
+2020-12-25 18:01:37,228-INFO: iter: 23900, lr: 0.005000, 'loss': '57.714455', 'loss_cls': '9.969001', 'loss_xy': '3.785182', 'loss_iou': '14.326159', 'loss_iou_aware': '0.004468', 'loss_wh': '4.640092', 'loss_obj': '23.980537', time: 0.799, eta: 5:47:44
+2020-12-25 18:02:57,019-INFO: iter: 24000, lr: 0.005000, 'loss': '54.732140', 'loss_cls': '10.083195', 'loss_xy': '3.704144', 'loss_iou': '14.118250', 'loss_iou_aware': '0.004580', 'loss_wh': '4.463176', 'loss_obj': '22.056269', time: 0.797, eta: 5:45:11
+2020-12-25 18:02:57,420-INFO: Save model to output/ppyolo_pan/24000.
+2020-12-25 18:03:00,865-INFO: Test iter 0
+2020-12-25 18:03:14,884-INFO: Test iter 100
+2020-12-25 18:03:28,751-INFO: Test iter 200
+2020-12-25 18:03:42,711-INFO: Test iter 300
+2020-12-25 18:03:56,672-INFO: Test iter 400
+2020-12-25 18:04:10,449-INFO: Test iter 500
+2020-12-25 18:04:24,445-INFO: Test iter 600
+2020-12-25 18:04:27,711-INFO: Test finish iter 625
+2020-12-25 18:04:27,711-INFO: Total number of images: 5000, inference time: 57.4241027427 fps.
+loading annotations into memory...
+Done (t=0.77s)
+creating index...
+index created!
+2020-12-25 18:04:42,830-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.09s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=71.93s).
+Accumulating evaluation results...
+DONE (t=7.80s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.282
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.480
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.296
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.143
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.302
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.366
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.249
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.428
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.472
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.251
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.503
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.605
+2020-12-25 18:06:12,304-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 18:06:15,411-INFO: Best test box ap: 0.28222840982, in iter: 24000
+2020-12-25 18:07:35,242-INFO: iter: 24100, lr: 0.005000, 'loss': '59.964775', 'loss_cls': '10.390656', 'loss_xy': '3.934151', 'loss_iou': '15.332041', 'loss_iou_aware': '0.004677', 'loss_wh': '4.755822', 'loss_obj': '23.864395', time: 2.781, eta: 20:00:22
+2020-12-25 18:08:55,362-INFO: iter: 24200, lr: 0.005000, 'loss': '53.137287', 'loss_cls': '9.824645', 'loss_xy': '3.599943', 'loss_iou': '13.346800', 'loss_iou_aware': '0.004564', 'loss_wh': '4.073562', 'loss_obj': '21.248287', time: 0.803, eta: 5:45:18
+2020-12-25 18:10:15,441-INFO: iter: 24300, lr: 0.005000, 'loss': '53.915878', 'loss_cls': '9.864609', 'loss_xy': '3.586784', 'loss_iou': '14.142529', 'loss_iou_aware': '0.004623', 'loss_wh': '4.324951', 'loss_obj': '22.946915', time: 0.801, eta: 5:43:14
+2020-12-25 18:11:36,171-INFO: iter: 24400, lr: 0.005000, 'loss': '51.808403', 'loss_cls': '9.565299', 'loss_xy': '3.493072', 'loss_iou': '13.333560', 'loss_iou_aware': '0.004334', 'loss_wh': '4.120362', 'loss_obj': '21.239456', time: 0.806, eta: 5:43:56
+2020-12-25 18:12:56,144-INFO: iter: 24500, lr: 0.005000, 'loss': '52.504990', 'loss_cls': '9.858405', 'loss_xy': '3.415099', 'loss_iou': '13.626629', 'loss_iou_aware': '0.004230', 'loss_wh': '4.212375', 'loss_obj': '21.557512', time: 0.800, eta: 5:40:11
+2020-12-25 18:14:17,731-INFO: iter: 24600, lr: 0.005000, 'loss': '55.153229', 'loss_cls': '9.957565', 'loss_xy': '3.681350', 'loss_iou': '14.166519', 'loss_iou_aware': '0.004529', 'loss_wh': '4.476223', 'loss_obj': '21.859383', time: 0.815, eta: 5:45:09
+2020-12-25 18:15:37,925-INFO: iter: 24700, lr: 0.005000, 'loss': '54.911934', 'loss_cls': '9.685912', 'loss_xy': '3.575251', 'loss_iou': '13.974260', 'loss_iou_aware': '0.004697', 'loss_wh': '4.529432', 'loss_obj': '22.846973', time: 0.803, eta: 5:38:32
+2020-12-25 18:16:58,740-INFO: iter: 24800, lr: 0.005000, 'loss': '56.252029', 'loss_cls': '10.754442', 'loss_xy': '3.723350', 'loss_iou': '14.627822', 'loss_iou_aware': '0.004636', 'loss_wh': '4.576694', 'loss_obj': '22.580517', time: 0.808, eta: 5:39:10
+2020-12-25 18:18:18,635-INFO: iter: 24900, lr: 0.005000, 'loss': '55.315338', 'loss_cls': '10.089106', 'loss_xy': '3.462064', 'loss_iou': '14.376682', 'loss_iou_aware': '0.004503', 'loss_wh': '4.658720', 'loss_obj': '21.813992', time: 0.799, eta: 5:34:20
+2020-12-25 18:19:42,839-INFO: iter: 25000, lr: 0.005000, 'loss': '55.945435', 'loss_cls': '10.003016', 'loss_xy': '3.658143', 'loss_iou': '14.326809', 'loss_iou_aware': '0.004614', 'loss_wh': '4.615441', 'loss_obj': '22.820770', time: 0.843, eta: 5:51:13
+2020-12-25 18:21:02,995-INFO: iter: 25100, lr: 0.005000, 'loss': '54.677143', 'loss_cls': '9.636325', 'loss_xy': '3.606988', 'loss_iou': '14.305439', 'loss_iou_aware': '0.004531', 'loss_wh': '4.440635', 'loss_obj': '22.739092', time: 0.802, eta: 5:32:38
+2020-12-25 18:22:23,694-INFO: iter: 25200, lr: 0.005000, 'loss': '53.762539', 'loss_cls': '9.682737', 'loss_xy': '3.649734', 'loss_iou': '14.603354', 'loss_iou_aware': '0.004684', 'loss_wh': '4.663439', 'loss_obj': '22.217487', time: 0.806, eta: 5:33:15
+2020-12-25 18:23:43,545-INFO: iter: 25300, lr: 0.005000, 'loss': '53.470757', 'loss_cls': '10.079154', 'loss_xy': '3.435712', 'loss_iou': '13.195993', 'loss_iou_aware': '0.004530', 'loss_wh': '4.196480', 'loss_obj': '21.693531', time: 0.798, eta: 5:28:37
+2020-12-25 18:25:04,562-INFO: iter: 25400, lr: 0.005000, 'loss': '54.326279', 'loss_cls': '9.961058', 'loss_xy': '3.632513', 'loss_iou': '14.095428', 'loss_iou_aware': '0.004459', 'loss_wh': '4.393577', 'loss_obj': '22.526619', time: 0.810, eta: 5:31:54
+2020-12-25 18:26:24,925-INFO: iter: 25500, lr: 0.005000, 'loss': '51.573112', 'loss_cls': '9.320432', 'loss_xy': '3.334579', 'loss_iou': '13.502945', 'loss_iou_aware': '0.004509', 'loss_wh': '4.276296', 'loss_obj': '21.746532', time: 0.804, eta: 5:28:29
+2020-12-25 18:27:45,913-INFO: iter: 25600, lr: 0.005000, 'loss': '53.172028', 'loss_cls': '9.752851', 'loss_xy': '3.597488', 'loss_iou': '13.790387', 'loss_iou_aware': '0.004712', 'loss_wh': '4.413176', 'loss_obj': '21.933788', time: 0.810, eta: 5:29:22
+2020-12-25 18:29:05,046-INFO: iter: 25700, lr: 0.005000, 'loss': '57.753174', 'loss_cls': '10.637105', 'loss_xy': '3.934000', 'loss_iou': '14.954560', 'loss_iou_aware': '0.004716', 'loss_wh': '4.698045', 'loss_obj': '23.713427', time: 0.792, eta: 5:20:34
+2020-12-25 18:30:25,358-INFO: iter: 25800, lr: 0.005000, 'loss': '55.461147', 'loss_cls': '10.230512', 'loss_xy': '3.623505', 'loss_iou': '14.079014', 'loss_iou_aware': '0.004579', 'loss_wh': '4.344771', 'loss_obj': '22.696955', time: 0.803, eta: 5:23:52
+2020-12-25 18:31:46,267-INFO: iter: 25900, lr: 0.005000, 'loss': '54.450287', 'loss_cls': '9.366346', 'loss_xy': '3.613723', 'loss_iou': '14.165408', 'loss_iou_aware': '0.004516', 'loss_wh': '4.559816', 'loss_obj': '22.141432', time: 0.809, eta: 5:24:48
+2020-12-25 18:33:05,586-INFO: iter: 26000, lr: 0.005000, 'loss': '55.354855', 'loss_cls': '9.875599', 'loss_xy': '3.554404', 'loss_iou': '13.908669', 'loss_iou_aware': '0.004358', 'loss_wh': '4.374451', 'loss_obj': '21.831959', time: 0.794, eta: 5:17:39
+2020-12-25 18:33:05,989-INFO: Save model to output/ppyolo_pan/26000.
+2020-12-25 18:33:09,298-INFO: Test iter 0
+2020-12-25 18:33:23,376-INFO: Test iter 100
+2020-12-25 18:33:37,241-INFO: Test iter 200
+2020-12-25 18:33:51,160-INFO: Test iter 300
+2020-12-25 18:34:05,156-INFO: Test iter 400
+2020-12-25 18:34:18,886-INFO: Test iter 500
+2020-12-25 18:34:32,860-INFO: Test iter 600
+2020-12-25 18:34:36,158-INFO: Test finish iter 625
+2020-12-25 18:34:36,158-INFO: Total number of images: 5000, inference time: 57.4132867806 fps.
+loading annotations into memory...
+Done (t=0.75s)
+creating index...
+index created!
+2020-12-25 18:34:49,170-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.76s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=68.29s).
+Accumulating evaluation results...
+DONE (t=7.91s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.289
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.489
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.305
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.143
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.309
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.373
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.252
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.434
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.480
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.255
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.510
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.611
+2020-12-25 18:36:16,201-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 18:36:19,485-INFO: Best test box ap: 0.288742150224, in iter: 26000
+2020-12-25 18:37:39,462-INFO: iter: 26100, lr: 0.005000, 'loss': '54.947742', 'loss_cls': '10.239754', 'loss_xy': '3.709552', 'loss_iou': '14.465998', 'loss_iou_aware': '0.004546', 'loss_wh': '4.479501', 'loss_obj': '22.484863', time: 2.737, eta: 18:10:07
+2020-12-25 18:38:59,371-INFO: iter: 26200, lr: 0.005000, 'loss': '53.776062', 'loss_cls': '10.127645', 'loss_xy': '3.503213', 'loss_iou': '13.756708', 'loss_iou_aware': '0.004379', 'loss_wh': '4.435124', 'loss_obj': '21.509293', time: 0.801, eta: 5:17:50
+2020-12-25 18:40:18,697-INFO: iter: 26300, lr: 0.005000, 'loss': '53.916466', 'loss_cls': '9.984122', 'loss_xy': '3.548852', 'loss_iou': '14.024748', 'loss_iou_aware': '0.004343', 'loss_wh': '4.526547', 'loss_obj': '21.251122', time: 0.794, eta: 5:13:31
+2020-12-25 18:41:40,183-INFO: iter: 26400, lr: 0.005000, 'loss': '54.784336', 'loss_cls': '9.674077', 'loss_xy': '3.521953', 'loss_iou': '14.137677', 'loss_iou_aware': '0.004439', 'loss_wh': '4.728954', 'loss_obj': '22.113571', time: 0.813, eta: 5:19:50
+2020-12-25 18:42:59,587-INFO: iter: 26500, lr: 0.005000, 'loss': '52.770630', 'loss_cls': '10.028658', 'loss_xy': '3.562023', 'loss_iou': '14.016877', 'loss_iou_aware': '0.004128', 'loss_wh': '4.521132', 'loss_obj': '21.168243', time: 0.794, eta: 5:10:55
+2020-12-25 18:44:21,328-INFO: iter: 26600, lr: 0.005000, 'loss': '52.718468', 'loss_cls': '9.573303', 'loss_xy': '3.547828', 'loss_iou': '13.443611', 'loss_iou_aware': '0.004434', 'loss_wh': '4.176446', 'loss_obj': '22.038973', time: 0.817, eta: 5:18:46
+2020-12-25 18:45:41,802-INFO: iter: 26700, lr: 0.005000, 'loss': '51.624695', 'loss_cls': '9.427279', 'loss_xy': '3.567624', 'loss_iou': '13.269017', 'loss_iou_aware': '0.004538', 'loss_wh': '4.244041', 'loss_obj': '21.944283', time: 0.805, eta: 5:12:27
+2020-12-25 18:47:02,863-INFO: iter: 26800, lr: 0.005000, 'loss': '55.924088', 'loss_cls': '10.271640', 'loss_xy': '3.781278', 'loss_iou': '14.172816', 'loss_iou_aware': '0.004639', 'loss_wh': '4.666605', 'loss_obj': '23.416569', time: 0.811, eta: 5:13:35
+2020-12-25 18:48:23,148-INFO: iter: 26900, lr: 0.005000, 'loss': '53.805229', 'loss_cls': '9.388840', 'loss_xy': '3.611202', 'loss_iou': '13.750582', 'loss_iou_aware': '0.004350', 'loss_wh': '4.178959', 'loss_obj': '22.864227', time: 0.803, eta: 5:09:09
+2020-12-25 18:49:43,496-INFO: iter: 27000, lr: 0.005000, 'loss': '52.009071', 'loss_cls': '9.000557', 'loss_xy': '3.388535', 'loss_iou': '13.750764', 'loss_iou_aware': '0.004369', 'loss_wh': '4.079000', 'loss_obj': '21.370737', time: 0.804, eta: 5:08:17
+2020-12-25 18:51:08,665-INFO: iter: 27100, lr: 0.005000, 'loss': '52.575279', 'loss_cls': '9.643118', 'loss_xy': '3.559345', 'loss_iou': '13.658108', 'loss_iou_aware': '0.004324', 'loss_wh': '4.349814', 'loss_obj': '21.852451', time: 0.852, eta: 5:25:08
+2020-12-25 18:52:27,638-INFO: iter: 27200, lr: 0.005000, 'loss': '57.875652', 'loss_cls': '10.515457', 'loss_xy': '3.942343', 'loss_iou': '15.294022', 'loss_iou_aware': '0.004474', 'loss_wh': '4.853368', 'loss_obj': '22.334942', time: 0.788, eta: 4:59:29
+2020-12-25 18:53:48,881-INFO: iter: 27300, lr: 0.005000, 'loss': '51.268604', 'loss_cls': '9.073278', 'loss_xy': '3.504466', 'loss_iou': '13.662156', 'loss_iou_aware': '0.004251', 'loss_wh': '4.245677', 'loss_obj': '20.978231', time: 0.812, eta: 5:07:07
+2020-12-25 18:55:09,067-INFO: iter: 27400, lr: 0.005000, 'loss': '56.243439', 'loss_cls': '10.217740', 'loss_xy': '3.741108', 'loss_iou': '15.162339', 'loss_iou_aware': '0.004521', 'loss_wh': '4.828141', 'loss_obj': '22.044456', time: 0.802, eta: 5:02:02
+2020-12-25 18:56:29,506-INFO: iter: 27500, lr: 0.005000, 'loss': '55.488968', 'loss_cls': '9.678392', 'loss_xy': '3.688558', 'loss_iou': '14.322305', 'loss_iou_aware': '0.004500', 'loss_wh': '4.365093', 'loss_obj': '22.019709', time: 0.805, eta: 5:01:55
+2020-12-25 18:57:50,390-INFO: iter: 27600, lr: 0.005000, 'loss': '57.668743', 'loss_cls': '10.195614', 'loss_xy': '3.845089', 'loss_iou': '14.738911', 'loss_iou_aware': '0.004853', 'loss_wh': '4.753201', 'loss_obj': '23.563726', time: 0.810, eta: 5:02:16
+2020-12-25 18:59:10,177-INFO: iter: 27700, lr: 0.005000, 'loss': '53.004364', 'loss_cls': '9.576897', 'loss_xy': '3.705478', 'loss_iou': '13.959965', 'loss_iou_aware': '0.004513', 'loss_wh': '4.343012', 'loss_obj': '21.260052', time: 0.797, eta: 4:56:17
+2020-12-25 19:00:30,022-INFO: iter: 27800, lr: 0.005000, 'loss': '54.684174', 'loss_cls': '9.278208', 'loss_xy': '3.712517', 'loss_iou': '14.352748', 'loss_iou_aware': '0.004774', 'loss_wh': '4.400447', 'loss_obj': '22.316521', time: 0.798, eta: 4:55:06
+2020-12-25 19:01:49,453-INFO: iter: 27900, lr: 0.005000, 'loss': '53.473198', 'loss_cls': '9.991912', 'loss_xy': '3.469255', 'loss_iou': '13.591156', 'loss_iou_aware': '0.004220', 'loss_wh': '4.387845', 'loss_obj': '21.521513', time: 0.794, eta: 4:52:23
+2020-12-25 19:03:09,128-INFO: iter: 28000, lr: 0.005000, 'loss': '53.507980', 'loss_cls': '9.485498', 'loss_xy': '3.531209', 'loss_iou': '14.044266', 'loss_iou_aware': '0.004186', 'loss_wh': '4.360108', 'loss_obj': '21.654217', time: 0.799, eta: 4:53:00
+2020-12-25 19:03:09,548-INFO: Save model to output/ppyolo_pan/28000.
+2020-12-25 19:03:14,183-INFO: Test iter 0
+2020-12-25 19:03:28,289-INFO: Test iter 100
+2020-12-25 19:03:42,096-INFO: Test iter 200
+2020-12-25 19:03:55,900-INFO: Test iter 300
+2020-12-25 19:04:09,830-INFO: Test iter 400
+2020-12-25 19:04:23,618-INFO: Test iter 500
+2020-12-25 19:04:37,564-INFO: Test iter 600
+2020-12-25 19:04:40,860-INFO: Test finish iter 625
+2020-12-25 19:04:40,860-INFO: Total number of images: 5000, inference time: 57.5243685339 fps.
+loading annotations into memory...
+Done (t=0.80s)
+creating index...
+index created!
+2020-12-25 19:04:56,462-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.16s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=67.28s).
+Accumulating evaluation results...
+DONE (t=7.82s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.295
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.497
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.311
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.158
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.315
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.381
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.256
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.439
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.485
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.268
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.518
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.623
+2020-12-25 19:06:21,684-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 19:06:24,790-INFO: Best test box ap: 0.294794497227, in iter: 28000
+2020-12-25 19:07:44,208-INFO: iter: 28100, lr: 0.005000, 'loss': '56.073792', 'loss_cls': '10.281106', 'loss_xy': '3.825982', 'loss_iou': '14.615718', 'loss_iou_aware': '0.004707', 'loss_wh': '4.833416', 'loss_obj': '23.171112', time: 2.750, eta: 16:43:41
+2020-12-25 19:09:03,351-INFO: iter: 28200, lr: 0.005000, 'loss': '52.273415', 'loss_cls': '9.529789', 'loss_xy': '3.497773', 'loss_iou': '13.556568', 'loss_iou_aware': '0.004439', 'loss_wh': '4.383461', 'loss_obj': '21.297657', time: 0.792, eta: 4:47:39
+2020-12-25 19:10:24,099-INFO: iter: 28300, lr: 0.005000, 'loss': '56.673134', 'loss_cls': '9.934362', 'loss_xy': '3.849353', 'loss_iou': '14.992043', 'loss_iou_aware': '0.004413', 'loss_wh': '4.658436', 'loss_obj': '22.742195', time: 0.806, eta: 4:51:39
+2020-12-25 19:11:45,160-INFO: iter: 28400, lr: 0.005000, 'loss': '52.065765', 'loss_cls': '9.225334', 'loss_xy': '3.468887', 'loss_iou': '13.295755', 'loss_iou_aware': '0.004328', 'loss_wh': '4.050548', 'loss_obj': '21.397438', time: 0.812, eta: 4:52:19
+2020-12-25 19:13:05,231-INFO: iter: 28500, lr: 0.005000, 'loss': '52.672985', 'loss_cls': '9.689196', 'loss_xy': '3.442950', 'loss_iou': '13.630707', 'loss_iou_aware': '0.004229', 'loss_wh': '4.396634', 'loss_obj': '21.419830', time: 0.800, eta: 4:46:38
+2020-12-25 19:14:26,126-INFO: iter: 28600, lr: 0.005000, 'loss': '55.344120', 'loss_cls': '9.491633', 'loss_xy': '3.746070', 'loss_iou': '14.616413', 'loss_iou_aware': '0.004720', 'loss_wh': '4.512324', 'loss_obj': '23.323303', time: 0.809, eta: 4:48:27
+2020-12-25 19:15:45,780-INFO: iter: 28700, lr: 0.005000, 'loss': '54.740475', 'loss_cls': '9.157678', 'loss_xy': '3.692563', 'loss_iou': '13.767431', 'loss_iou_aware': '0.004391', 'loss_wh': '4.041676', 'loss_obj': '22.309437', time: 0.796, eta: 4:42:38
+2020-12-25 19:17:06,669-INFO: iter: 28800, lr: 0.005000, 'loss': '50.939102', 'loss_cls': '9.477794', 'loss_xy': '3.233449', 'loss_iou': '12.942596', 'loss_iou_aware': '0.004106', 'loss_wh': '4.054802', 'loss_obj': '20.624615', time: 0.810, eta: 4:46:06
+2020-12-25 19:18:26,024-INFO: iter: 28900, lr: 0.005000, 'loss': '54.282021', 'loss_cls': '9.373747', 'loss_xy': '3.579714', 'loss_iou': '13.986027', 'loss_iou_aware': '0.004520', 'loss_wh': '4.374325', 'loss_obj': '22.060577', time: 0.794, eta: 4:39:07
+2020-12-25 19:19:46,142-INFO: iter: 29000, lr: 0.005000, 'loss': '56.333061', 'loss_cls': '10.190634', 'loss_xy': '3.801023', 'loss_iou': '14.904654', 'loss_iou_aware': '0.004451', 'loss_wh': '4.922975', 'loss_obj': '23.389729', time: 0.802, eta: 4:40:37
+2020-12-25 19:21:05,861-INFO: iter: 29100, lr: 0.005000, 'loss': '55.951881', 'loss_cls': '9.613682', 'loss_xy': '3.663973', 'loss_iou': '14.331652', 'loss_iou_aware': '0.004602', 'loss_wh': '4.529782', 'loss_obj': '22.534067', time: 0.796, eta: 4:37:19
+2020-12-25 19:22:30,424-INFO: iter: 29200, lr: 0.005000, 'loss': '53.732540', 'loss_cls': '9.413565', 'loss_xy': '3.565158', 'loss_iou': '14.090072', 'loss_iou_aware': '0.004463', 'loss_wh': '4.350325', 'loss_obj': '21.894682', time: 0.847, eta: 4:53:39
+2020-12-25 19:23:51,328-INFO: iter: 29300, lr: 0.005000, 'loss': '53.306362', 'loss_cls': '9.670498', 'loss_xy': '3.622396', 'loss_iou': '13.539389', 'loss_iou_aware': '0.004527', 'loss_wh': '4.049016', 'loss_obj': '22.556477', time: 0.809, eta: 4:39:15
+2020-12-25 19:25:12,093-INFO: iter: 29400, lr: 0.005000, 'loss': '51.360199', 'loss_cls': '9.556627', 'loss_xy': '3.510447', 'loss_iou': '13.199640', 'loss_iou_aware': '0.004265', 'loss_wh': '4.095848', 'loss_obj': '21.014420', time: 0.806, eta: 4:36:45
+2020-12-25 19:26:32,341-INFO: iter: 29500, lr: 0.005000, 'loss': '53.661316', 'loss_cls': '9.298102', 'loss_xy': '3.561928', 'loss_iou': '13.804242', 'loss_iou_aware': '0.004549', 'loss_wh': '4.233779', 'loss_obj': '21.622715', time: 0.802, eta: 4:34:09
+2020-12-25 19:27:53,609-INFO: iter: 29600, lr: 0.005000, 'loss': '57.547226', 'loss_cls': '9.793942', 'loss_xy': '3.843532', 'loss_iou': '15.403695', 'loss_iou_aware': '0.004550', 'loss_wh': '4.719735', 'loss_obj': '23.678871', time: 0.813, eta: 4:36:16
+2020-12-25 19:29:13,352-INFO: iter: 29700, lr: 0.005000, 'loss': '52.886189', 'loss_cls': '9.739081', 'loss_xy': '3.370539', 'loss_iou': '13.870048', 'loss_iou_aware': '0.004267', 'loss_wh': '4.333158', 'loss_obj': '21.109934', time: 0.798, eta: 4:30:06
+2020-12-25 19:30:33,607-INFO: iter: 29800, lr: 0.005000, 'loss': '55.713047', 'loss_cls': '9.818069', 'loss_xy': '3.730234', 'loss_iou': '14.544365', 'loss_iou_aware': '0.004437', 'loss_wh': '4.569067', 'loss_obj': '21.760611', time: 0.802, eta: 4:29:58
+2020-12-25 19:31:52,881-INFO: iter: 29900, lr: 0.005000, 'loss': '55.932220', 'loss_cls': '9.849918', 'loss_xy': '3.719829', 'loss_iou': '15.032540', 'loss_iou_aware': '0.004464', 'loss_wh': '4.829632', 'loss_obj': '22.564095', time: 0.793, eta: 4:25:39
+2020-12-25 19:33:12,845-INFO: iter: 30000, lr: 0.005000, 'loss': '50.719238', 'loss_cls': '9.036354', 'loss_xy': '3.386657', 'loss_iou': '13.210750', 'loss_iou_aware': '0.004420', 'loss_wh': '4.009186', 'loss_obj': '20.702744', time: 0.799, eta: 4:26:27
+2020-12-25 19:33:14,490-INFO: Save model to output/ppyolo_pan/30000.
+2020-12-25 19:33:17,722-INFO: Test iter 0
+2020-12-25 19:33:31,765-INFO: Test iter 100
+2020-12-25 19:33:45,531-INFO: Test iter 200
+2020-12-25 19:33:59,480-INFO: Test iter 300
+2020-12-25 19:34:13,448-INFO: Test iter 400
+2020-12-25 19:34:27,206-INFO: Test iter 500
+2020-12-25 19:34:41,149-INFO: Test iter 600
+2020-12-25 19:34:44,441-INFO: Test finish iter 625
+2020-12-25 19:34:44,442-INFO: Total number of images: 5000, inference time: 57.5031705956 fps.
+loading annotations into memory...
+Done (t=1.77s)
+creating index...
+index created!
+2020-12-25 19:34:59,719-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=6.73s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=69.15s).
+Accumulating evaluation results...
+DONE (t=7.92s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.300
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.503
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.317
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.162
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.322
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.388
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.258
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.444
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.490
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.274
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.523
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.631
+2020-12-25 19:36:26,851-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 19:36:29,965-INFO: Best test box ap: 0.300062122869, in iter: 30000
+2020-12-25 19:37:49,743-INFO: iter: 30100, lr: 0.005000, 'loss': '58.092896', 'loss_cls': '10.170908', 'loss_xy': '3.863400', 'loss_iou': '15.209652', 'loss_iou_aware': '0.004505', 'loss_wh': '4.907621', 'loss_obj': '23.064939', time: 2.769, eta: 15:18:19
+2020-12-25 19:39:10,182-INFO: iter: 30200, lr: 0.005000, 'loss': '56.580872', 'loss_cls': '10.056425', 'loss_xy': '3.726107', 'loss_iou': '15.032043', 'loss_iou_aware': '0.004358', 'loss_wh': '4.778968', 'loss_obj': '22.975853', time: 0.804, eta: 4:25:27
+2020-12-25 19:40:30,423-INFO: iter: 30300, lr: 0.005000, 'loss': '53.749725', 'loss_cls': '9.640567', 'loss_xy': '3.654117', 'loss_iou': '14.292356', 'loss_iou_aware': '0.004272', 'loss_wh': '4.388822', 'loss_obj': '22.104345', time: 0.802, eta: 4:23:20
+2020-12-25 19:41:50,949-INFO: iter: 30400, lr: 0.005000, 'loss': '52.578194', 'loss_cls': '9.352134', 'loss_xy': '3.505108', 'loss_iou': '13.468092', 'loss_iou_aware': '0.004185', 'loss_wh': '4.242245', 'loss_obj': '21.005798', time: 0.806, eta: 4:23:13
+2020-12-25 19:43:09,735-INFO: iter: 30500, lr: 0.005000, 'loss': '54.473221', 'loss_cls': '9.435734', 'loss_xy': '3.542164', 'loss_iou': '13.879173', 'loss_iou_aware': '0.004373', 'loss_wh': '4.537464', 'loss_obj': '22.598663', time: 0.789, eta: 4:16:26
+2020-12-25 19:44:30,722-INFO: iter: 30600, lr: 0.005000, 'loss': '53.192474', 'loss_cls': '9.705028', 'loss_xy': '3.655981', 'loss_iou': '13.972038', 'loss_iou_aware': '0.004334', 'loss_wh': '4.470594', 'loss_obj': '22.072689', time: 0.809, eta: 4:21:35
+2020-12-25 19:45:50,588-INFO: iter: 30700, lr: 0.005000, 'loss': '52.679718', 'loss_cls': '9.850515', 'loss_xy': '3.650386', 'loss_iou': '14.039732', 'loss_iou_aware': '0.004745', 'loss_wh': '4.327134', 'loss_obj': '21.291046', time: 0.799, eta: 4:16:55
+2020-12-25 19:47:12,970-INFO: iter: 30800, lr: 0.005000, 'loss': '56.047035', 'loss_cls': '9.727018', 'loss_xy': '3.699459', 'loss_iou': '14.665007', 'loss_iou_aware': '0.004487', 'loss_wh': '4.597370', 'loss_obj': '22.027449', time: 0.823, eta: 4:23:19
+2020-12-25 19:48:32,565-INFO: iter: 30900, lr: 0.005000, 'loss': '53.144485', 'loss_cls': '9.382797', 'loss_xy': '3.535830', 'loss_iou': '13.887235', 'loss_iou_aware': '0.004423', 'loss_wh': '4.395343', 'loss_obj': '21.720718', time: 0.795, eta: 4:12:55
+2020-12-25 19:49:52,533-INFO: iter: 31000, lr: 0.005000, 'loss': '51.815475', 'loss_cls': '9.595555', 'loss_xy': '3.395022', 'loss_iou': '13.494970', 'loss_iou_aware': '0.004514', 'loss_wh': '4.329433', 'loss_obj': '20.872561', time: 0.801, eta: 4:13:38
+2020-12-25 19:51:12,947-INFO: iter: 31100, lr: 0.005000, 'loss': '54.524742', 'loss_cls': '9.520506', 'loss_xy': '3.619153', 'loss_iou': '13.927992', 'loss_iou_aware': '0.004556', 'loss_wh': '4.266425', 'loss_obj': '22.303516', time: 0.804, eta: 4:13:20
+2020-12-25 19:52:33,569-INFO: iter: 31200, lr: 0.005000, 'loss': '50.469772', 'loss_cls': '9.067336', 'loss_xy': '3.462424', 'loss_iou': '13.605843', 'loss_iou_aware': '0.004122', 'loss_wh': '4.169963', 'loss_obj': '20.821056', time: 0.806, eta: 4:12:28
+2020-12-25 19:53:58,653-INFO: iter: 31300, lr: 0.005000, 'loss': '52.102585', 'loss_cls': '9.326912', 'loss_xy': '3.465463', 'loss_iou': '13.675821', 'loss_iou_aware': '0.004294', 'loss_wh': '4.100029', 'loss_obj': '21.507015', time: 0.851, eta: 4:25:21
+2020-12-25 19:55:19,363-INFO: iter: 31400, lr: 0.005000, 'loss': '51.858154', 'loss_cls': '8.848354', 'loss_xy': '3.420925', 'loss_iou': '13.128144', 'loss_iou_aware': '0.004285', 'loss_wh': '3.908656', 'loss_obj': '21.464088', time: 0.808, eta: 4:10:23
+2020-12-25 19:56:39,778-INFO: iter: 31500, lr: 0.005000, 'loss': '52.470329', 'loss_cls': '9.480791', 'loss_xy': '3.414328', 'loss_iou': '13.865891', 'loss_iou_aware': '0.004270', 'loss_wh': '4.441016', 'loss_obj': '21.065697', time: 0.803, eta: 4:07:33
+2020-12-25 19:58:00,529-INFO: iter: 31600, lr: 0.005000, 'loss': '53.640518', 'loss_cls': '9.145733', 'loss_xy': '3.739937', 'loss_iou': '14.007006', 'loss_iou_aware': '0.004181', 'loss_wh': '4.389943', 'loss_obj': '22.171637', time: 0.808, eta: 4:07:51
+2020-12-25 19:59:20,140-INFO: iter: 31700, lr: 0.005000, 'loss': '51.690376', 'loss_cls': '8.890909', 'loss_xy': '3.429480', 'loss_iou': '13.512102', 'loss_iou_aware': '0.004060', 'loss_wh': '4.163467', 'loss_obj': '20.843025', time: 0.796, eta: 4:02:46
+2020-12-25 20:00:40,497-INFO: iter: 31800, lr: 0.005000, 'loss': '54.665821', 'loss_cls': '9.752977', 'loss_xy': '3.584232', 'loss_iou': '14.057556', 'loss_iou_aware': '0.004585', 'loss_wh': '4.498120', 'loss_obj': '22.694489', time: 0.803, eta: 4:03:29
+2020-12-25 20:02:00,742-INFO: iter: 31900, lr: 0.005000, 'loss': '53.017315', 'loss_cls': '9.304862', 'loss_xy': '3.563310', 'loss_iou': '14.277128', 'loss_iou_aware': '0.004324', 'loss_wh': '4.489307', 'loss_obj': '21.852562', time: 0.804, eta: 4:02:26
+2020-12-25 20:03:21,978-INFO: iter: 32000, lr: 0.005000, 'loss': '50.822372', 'loss_cls': '9.285424', 'loss_xy': '3.466777', 'loss_iou': '13.318388', 'loss_iou_aware': '0.004133', 'loss_wh': '4.098573', 'loss_obj': '21.011086', time: 0.812, eta: 4:03:43
+2020-12-25 20:03:22,404-INFO: Save model to output/ppyolo_pan/32000.
+2020-12-25 20:03:25,864-INFO: Test iter 0
+2020-12-25 20:03:39,917-INFO: Test iter 100
+2020-12-25 20:03:53,746-INFO: Test iter 200
+2020-12-25 20:04:07,613-INFO: Test iter 300
+2020-12-25 20:04:21,531-INFO: Test iter 400
+2020-12-25 20:04:35,308-INFO: Test iter 500
+2020-12-25 20:04:49,255-INFO: Test iter 600
+2020-12-25 20:04:52,499-INFO: Test finish iter 625
+2020-12-25 20:04:52,499-INFO: Total number of images: 5000, inference time: 57.5593069507 fps.
+loading annotations into memory...
+Done (t=0.64s)
+creating index...
+index created!
+2020-12-25 20:05:04,857-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.80s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=66.80s).
+Accumulating evaluation results...
+DONE (t=7.85s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.305
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.509
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.322
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.163
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.328
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.391
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.260
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.448
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.494
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.279
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.526
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.634
+2020-12-25 20:06:30,250-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 20:06:33,402-INFO: Best test box ap: 0.305032715991, in iter: 32000
+2020-12-25 20:07:52,992-INFO: iter: 32100, lr: 0.005000, 'loss': '52.054222', 'loss_cls': '8.584383', 'loss_xy': '3.461654', 'loss_iou': '13.843994', 'loss_iou_aware': '0.004524', 'loss_wh': '4.339074', 'loss_obj': '20.698555', time: 2.710, eta: 13:28:23
+2020-12-25 20:09:14,114-INFO: iter: 32200, lr: 0.005000, 'loss': '54.033897', 'loss_cls': '9.826058', 'loss_xy': '3.589242', 'loss_iou': '14.043842', 'loss_iou_aware': '0.004363', 'loss_wh': '4.412262', 'loss_obj': '21.638020', time: 0.812, eta: 4:00:46
+2020-12-25 20:10:34,577-INFO: iter: 32300, lr: 0.005000, 'loss': '54.480637', 'loss_cls': '9.463345', 'loss_xy': '3.700887', 'loss_iou': '14.455896', 'loss_iou_aware': '0.004430', 'loss_wh': '4.700990', 'loss_obj': '22.330769', time: 0.804, eta: 3:57:12
+2020-12-25 20:11:55,438-INFO: iter: 32400, lr: 0.005000, 'loss': '53.488285', 'loss_cls': '9.156137', 'loss_xy': '3.442233', 'loss_iou': '13.849936', 'loss_iou_aware': '0.004333', 'loss_wh': '4.194134', 'loss_obj': '21.228985', time: 0.809, eta: 3:57:19
+2020-12-25 20:13:16,476-INFO: iter: 32500, lr: 0.005000, 'loss': '53.991905', 'loss_cls': '9.575735', 'loss_xy': '3.476187', 'loss_iou': '13.848019', 'loss_iou_aware': '0.004451', 'loss_wh': '4.301996', 'loss_obj': '21.291794', time: 0.809, eta: 3:56:03
+2020-12-25 20:14:36,270-INFO: iter: 32600, lr: 0.005000, 'loss': '52.562065', 'loss_cls': '9.136211', 'loss_xy': '3.562571', 'loss_iou': '13.623622', 'loss_iou_aware': '0.004334', 'loss_wh': '4.277429', 'loss_obj': '22.019754', time: 0.799, eta: 3:51:37
+2020-12-25 20:15:56,228-INFO: iter: 32700, lr: 0.005000, 'loss': '51.510155', 'loss_cls': '9.084350', 'loss_xy': '3.474039', 'loss_iou': '13.461984', 'loss_iou_aware': '0.004387', 'loss_wh': '4.197803', 'loss_obj': '21.367779', time: 0.800, eta: 3:50:36
+2020-12-25 20:17:16,537-INFO: iter: 32800, lr: 0.005000, 'loss': '53.162838', 'loss_cls': '9.703506', 'loss_xy': '3.533103', 'loss_iou': '13.942698', 'loss_iou_aware': '0.004309', 'loss_wh': '4.313287', 'loss_obj': '21.563574', time: 0.804, eta: 3:50:31
+2020-12-25 20:18:36,678-INFO: iter: 32900, lr: 0.005000, 'loss': '55.782814', 'loss_cls': '10.090610', 'loss_xy': '3.707449', 'loss_iou': '14.832155', 'loss_iou_aware': '0.004330', 'loss_wh': '4.529576', 'loss_obj': '22.552826', time: 0.800, eta: 3:48:04
+2020-12-25 20:19:56,693-INFO: iter: 33000, lr: 0.005000, 'loss': '53.936729', 'loss_cls': '9.418075', 'loss_xy': '3.670582', 'loss_iou': '14.380510', 'loss_iou_aware': '0.004531', 'loss_wh': '4.552672', 'loss_obj': '21.662355', time: 0.801, eta: 3:46:59
+2020-12-25 20:21:17,264-INFO: iter: 33100, lr: 0.005000, 'loss': '53.791084', 'loss_cls': '9.359741', 'loss_xy': '3.498625', 'loss_iou': '14.241241', 'loss_iou_aware': '0.004307', 'loss_wh': '4.428695', 'loss_obj': '21.379719', time: 0.805, eta: 3:46:46
+2020-12-25 20:22:37,492-INFO: iter: 33200, lr: 0.005000, 'loss': '52.876823', 'loss_cls': '9.587271', 'loss_xy': '3.565718', 'loss_iou': '13.947822', 'loss_iou_aware': '0.004452', 'loss_wh': '4.581425', 'loss_obj': '21.687628', time: 0.802, eta: 3:44:37
+2020-12-25 20:23:58,195-INFO: iter: 33300, lr: 0.005000, 'loss': '53.543983', 'loss_cls': '9.509139', 'loss_xy': '3.631792', 'loss_iou': '14.005224', 'loss_iou_aware': '0.004467', 'loss_wh': '4.447989', 'loss_obj': '22.536583', time: 0.808, eta: 3:44:56
+2020-12-25 20:25:23,795-INFO: iter: 33400, lr: 0.005000, 'loss': '51.366100', 'loss_cls': '8.979780', 'loss_xy': '3.355571', 'loss_iou': '13.192245', 'loss_iou_aware': '0.004200', 'loss_wh': '4.503948', 'loss_obj': '20.676502', time: 0.855, eta: 3:56:32
+2020-12-25 20:26:44,627-INFO: iter: 33500, lr: 0.005000, 'loss': '53.910172', 'loss_cls': '9.680693', 'loss_xy': '3.710945', 'loss_iou': '14.400179', 'loss_iou_aware': '0.004284', 'loss_wh': '4.530679', 'loss_obj': '21.863880', time: 0.807, eta: 3:42:02
+2020-12-25 20:28:04,758-INFO: iter: 33600, lr: 0.005000, 'loss': '53.226921', 'loss_cls': '9.496059', 'loss_xy': '3.582471', 'loss_iou': '14.019514', 'loss_iou_aware': '0.004710', 'loss_wh': '4.292880', 'loss_obj': '21.922625', time: 0.802, eta: 3:39:07
+2020-12-25 20:29:24,757-INFO: iter: 33700, lr: 0.005000, 'loss': '51.595291', 'loss_cls': '9.297291', 'loss_xy': '3.503488', 'loss_iou': '13.591594', 'loss_iou_aware': '0.004269', 'loss_wh': '4.119198', 'loss_obj': '20.547033', time: 0.800, eta: 3:37:23
+2020-12-25 20:30:43,222-INFO: iter: 33800, lr: 0.005000, 'loss': '51.330040', 'loss_cls': '8.829544', 'loss_xy': '3.412501', 'loss_iou': '13.022185', 'loss_iou_aware': '0.004365', 'loss_wh': '4.019566', 'loss_obj': '20.801634', time: 0.784, eta: 3:31:45
+2020-12-25 20:32:02,166-INFO: iter: 33900, lr: 0.005000, 'loss': '54.292084', 'loss_cls': '8.863028', 'loss_xy': '3.548794', 'loss_iou': '14.040708', 'loss_iou_aware': '0.004413', 'loss_wh': '4.517559', 'loss_obj': '21.449554', time: 0.790, eta: 3:31:57
+2020-12-25 20:33:22,336-INFO: iter: 34000, lr: 0.005000, 'loss': '55.537926', 'loss_cls': '9.709459', 'loss_xy': '3.753491', 'loss_iou': '14.547356', 'loss_iou_aware': '0.004431', 'loss_wh': '4.581445', 'loss_obj': '22.684792', time: 0.802, eta: 3:33:46
+2020-12-25 20:33:22,768-INFO: Save model to output/ppyolo_pan/34000.
+2020-12-25 20:33:26,295-INFO: Test iter 0
+2020-12-25 20:33:40,341-INFO: Test iter 100
+2020-12-25 20:33:54,105-INFO: Test iter 200
+2020-12-25 20:34:07,952-INFO: Test iter 300
+2020-12-25 20:34:21,835-INFO: Test iter 400
+2020-12-25 20:34:35,560-INFO: Test iter 500
+2020-12-25 20:34:49,427-INFO: Test iter 600
+2020-12-25 20:34:52,724-INFO: Test finish iter 625
+2020-12-25 20:34:52,724-INFO: Total number of images: 5000, inference time: 57.6868613648 fps.
+loading annotations into memory...
+Done (t=0.80s)
+creating index...
+index created!
+2020-12-25 20:35:08,417-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.09s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=66.11s).
+Accumulating evaluation results...
+DONE (t=7.68s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.309
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.513
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.329
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.167
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.331
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.397
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.262
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.451
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.498
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.281
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.530
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.633
+2020-12-25 20:36:32,048-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 20:36:35,200-INFO: Best test box ap: 0.309123300439, in iter: 34000
+2020-12-25 20:37:55,007-INFO: iter: 34100, lr: 0.005000, 'loss': '48.631783', 'loss_cls': '8.558277', 'loss_xy': '3.298952', 'loss_iou': '12.562190', 'loss_iou_aware': '0.004006', 'loss_wh': '3.950194', 'loss_obj': '20.455601', time: 2.727, eta: 12:02:33
+2020-12-25 20:39:15,366-INFO: iter: 34200, lr: 0.005000, 'loss': '52.987099', 'loss_cls': '8.854109', 'loss_xy': '3.618281', 'loss_iou': '13.855852', 'loss_iou_aware': '0.004265', 'loss_wh': '4.425338', 'loss_obj': '21.491703', time: 0.804, eta: 3:31:38
+2020-12-25 20:40:35,472-INFO: iter: 34300, lr: 0.005000, 'loss': '50.330009', 'loss_cls': '8.858855', 'loss_xy': '3.346754', 'loss_iou': '12.778983', 'loss_iou_aware': '0.004191', 'loss_wh': '3.996273', 'loss_obj': '20.428581', time: 0.800, eta: 3:29:22
+2020-12-25 20:41:54,846-INFO: iter: 34400, lr: 0.005000, 'loss': '52.471157', 'loss_cls': '9.245615', 'loss_xy': '3.595522', 'loss_iou': '14.033533', 'loss_iou_aware': '0.004475', 'loss_wh': '4.485504', 'loss_obj': '22.540180', time: 0.793, eta: 3:26:16
+2020-12-25 20:43:14,199-INFO: iter: 34500, lr: 0.005000, 'loss': '53.176193', 'loss_cls': '9.095177', 'loss_xy': '3.548368', 'loss_iou': '14.020188', 'loss_iou_aware': '0.004038', 'loss_wh': '4.609679', 'loss_obj': '21.692263', time: 0.796, eta: 3:25:39
+2020-12-25 20:44:36,436-INFO: iter: 34600, lr: 0.005000, 'loss': '53.814728', 'loss_cls': '9.536161', 'loss_xy': '3.642458', 'loss_iou': '14.128823', 'loss_iou_aware': '0.004488', 'loss_wh': '4.483818', 'loss_obj': '22.232637', time: 0.820, eta: 3:30:29
+2020-12-25 20:45:56,855-INFO: iter: 34700, lr: 0.005000, 'loss': '54.809532', 'loss_cls': '9.863998', 'loss_xy': '3.641356', 'loss_iou': '14.624184', 'loss_iou_aware': '0.004505', 'loss_wh': '4.638225', 'loss_obj': '22.393217', time: 0.804, eta: 3:25:04
+2020-12-25 20:47:18,144-INFO: iter: 34800, lr: 0.005000, 'loss': '52.476662', 'loss_cls': '9.085978', 'loss_xy': '3.577287', 'loss_iou': '13.306807', 'loss_iou_aware': '0.004347', 'loss_wh': '4.150323', 'loss_obj': '21.424435', time: 0.814, eta: 3:26:07
+2020-12-25 20:48:38,806-INFO: iter: 34900, lr: 0.005000, 'loss': '51.957645', 'loss_cls': '9.524984', 'loss_xy': '3.466526', 'loss_iou': '13.388872', 'loss_iou_aware': '0.004248', 'loss_wh': '4.213888', 'loss_obj': '21.944248', time: 0.806, eta: 3:22:43
+2020-12-25 20:49:59,877-INFO: iter: 35000, lr: 0.005000, 'loss': '53.095272', 'loss_cls': '9.052137', 'loss_xy': '3.656844', 'loss_iou': '14.296906', 'loss_iou_aware': '0.004413', 'loss_wh': '4.231650', 'loss_obj': '22.378651', time: 0.810, eta: 3:22:34
+2020-12-25 20:51:19,854-INFO: iter: 35100, lr: 0.005000, 'loss': '54.119987', 'loss_cls': '9.746408', 'loss_xy': '3.668887', 'loss_iou': '14.562203', 'loss_iou_aware': '0.004265', 'loss_wh': '4.636819', 'loss_obj': '22.071037', time: 0.801, eta: 3:19:02
+2020-12-25 20:52:39,655-INFO: iter: 35200, lr: 0.005000, 'loss': '51.789551', 'loss_cls': '9.065590', 'loss_xy': '3.494199', 'loss_iou': '13.985356', 'loss_iou_aware': '0.004123', 'loss_wh': '4.662399', 'loss_obj': '21.110714', time: 0.797, eta: 3:16:39
+2020-12-25 20:54:01,419-INFO: iter: 35300, lr: 0.005000, 'loss': '52.649155', 'loss_cls': '9.093969', 'loss_xy': '3.451408', 'loss_iou': '13.335661', 'loss_iou_aware': '0.004273', 'loss_wh': '4.140331', 'loss_obj': '20.703474', time: 0.818, eta: 3:20:25
+2020-12-25 20:55:25,643-INFO: iter: 35400, lr: 0.005000, 'loss': '54.768711', 'loss_cls': '9.482051', 'loss_xy': '3.645293', 'loss_iou': '14.089422', 'loss_iou_aware': '0.004259', 'loss_wh': '4.459320', 'loss_obj': '22.319149', time: 0.842, eta: 3:24:58
+2020-12-25 20:56:45,598-INFO: iter: 35500, lr: 0.005000, 'loss': '55.312901', 'loss_cls': '9.373343', 'loss_xy': '3.675160', 'loss_iou': '14.692594', 'loss_iou_aware': '0.004427', 'loss_wh': '4.637769', 'loss_obj': '22.118160', time: 0.798, eta: 3:12:54
+2020-12-25 20:58:05,641-INFO: iter: 35600, lr: 0.005000, 'loss': '50.942101', 'loss_cls': '9.068470', 'loss_xy': '3.400114', 'loss_iou': '13.586287', 'loss_iou_aware': '0.004427', 'loss_wh': '4.142586', 'loss_obj': '21.034233', time: 0.800, eta: 3:12:05
+2020-12-25 20:59:25,186-INFO: iter: 35700, lr: 0.005000, 'loss': '51.425205', 'loss_cls': '8.703192', 'loss_xy': '3.475578', 'loss_iou': '13.792500', 'loss_iou_aware': '0.004253', 'loss_wh': '4.246016', 'loss_obj': '21.544273', time: 0.796, eta: 3:09:43
+2020-12-25 21:00:44,702-INFO: iter: 35800, lr: 0.005000, 'loss': '51.669758', 'loss_cls': '9.288195', 'loss_xy': '3.412748', 'loss_iou': '13.249617', 'loss_iou_aware': '0.004239', 'loss_wh': '4.075408', 'loss_obj': '20.746506', time: 0.796, eta: 3:08:24
+2020-12-25 21:02:04,447-INFO: iter: 35900, lr: 0.005000, 'loss': '55.371498', 'loss_cls': '8.870237', 'loss_xy': '3.610945', 'loss_iou': '14.638023', 'loss_iou_aware': '0.004137', 'loss_wh': '4.593200', 'loss_obj': '21.552031', time: 0.797, eta: 3:07:18
+2020-12-25 21:03:24,639-INFO: iter: 36000, lr: 0.005000, 'loss': '52.476868', 'loss_cls': '9.066431', 'loss_xy': '3.530982', 'loss_iou': '14.183982', 'loss_iou_aware': '0.003981', 'loss_wh': '4.377082', 'loss_obj': '20.996479', time: 0.802, eta: 3:07:13
+2020-12-25 21:03:25,064-INFO: Save model to output/ppyolo_pan/36000.
+2020-12-25 21:03:28,551-INFO: Test iter 0
+2020-12-25 21:03:42,483-INFO: Test iter 100
+2020-12-25 21:03:56,271-INFO: Test iter 200
+2020-12-25 21:04:10,096-INFO: Test iter 300
+2020-12-25 21:04:23,950-INFO: Test iter 400
+2020-12-25 21:04:37,685-INFO: Test iter 500
+2020-12-25 21:04:51,547-INFO: Test iter 600
+2020-12-25 21:04:54,843-INFO: Test finish iter 625
+2020-12-25 21:04:54,843-INFO: Total number of images: 5000, inference time: 57.7775471864 fps.
+loading annotations into memory...
+Done (t=0.68s)
+creating index...
+index created!
+2020-12-25 21:05:10,536-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.04s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=66.34s).
+Accumulating evaluation results...
+DONE (t=7.64s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.313
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.518
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.332
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.171
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.336
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.401
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.264
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.455
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.500
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.285
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.533
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.636
+2020-12-25 21:06:34,283-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 21:06:37,494-INFO: Best test box ap: 0.312881974315, in iter: 36000
+2020-12-25 21:07:56,053-INFO: iter: 36100, lr: 0.005000, 'loss': '50.869030', 'loss_cls': '8.844839', 'loss_xy': '3.355865', 'loss_iou': '13.298307', 'loss_iou_aware': '0.004195', 'loss_wh': '4.125752', 'loss_obj': '21.435390', time: 2.715, eta: 10:28:55
+2020-12-25 21:09:16,551-INFO: iter: 36200, lr: 0.005000, 'loss': '53.279709', 'loss_cls': '9.066607', 'loss_xy': '3.776597', 'loss_iou': '13.841107', 'loss_iou_aware': '0.004272', 'loss_wh': '4.292955', 'loss_obj': '21.547441', time: 0.804, eta: 3:04:58
+2020-12-25 21:10:37,037-INFO: iter: 36300, lr: 0.005000, 'loss': '54.865646', 'loss_cls': '9.640018', 'loss_xy': '3.751350', 'loss_iou': '14.533661', 'loss_iou_aware': '0.004533', 'loss_wh': '4.371097', 'loss_obj': '22.842560', time: 0.805, eta: 3:03:49
+2020-12-25 21:11:57,297-INFO: iter: 36400, lr: 0.005000, 'loss': '53.050224', 'loss_cls': '9.163237', 'loss_xy': '3.667947', 'loss_iou': '13.430807', 'loss_iou_aware': '0.004268', 'loss_wh': '4.140431', 'loss_obj': '21.846697', time: 0.803, eta: 3:01:54
+2020-12-25 21:13:17,617-INFO: iter: 36500, lr: 0.005000, 'loss': '50.578529', 'loss_cls': '8.642753', 'loss_xy': '3.370151', 'loss_iou': '13.071405', 'loss_iou_aware': '0.004351', 'loss_wh': '3.971553', 'loss_obj': '20.967817', time: 0.802, eta: 3:00:29
+2020-12-25 21:14:38,384-INFO: iter: 36600, lr: 0.005000, 'loss': '53.276489', 'loss_cls': '8.927752', 'loss_xy': '3.676810', 'loss_iou': '13.766685', 'loss_iou_aware': '0.004400', 'loss_wh': '4.266453', 'loss_obj': '22.026106', time: 0.809, eta: 3:00:43
+2020-12-25 21:15:58,347-INFO: iter: 36700, lr: 0.005000, 'loss': '51.129723', 'loss_cls': '9.310251', 'loss_xy': '3.534488', 'loss_iou': '13.329266', 'loss_iou_aware': '0.004282', 'loss_wh': '4.144737', 'loss_obj': '20.683002', time: 0.799, eta: 2:57:12
+2020-12-25 21:17:18,550-INFO: iter: 36800, lr: 0.005000, 'loss': '55.937309', 'loss_cls': '9.421535', 'loss_xy': '3.754227', 'loss_iou': '14.705883', 'loss_iou_aware': '0.004400', 'loss_wh': '4.586535', 'loss_obj': '22.535973', time: 0.801, eta: 2:56:16
+2020-12-25 21:18:38,470-INFO: iter: 36900, lr: 0.005000, 'loss': '55.104923', 'loss_cls': '9.863932', 'loss_xy': '3.601538', 'loss_iou': '14.537189', 'loss_iou_aware': '0.004446', 'loss_wh': '4.682576', 'loss_obj': '22.317825', time: 0.798, eta: 2:54:10
+2020-12-25 21:19:58,500-INFO: iter: 37000, lr: 0.005000, 'loss': '54.897797', 'loss_cls': '9.344618', 'loss_xy': '3.610537', 'loss_iou': '14.813549', 'loss_iou_aware': '0.004401', 'loss_wh': '4.589507', 'loss_obj': '21.431778', time: 0.802, eta: 2:53:51
+2020-12-25 21:21:19,257-INFO: iter: 37100, lr: 0.005000, 'loss': '54.483982', 'loss_cls': '9.146217', 'loss_xy': '3.622956', 'loss_iou': '14.241296', 'loss_iou_aware': '0.004462', 'loss_wh': '4.336872', 'loss_obj': '22.266979', time: 0.806, eta: 2:53:20
+2020-12-25 21:22:40,049-INFO: iter: 37200, lr: 0.005000, 'loss': '48.359463', 'loss_cls': '8.315994', 'loss_xy': '3.349267', 'loss_iou': '13.287731', 'loss_iou_aware': '0.004097', 'loss_wh': '3.984758', 'loss_obj': '20.277967', time: 0.808, eta: 2:52:28
+2020-12-25 21:24:01,888-INFO: iter: 37300, lr: 0.005000, 'loss': '55.731705', 'loss_cls': '9.179163', 'loss_xy': '3.720767', 'loss_iou': '14.504980', 'loss_iou_aware': '0.004508', 'loss_wh': '4.368930', 'loss_obj': '22.256685', time: 0.818, eta: 2:53:14
+2020-12-25 21:25:21,839-INFO: iter: 37400, lr: 0.005000, 'loss': '52.939369', 'loss_cls': '9.022594', 'loss_xy': '3.518630', 'loss_iou': '14.105938', 'loss_iou_aware': '0.004654', 'loss_wh': '4.418654', 'loss_obj': '22.171749', time: 0.800, eta: 2:47:58
+2020-12-25 21:26:47,041-INFO: iter: 37500, lr: 0.005000, 'loss': '54.614403', 'loss_cls': '9.672825', 'loss_xy': '3.596000', 'loss_iou': '14.082856', 'loss_iou_aware': '0.004477', 'loss_wh': '4.444247', 'loss_obj': '23.094883', time: 0.852, eta: 2:57:27
+2020-12-25 21:28:07,708-INFO: iter: 37600, lr: 0.005000, 'loss': '51.095196', 'loss_cls': '8.644264', 'loss_xy': '3.448910', 'loss_iou': '13.360390', 'loss_iou_aware': '0.004317', 'loss_wh': '4.025856', 'loss_obj': '20.747368', time: 0.807, eta: 2:46:43
+2020-12-25 21:29:28,413-INFO: iter: 37700, lr: 0.005000, 'loss': '53.083389', 'loss_cls': '8.907619', 'loss_xy': '3.596179', 'loss_iou': '14.014126', 'loss_iou_aware': '0.004388', 'loss_wh': '4.413619', 'loss_obj': '21.920589', time: 0.808, eta: 2:45:33
+2020-12-25 21:30:47,825-INFO: iter: 37800, lr: 0.005000, 'loss': '49.788757', 'loss_cls': '8.604541', 'loss_xy': '3.335555', 'loss_iou': '12.854933', 'loss_iou_aware': '0.003965', 'loss_wh': '3.882076', 'loss_obj': '20.542364', time: 0.794, eta: 2:41:20
+2020-12-25 21:32:08,452-INFO: iter: 37900, lr: 0.005000, 'loss': '49.803093', 'loss_cls': '8.440228', 'loss_xy': '3.354152', 'loss_iou': '13.168149', 'loss_iou_aware': '0.004295', 'loss_wh': '4.114895', 'loss_obj': '20.728928', time: 0.806, eta: 2:42:35
+2020-12-25 21:33:27,484-INFO: iter: 38000, lr: 0.005000, 'loss': '54.428669', 'loss_cls': '9.792049', 'loss_xy': '3.595759', 'loss_iou': '14.499649', 'loss_iou_aware': '0.004543', 'loss_wh': '4.361627', 'loss_obj': '22.273689', time: 0.791, eta: 2:38:08
+2020-12-25 21:33:27,930-INFO: Save model to output/ppyolo_pan/38000.
+2020-12-25 21:33:31,361-INFO: Test iter 0
+2020-12-25 21:33:45,362-INFO: Test iter 100
+2020-12-25 21:33:59,120-INFO: Test iter 200
+2020-12-25 21:34:12,923-INFO: Test iter 300
+2020-12-25 21:34:26,810-INFO: Test iter 400
+2020-12-25 21:34:40,568-INFO: Test iter 500
+2020-12-25 21:34:54,456-INFO: Test iter 600
+2020-12-25 21:34:57,757-INFO: Test finish iter 625
+2020-12-25 21:34:57,758-INFO: Total number of images: 5000, inference time: 57.7234342395 fps.
+loading annotations into memory...
+Done (t=0.82s)
+creating index...
+index created!
+2020-12-25 21:35:12,854-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=6.99s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=66.03s).
+Accumulating evaluation results...
+DONE (t=7.55s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.317
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.523
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.337
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.175
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.342
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.404
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.267
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.459
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.505
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.293
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.536
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.640
+2020-12-25 21:36:36,267-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 21:36:39,419-INFO: Best test box ap: 0.316848954901, in iter: 38000
+2020-12-25 21:37:58,393-INFO: iter: 38100, lr: 0.005000, 'loss': '50.110870', 'loss_cls': '8.545050', 'loss_xy': '3.459640', 'loss_iou': '13.491188', 'loss_iou_aware': '0.004486', 'loss_wh': '4.251942', 'loss_obj': '21.046715', time: 2.709, eta: 8:57:17
+2020-12-25 21:39:18,453-INFO: iter: 38200, lr: 0.005000, 'loss': '52.164169', 'loss_cls': '8.744101', 'loss_xy': '3.589294', 'loss_iou': '13.737116', 'loss_iou_aware': '0.004202', 'loss_wh': '4.309538', 'loss_obj': '21.806248', time: 0.800, eta: 2:37:17
+2020-12-25 21:40:39,102-INFO: iter: 38300, lr: 0.005000, 'loss': '49.299667', 'loss_cls': '8.382090', 'loss_xy': '3.475169', 'loss_iou': '13.234400', 'loss_iou_aware': '0.004200', 'loss_wh': '4.152396', 'loss_obj': '20.941420', time: 0.807, eta: 2:37:27
+2020-12-25 21:41:59,206-INFO: iter: 38400, lr: 0.005000, 'loss': '50.456188', 'loss_cls': '8.752621', 'loss_xy': '3.411105', 'loss_iou': '13.181338', 'loss_iou_aware': '0.004420', 'loss_wh': '4.211657', 'loss_obj': '21.137400', time: 0.800, eta: 2:34:39
+2020-12-25 21:43:19,885-INFO: iter: 38500, lr: 0.005000, 'loss': '54.069267', 'loss_cls': '9.481539', 'loss_xy': '3.645808', 'loss_iou': '14.278309', 'loss_iou_aware': '0.004412', 'loss_wh': '4.511583', 'loss_obj': '21.760426', time: 0.807, eta: 2:34:41
+2020-12-25 21:44:41,041-INFO: iter: 38600, lr: 0.005000, 'loss': '49.874763', 'loss_cls': '8.591378', 'loss_xy': '3.571155', 'loss_iou': '13.385487', 'loss_iou_aware': '0.004018', 'loss_wh': '4.014601', 'loss_obj': '20.975712', time: 0.811, eta: 2:34:11
+2020-12-25 21:46:02,203-INFO: iter: 38700, lr: 0.005000, 'loss': '52.820560', 'loss_cls': '8.625222', 'loss_xy': '3.532083', 'loss_iou': '13.506120', 'loss_iou_aware': '0.004237', 'loss_wh': '4.496536', 'loss_obj': '21.635880', time: 0.812, eta: 2:32:54
+2020-12-25 21:47:24,051-INFO: iter: 38800, lr: 0.005000, 'loss': '56.201775', 'loss_cls': '9.854567', 'loss_xy': '3.690479', 'loss_iou': '14.557783', 'loss_iou_aware': '0.004419', 'loss_wh': '4.467048', 'loss_obj': '22.220741', time: 0.818, eta: 2:32:44
+2020-12-25 21:48:43,282-INFO: iter: 38900, lr: 0.005000, 'loss': '49.631905', 'loss_cls': '8.449987', 'loss_xy': '3.327264', 'loss_iou': '12.861949', 'loss_iou_aware': '0.004405', 'loss_wh': '3.982504', 'loss_obj': '20.019657', time: 0.793, eta: 2:26:39
+2020-12-25 21:50:03,559-INFO: iter: 39000, lr: 0.005000, 'loss': '53.722927', 'loss_cls': '9.145238', 'loss_xy': '3.631588', 'loss_iou': '14.459644', 'loss_iou_aware': '0.004194', 'loss_wh': '4.446301', 'loss_obj': '21.907833', time: 0.803, eta: 2:27:11
+2020-12-25 21:51:23,684-INFO: iter: 39100, lr: 0.005000, 'loss': '53.453686', 'loss_cls': '8.895432', 'loss_xy': '3.505402', 'loss_iou': '13.701820', 'loss_iou_aware': '0.004374', 'loss_wh': '4.146570', 'loss_obj': '22.079607', time: 0.801, eta: 2:25:36
+2020-12-25 21:52:43,738-INFO: iter: 39200, lr: 0.005000, 'loss': '52.072655', 'loss_cls': '9.069901', 'loss_xy': '3.531942', 'loss_iou': '13.322751', 'loss_iou_aware': '0.004167', 'loss_wh': '4.106708', 'loss_obj': '21.458420', time: 0.800, eta: 2:23:57
+2020-12-25 21:54:05,183-INFO: iter: 39300, lr: 0.005000, 'loss': '51.438812', 'loss_cls': '8.591627', 'loss_xy': '3.520306', 'loss_iou': '13.586628', 'loss_iou_aware': '0.004350', 'loss_wh': '4.148530', 'loss_obj': '22.015593', time: 0.814, eta: 2:25:09
+2020-12-25 21:55:26,768-INFO: iter: 39400, lr: 0.005000, 'loss': '53.512878', 'loss_cls': '9.007934', 'loss_xy': '3.532484', 'loss_iou': '13.738996', 'loss_iou_aware': '0.004542', 'loss_wh': '4.344628', 'loss_obj': '21.886251', time: 0.816, eta: 2:24:14
+2020-12-25 21:56:47,459-INFO: iter: 39500, lr: 0.005000, 'loss': '53.781960', 'loss_cls': '9.309549', 'loss_xy': '3.748404', 'loss_iou': '14.234362', 'loss_iou_aware': '0.004363', 'loss_wh': '4.668838', 'loss_obj': '22.415527', time: 0.807, eta: 2:21:12
+2020-12-25 21:58:13,029-INFO: iter: 39600, lr: 0.005000, 'loss': '54.667057', 'loss_cls': '8.973991', 'loss_xy': '3.600551', 'loss_iou': '14.016087', 'loss_iou_aware': '0.004544', 'loss_wh': '4.383593', 'loss_obj': '21.643139', time: 0.856, eta: 2:28:24
+2020-12-25 21:59:33,172-INFO: iter: 39700, lr: 0.005000, 'loss': '50.295906', 'loss_cls': '8.899946', 'loss_xy': '3.382410', 'loss_iou': '13.255799', 'loss_iou_aware': '0.004169', 'loss_wh': '4.116954', 'loss_obj': '20.606743', time: 0.801, eta: 2:17:34
+2020-12-25 22:00:53,763-INFO: iter: 39800, lr: 0.005000, 'loss': '46.147499', 'loss_cls': '8.241482', 'loss_xy': '3.176475', 'loss_iou': '11.932568', 'loss_iou_aware': '0.003960', 'loss_wh': '3.608782', 'loss_obj': '19.366796', time: 0.804, eta: 2:16:44
+2020-12-25 22:02:13,966-INFO: iter: 39900, lr: 0.005000, 'loss': '51.033321', 'loss_cls': '9.036060', 'loss_xy': '3.342504', 'loss_iou': '13.510106', 'loss_iou_aware': '0.004017', 'loss_wh': '4.210808', 'loss_obj': '20.775928', time: 0.803, eta: 2:15:10
+2020-12-25 22:03:33,336-INFO: iter: 40000, lr: 0.000500, 'loss': '52.972710', 'loss_cls': '9.208296', 'loss_xy': '3.496811', 'loss_iou': '13.593599', 'loss_iou_aware': '0.004456', 'loss_wh': '4.418849', 'loss_obj': '21.499115', time: 0.793, eta: 2:12:08
+2020-12-25 22:03:33,739-INFO: Save model to output/ppyolo_pan/40000.
+2020-12-25 22:03:37,231-INFO: Test iter 0
+2020-12-25 22:03:51,228-INFO: Test iter 100
+2020-12-25 22:04:04,954-INFO: Test iter 200
+2020-12-25 22:04:18,670-INFO: Test iter 300
+2020-12-25 22:04:32,513-INFO: Test iter 400
+2020-12-25 22:04:46,231-INFO: Test iter 500
+2020-12-25 22:05:00,073-INFO: Test iter 600
+2020-12-25 22:05:03,355-INFO: Test finish iter 625
+2020-12-25 22:05:03,355-INFO: Total number of images: 5000, inference time: 57.9035013579 fps.
+loading annotations into memory...
+Done (t=2.10s)
+creating index...
+index created!
+2020-12-25 22:05:20,195-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=5.67s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=70.06s).
+Accumulating evaluation results...
+DONE (t=7.58s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.320
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.526
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.341
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.180
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.345
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.407
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.269
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.462
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.509
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.299
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.540
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.644
+2020-12-25 22:06:46,191-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 22:06:49,345-INFO: Best test box ap: 0.320241172762, in iter: 40000
+2020-12-25 22:08:09,150-INFO: iter: 40100, lr: 0.000500, 'loss': '49.520042', 'loss_cls': '8.487421', 'loss_xy': '3.412527', 'loss_iou': '12.637584', 'loss_iou_aware': '0.003776', 'loss_wh': '3.814934', 'loss_obj': '20.087074', time: 2.759, eta: 7:35:11
+2020-12-25 22:09:29,198-INFO: iter: 40200, lr: 0.000500, 'loss': '48.397064', 'loss_cls': '8.327996', 'loss_xy': '3.385216', 'loss_iou': '12.211489', 'loss_iou_aware': '0.003452', 'loss_wh': '3.607763', 'loss_obj': '20.104874', time: 0.801, eta: 2:10:53
+2020-12-25 22:10:50,278-INFO: iter: 40300, lr: 0.000500, 'loss': '50.058289', 'loss_cls': '8.485400', 'loss_xy': '3.478065', 'loss_iou': '12.524396', 'loss_iou_aware': '0.003118', 'loss_wh': '3.536098', 'loss_obj': '20.740276', time: 0.811, eta: 2:11:03
+2020-12-25 22:12:10,325-INFO: iter: 40400, lr: 0.000500, 'loss': '48.083992', 'loss_cls': '8.011158', 'loss_xy': '3.355212', 'loss_iou': '12.580624', 'loss_iou_aware': '0.002997', 'loss_wh': '3.833962', 'loss_obj': '20.264336', time: 0.800, eta: 2:08:02
+2020-12-25 22:13:32,194-INFO: iter: 40500, lr: 0.000500, 'loss': '47.661724', 'loss_cls': '7.713011', 'loss_xy': '3.425267', 'loss_iou': '12.643015', 'loss_iou_aware': '0.003166', 'loss_wh': '3.774577', 'loss_obj': '20.329531', time: 0.819, eta: 2:09:40
+2020-12-25 22:14:53,466-INFO: iter: 40600, lr: 0.000500, 'loss': '48.453621', 'loss_cls': '8.127550', 'loss_xy': '3.481800', 'loss_iou': '12.627501', 'loss_iou_aware': '0.003223', 'loss_wh': '3.702403', 'loss_obj': '20.786472', time: 0.812, eta: 2:07:14
+2020-12-25 22:16:13,698-INFO: iter: 40700, lr: 0.000500, 'loss': '46.408012', 'loss_cls': '8.152155', 'loss_xy': '3.193296', 'loss_iou': '12.159279', 'loss_iou_aware': '0.003104', 'loss_wh': '3.672797', 'loss_obj': '19.520956', time: 0.802, eta: 2:04:19
+2020-12-25 22:17:34,719-INFO: iter: 40800, lr: 0.000500, 'loss': '48.959892', 'loss_cls': '7.933636', 'loss_xy': '3.437040', 'loss_iou': '12.844791', 'loss_iou_aware': '0.003136', 'loss_wh': '3.582604', 'loss_obj': '20.020664', time: 0.812, eta: 2:04:25
+2020-12-25 22:18:54,208-INFO: iter: 40900, lr: 0.000500, 'loss': '45.597061', 'loss_cls': '7.404353', 'loss_xy': '3.274955', 'loss_iou': '11.887568', 'loss_iou_aware': '0.002962', 'loss_wh': '3.505398', 'loss_obj': '19.288162', time: 0.794, eta: 2:00:29
+2020-12-25 22:20:15,081-INFO: iter: 41000, lr: 0.000500, 'loss': '47.207169', 'loss_cls': '7.535528', 'loss_xy': '3.336037', 'loss_iou': '12.499664', 'loss_iou_aware': '0.002836', 'loss_wh': '3.638136', 'loss_obj': '20.054703', time: 0.809, eta: 2:01:16
+2020-12-25 22:21:35,459-INFO: iter: 41100, lr: 0.000500, 'loss': '47.323513', 'loss_cls': '7.602163', 'loss_xy': '3.412786', 'loss_iou': '12.368601', 'loss_iou_aware': '0.002879', 'loss_wh': '3.574508', 'loss_obj': '20.359293', time: 0.804, eta: 1:59:14
+2020-12-25 22:22:56,070-INFO: iter: 41200, lr: 0.000500, 'loss': '48.488342', 'loss_cls': '8.243530', 'loss_xy': '3.375666', 'loss_iou': '12.663742', 'loss_iou_aware': '0.003059', 'loss_wh': '3.735666', 'loss_obj': '19.870060', time: 0.805, eta: 1:58:08
+2020-12-25 22:24:18,323-INFO: iter: 41300, lr: 0.000500, 'loss': '48.595409', 'loss_cls': '7.965469', 'loss_xy': '3.339037', 'loss_iou': '12.842461', 'loss_iou_aware': '0.002914', 'loss_wh': '3.704982', 'loss_obj': '19.883636', time: 0.823, eta: 1:59:16
+2020-12-25 22:25:37,908-INFO: iter: 41400, lr: 0.000500, 'loss': '46.712425', 'loss_cls': '7.895091', 'loss_xy': '3.404224', 'loss_iou': '12.706921', 'loss_iou_aware': '0.002927', 'loss_wh': '3.580494', 'loss_obj': '19.759005', time: 0.796, eta: 1:54:08
+2020-12-25 22:26:58,027-INFO: iter: 41500, lr: 0.000500, 'loss': '45.602272', 'loss_cls': '7.255679', 'loss_xy': '3.281466', 'loss_iou': '11.938140', 'loss_iou_aware': '0.002725', 'loss_wh': '3.441898', 'loss_obj': '19.429050', time: 0.801, eta: 1:53:25
+2020-12-25 22:28:17,893-INFO: iter: 41600, lr: 0.000500, 'loss': '49.888077', 'loss_cls': '7.995707', 'loss_xy': '3.535422', 'loss_iou': '12.782082', 'loss_iou_aware': '0.002956', 'loss_wh': '3.630750', 'loss_obj': '20.633507', time: 0.800, eta: 1:51:59
+2020-12-25 22:29:42,348-INFO: iter: 41700, lr: 0.000500, 'loss': '46.311859', 'loss_cls': '7.446812', 'loss_xy': '3.379144', 'loss_iou': '12.448095', 'loss_iou_aware': '0.002868', 'loss_wh': '3.455101', 'loss_obj': '19.650803', time: 0.844, eta: 1:56:47
+2020-12-25 22:31:02,068-INFO: iter: 41800, lr: 0.000500, 'loss': '49.897289', 'loss_cls': '8.256359', 'loss_xy': '3.464550', 'loss_iou': '12.899807', 'loss_iou_aware': '0.002767', 'loss_wh': '3.833082', 'loss_obj': '19.584408', time: 0.796, eta: 1:48:47
+2020-12-25 22:32:22,088-INFO: iter: 41900, lr: 0.000500, 'loss': '47.099998', 'loss_cls': '7.539545', 'loss_xy': '3.350912', 'loss_iou': '12.200401', 'loss_iou_aware': '0.002807', 'loss_wh': '3.602654', 'loss_obj': '19.427349', time: 0.802, eta: 1:48:14
+2020-12-25 22:33:43,235-INFO: iter: 42000, lr: 0.000500, 'loss': '45.832275', 'loss_cls': '7.431828', 'loss_xy': '3.241511', 'loss_iou': '11.601009', 'loss_iou_aware': '0.002898', 'loss_wh': '3.581878', 'loss_obj': '18.930962', time: 0.810, eta: 1:48:03
+2020-12-25 22:33:43,701-INFO: Save model to output/ppyolo_pan/42000.
+2020-12-25 22:33:47,036-INFO: Test iter 0
+2020-12-25 22:34:00,994-INFO: Test iter 100
+2020-12-25 22:34:14,614-INFO: Test iter 200
+2020-12-25 22:34:28,308-INFO: Test iter 300
+2020-12-25 22:34:42,056-INFO: Test iter 400
+2020-12-25 22:34:55,739-INFO: Test iter 500
+2020-12-25 22:35:09,553-INFO: Test iter 600
+2020-12-25 22:35:12,825-INFO: Test finish iter 625
+2020-12-25 22:35:12,825-INFO: Total number of images: 5000, inference time: 58.1224685959 fps.
+loading annotations into memory...
+Done (t=0.75s)
+creating index...
+index created!
+2020-12-25 22:35:25,042-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.51s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=66.06s).
+Accumulating evaluation results...
+DONE (t=7.51s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.324
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.530
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.345
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.186
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.350
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.413
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.271
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.465
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.512
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.307
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.543
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.648
+2020-12-25 22:36:48,942-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 22:36:52,172-INFO: Best test box ap: 0.324102877817, in iter: 42000
+2020-12-25 22:38:11,627-INFO: iter: 42100, lr: 0.000500, 'loss': '44.535187', 'loss_cls': '7.531472', 'loss_xy': '3.137613', 'loss_iou': '11.517291', 'loss_iou_aware': '0.002737', 'loss_wh': '3.477307', 'loss_obj': '18.827734', time: 2.684, eta: 5:53:23
+2020-12-25 22:39:31,190-INFO: iter: 42200, lr: 0.000500, 'loss': '48.094421', 'loss_cls': '7.658707', 'loss_xy': '3.507370', 'loss_iou': '12.664539', 'loss_iou_aware': '0.002908', 'loss_wh': '3.738210', 'loss_obj': '19.743572', time: 0.796, eta: 1:43:29
+2020-12-25 22:40:51,084-INFO: iter: 42300, lr: 0.000500, 'loss': '44.143867', 'loss_cls': '7.605422', 'loss_xy': '3.127696', 'loss_iou': '11.700699', 'loss_iou_aware': '0.002793', 'loss_wh': '3.404419', 'loss_obj': '18.614904', time: 0.798, eta: 1:42:25
+2020-12-25 22:42:10,947-INFO: iter: 42400, lr: 0.000500, 'loss': '46.527069', 'loss_cls': '7.330258', 'loss_xy': '3.482078', 'loss_iou': '12.175026', 'loss_iou_aware': '0.002716', 'loss_wh': '3.522672', 'loss_obj': '19.790571', time: 0.799, eta: 1:41:14
+2020-12-25 22:43:31,042-INFO: iter: 42500, lr: 0.000500, 'loss': '48.319691', 'loss_cls': '7.697778', 'loss_xy': '3.532011', 'loss_iou': '12.907994', 'loss_iou_aware': '0.002961', 'loss_wh': '3.847030', 'loss_obj': '20.665556', time: 0.801, eta: 1:40:06
+2020-12-25 22:44:52,931-INFO: iter: 42600, lr: 0.000500, 'loss': '50.872910', 'loss_cls': '8.371662', 'loss_xy': '3.630464', 'loss_iou': '13.381793', 'loss_iou_aware': '0.003058', 'loss_wh': '4.000607', 'loss_obj': '21.183338', time: 0.818, eta: 1:40:54
+2020-12-25 22:46:12,878-INFO: iter: 42700, lr: 0.000500, 'loss': '46.267399', 'loss_cls': '7.502445', 'loss_xy': '3.422359', 'loss_iou': '12.035866', 'loss_iou_aware': '0.002749', 'loss_wh': '3.684342', 'loss_obj': '19.421333', time: 0.800, eta: 1:37:17
+2020-12-25 22:47:34,562-INFO: iter: 42800, lr: 0.000500, 'loss': '44.493217', 'loss_cls': '7.227355', 'loss_xy': '3.225031', 'loss_iou': '11.648104', 'loss_iou_aware': '0.002657', 'loss_wh': '3.472123', 'loss_obj': '18.861168', time: 0.817, eta: 1:38:03
+2020-12-25 22:48:54,187-INFO: iter: 42900, lr: 0.000500, 'loss': '47.386898', 'loss_cls': '7.574984', 'loss_xy': '3.316279', 'loss_iou': '12.295772', 'loss_iou_aware': '0.002881', 'loss_wh': '3.659457', 'loss_obj': '19.587883', time: 0.796, eta: 1:34:09
+2020-12-25 22:50:15,016-INFO: iter: 43000, lr: 0.000500, 'loss': '46.811157', 'loss_cls': '7.489330', 'loss_xy': '3.395673', 'loss_iou': '12.470186', 'loss_iou_aware': '0.002793', 'loss_wh': '3.659695', 'loss_obj': '18.626804', time: 0.809, eta: 1:34:23
+2020-12-25 22:51:35,261-INFO: iter: 43100, lr: 0.000500, 'loss': '43.992470', 'loss_cls': '7.339797', 'loss_xy': '3.267711', 'loss_iou': '11.623047', 'loss_iou_aware': '0.002760', 'loss_wh': '3.307099', 'loss_obj': '18.808952', time: 0.803, eta: 1:32:19
+2020-12-25 22:52:55,749-INFO: iter: 43200, lr: 0.000500, 'loss': '44.515411', 'loss_cls': '7.510758', 'loss_xy': '3.243149', 'loss_iou': '12.000451', 'loss_iou_aware': '0.002712', 'loss_wh': '3.546259', 'loss_obj': '18.847198', time: 0.804, eta: 1:31:04
+2020-12-25 22:54:17,759-INFO: iter: 43300, lr: 0.000500, 'loss': '44.078892', 'loss_cls': '7.643847', 'loss_xy': '3.195160', 'loss_iou': '11.460751', 'loss_iou_aware': '0.002765', 'loss_wh': '3.367790', 'loss_obj': '18.473587', time: 0.820, eta: 1:31:33
+2020-12-25 22:55:38,263-INFO: iter: 43400, lr: 0.000500, 'loss': '44.744244', 'loss_cls': '7.598766', 'loss_xy': '3.225191', 'loss_iou': '11.600338', 'loss_iou_aware': '0.002846', 'loss_wh': '3.620537', 'loss_obj': '19.643581', time: 0.806, eta: 1:28:41
+2020-12-25 22:56:59,153-INFO: iter: 43500, lr: 0.000500, 'loss': '52.028275', 'loss_cls': '8.202375', 'loss_xy': '3.612375', 'loss_iou': '13.897200', 'loss_iou_aware': '0.002654', 'loss_wh': '4.068701', 'loss_obj': '20.847237', time: 0.808, eta: 1:27:30
+2020-12-25 22:58:20,026-INFO: iter: 43600, lr: 0.000500, 'loss': '43.660706', 'loss_cls': '6.989643', 'loss_xy': '3.248060', 'loss_iou': '11.490997', 'loss_iou_aware': '0.002919', 'loss_wh': '3.216316', 'loss_obj': '18.478430', time: 0.809, eta: 1:26:18
+2020-12-25 22:59:40,082-INFO: iter: 43700, lr: 0.000500, 'loss': '45.333614', 'loss_cls': '7.037407', 'loss_xy': '3.254680', 'loss_iou': '12.214438', 'loss_iou_aware': '0.002644', 'loss_wh': '3.632826', 'loss_obj': '18.917137', time: 0.801, eta: 1:24:08
+2020-12-25 23:01:04,515-INFO: iter: 43800, lr: 0.000500, 'loss': '43.625763', 'loss_cls': '7.288954', 'loss_xy': '3.133399', 'loss_iou': '11.385216', 'loss_iou_aware': '0.002761', 'loss_wh': '3.216346', 'loss_obj': '18.207462', time: 0.843, eta: 1:27:07
+2020-12-25 23:02:24,260-INFO: iter: 43900, lr: 0.000500, 'loss': '45.098183', 'loss_cls': '7.843923', 'loss_xy': '3.345584', 'loss_iou': '12.062852', 'loss_iou_aware': '0.002834', 'loss_wh': '3.620483', 'loss_obj': '19.176435', time: 0.799, eta: 1:21:11
+2020-12-25 23:03:43,727-INFO: iter: 44000, lr: 0.000500, 'loss': '45.005062', 'loss_cls': '7.316895', 'loss_xy': '3.214135', 'loss_iou': '11.812263', 'loss_iou_aware': '0.002883', 'loss_wh': '3.429188', 'loss_obj': '18.842285', time: 0.794, eta: 1:19:25
+2020-12-25 23:03:44,124-INFO: Save model to output/ppyolo_pan/44000.
+2020-12-25 23:03:47,592-INFO: Test iter 0
+2020-12-25 23:04:01,554-INFO: Test iter 100
+2020-12-25 23:04:15,183-INFO: Test iter 200
+2020-12-25 23:04:28,956-INFO: Test iter 300
+2020-12-25 23:04:42,758-INFO: Test iter 400
+2020-12-25 23:04:56,434-INFO: Test iter 500
+2020-12-25 23:05:10,217-INFO: Test iter 600
+2020-12-25 23:05:13,504-INFO: Test finish iter 625
+2020-12-25 23:05:13,504-INFO: Total number of images: 5000, inference time: 58.0481946673 fps.
+loading annotations into memory...
+Done (t=1.97s)
+creating index...
+index created!
+2020-12-25 23:05:29,376-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=6.75s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=65.04s).
+Accumulating evaluation results...
+DONE (t=7.23s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.326
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.532
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.348
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.188
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.353
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.418
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.271
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.466
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.514
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.308
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.544
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.651
+2020-12-25 23:06:51,050-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 23:06:54,162-INFO: Best test box ap: 0.325896706787, in iter: 44000
+2020-12-25 23:08:13,374-INFO: iter: 44100, lr: 0.000500, 'loss': '46.405556', 'loss_cls': '7.516063', 'loss_xy': '3.435591', 'loss_iou': '12.191329', 'loss_iou_aware': '0.002719', 'loss_wh': '3.642098', 'loss_obj': '19.786991', time: 2.698, eta: 4:25:17
+2020-12-25 23:09:32,999-INFO: iter: 44200, lr: 0.000500, 'loss': '47.689625', 'loss_cls': '7.601246', 'loss_xy': '3.411130', 'loss_iou': '12.873756', 'loss_iou_aware': '0.002660', 'loss_wh': '3.697274', 'loss_obj': '19.884869', time: 0.795, eta: 1:16:50
+2020-12-25 23:10:53,578-INFO: iter: 44300, lr: 0.000500, 'loss': '46.820156', 'loss_cls': '7.378822', 'loss_xy': '3.314063', 'loss_iou': '12.202836', 'loss_iou_aware': '0.002643', 'loss_wh': '3.407360', 'loss_obj': '19.835060', time: 0.806, eta: 1:16:34
+2020-12-25 23:12:13,803-INFO: iter: 44400, lr: 0.000500, 'loss': '46.487576', 'loss_cls': '7.196348', 'loss_xy': '3.340126', 'loss_iou': '12.123667', 'loss_iou_aware': '0.002928', 'loss_wh': '3.399018', 'loss_obj': '20.010174', time: 0.802, eta: 1:14:49
+2020-12-25 23:13:32,861-INFO: iter: 44500, lr: 0.000500, 'loss': '47.128517', 'loss_cls': '7.785922', 'loss_xy': '3.447609', 'loss_iou': '12.240086', 'loss_iou_aware': '0.002630', 'loss_wh': '3.568684', 'loss_obj': '19.241249', time: 0.790, eta: 1:12:27
+2020-12-25 23:14:54,027-INFO: iter: 44600, lr: 0.000500, 'loss': '48.428238', 'loss_cls': '7.976310', 'loss_xy': '3.331677', 'loss_iou': '12.706063', 'loss_iou_aware': '0.002859', 'loss_wh': '3.725697', 'loss_obj': '19.552292', time: 0.814, eta: 1:13:14
+2020-12-25 23:16:14,153-INFO: iter: 44700, lr: 0.000500, 'loss': '46.094368', 'loss_cls': '7.299081', 'loss_xy': '3.395932', 'loss_iou': '12.196237', 'loss_iou_aware': '0.002822', 'loss_wh': '3.473571', 'loss_obj': '19.727884', time: 0.799, eta: 1:10:35
+2020-12-25 23:17:35,689-INFO: iter: 44800, lr: 0.000500, 'loss': '46.072189', 'loss_cls': '7.215514', 'loss_xy': '3.367303', 'loss_iou': '12.565632', 'loss_iou_aware': '0.002706', 'loss_wh': '3.652839', 'loss_obj': '19.170727', time: 0.815, eta: 1:10:39
+2020-12-25 23:18:56,724-INFO: iter: 44900, lr: 0.000500, 'loss': '48.331863', 'loss_cls': '7.784938', 'loss_xy': '3.436305', 'loss_iou': '12.861141', 'loss_iou_aware': '0.002725', 'loss_wh': '3.656265', 'loss_obj': '19.364227', time: 0.810, eta: 1:08:53
+2020-12-25 23:20:16,525-INFO: iter: 45000, lr: 0.000050, 'loss': '48.210815', 'loss_cls': '7.441875', 'loss_xy': '3.461526', 'loss_iou': '12.897146', 'loss_iou_aware': '0.002494', 'loss_wh': '3.799910', 'loss_obj': '18.605907', time: 0.799, eta: 1:06:35
+2020-12-25 23:21:36,144-INFO: iter: 45100, lr: 0.000050, 'loss': '49.188820', 'loss_cls': '7.950151', 'loss_xy': '3.544897', 'loss_iou': '12.613720', 'loss_iou_aware': '0.002903', 'loss_wh': '3.501744', 'loss_obj': '20.023521', time: 0.796, eta: 1:04:58
+2020-12-25 23:22:56,771-INFO: iter: 45200, lr: 0.000050, 'loss': '43.998680', 'loss_cls': '7.579628', 'loss_xy': '3.112713', 'loss_iou': '11.469467', 'loss_iou_aware': '0.002567', 'loss_wh': '3.413961', 'loss_obj': '18.541454', time: 0.806, eta: 1:04:27
+2020-12-25 23:24:17,816-INFO: iter: 45300, lr: 0.000050, 'loss': '46.007885', 'loss_cls': '7.650024', 'loss_xy': '3.410979', 'loss_iou': '12.198462', 'loss_iou_aware': '0.002903', 'loss_wh': '3.730709', 'loss_obj': '19.880615', time: 0.810, eta: 1:03:28
+2020-12-25 23:25:37,625-INFO: iter: 45400, lr: 0.000050, 'loss': '41.840141', 'loss_cls': '6.752878', 'loss_xy': '3.085190', 'loss_iou': '11.057251', 'loss_iou_aware': '0.002502', 'loss_wh': '3.150018', 'loss_obj': '18.053541', time: 0.799, eta: 1:01:14
+2020-12-25 23:26:58,732-INFO: iter: 45500, lr: 0.000050, 'loss': '44.482132', 'loss_cls': '6.933332', 'loss_xy': '3.147341', 'loss_iou': '11.816701', 'loss_iou_aware': '0.002676', 'loss_wh': '3.448100', 'loss_obj': '18.677052', time: 0.811, eta: 1:00:47
+2020-12-25 23:28:18,409-INFO: iter: 45600, lr: 0.000050, 'loss': '43.495216', 'loss_cls': '7.308906', 'loss_xy': '3.342401', 'loss_iou': '11.693690', 'loss_iou_aware': '0.002673', 'loss_wh': '3.478899', 'loss_obj': '19.808067', time: 0.797, eta: 0:58:26
+2020-12-25 23:29:38,370-INFO: iter: 45700, lr: 0.000050, 'loss': '45.827023', 'loss_cls': '7.064656', 'loss_xy': '3.421649', 'loss_iou': '12.576317', 'loss_iou_aware': '0.002597', 'loss_wh': '3.774581', 'loss_obj': '19.350990', time: 0.799, eta: 0:57:15
+2020-12-25 23:30:57,809-INFO: iter: 45800, lr: 0.000050, 'loss': '46.765949', 'loss_cls': '7.597797', 'loss_xy': '3.399560', 'loss_iou': '12.108627', 'loss_iou_aware': '0.002843', 'loss_wh': '3.485664', 'loss_obj': '19.495638', time: 0.797, eta: 0:55:45
+2020-12-25 23:32:24,139-INFO: iter: 45900, lr: 0.000050, 'loss': '47.481667', 'loss_cls': '7.430403', 'loss_xy': '3.515839', 'loss_iou': '12.673007', 'loss_iou_aware': '0.002570', 'loss_wh': '3.848009', 'loss_obj': '19.760990', time: 0.862, eta: 0:58:55
+2020-12-25 23:33:43,917-INFO: iter: 46000, lr: 0.000050, 'loss': '45.043953', 'loss_cls': '7.361419', 'loss_xy': '3.209354', 'loss_iou': '11.937031', 'loss_iou_aware': '0.002749', 'loss_wh': '3.376883', 'loss_obj': '19.128323', time: 0.798, eta: 0:53:10
+2020-12-25 23:33:44,419-INFO: Save model to output/ppyolo_pan/46000.
+2020-12-25 23:33:47,758-INFO: Test iter 0
+2020-12-25 23:34:01,607-INFO: Test iter 100
+2020-12-25 23:34:15,217-INFO: Test iter 200
+2020-12-25 23:34:28,919-INFO: Test iter 300
+2020-12-25 23:34:42,657-INFO: Test iter 400
+2020-12-25 23:34:56,294-INFO: Test iter 500
+2020-12-25 23:35:10,010-INFO: Test iter 600
+2020-12-25 23:35:13,281-INFO: Test finish iter 625
+2020-12-25 23:35:13,282-INFO: Total number of images: 5000, inference time: 58.3074460688 fps.
+loading annotations into memory...
+Done (t=0.64s)
+creating index...
+index created!
+2020-12-25 23:35:28,962-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.21s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=66.45s).
+Accumulating evaluation results...
+DONE (t=7.29s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.328
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.533
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.351
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.187
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.355
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.421
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.273
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.468
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.517
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.309
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.548
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.660
+2020-12-25 23:36:52,702-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-25 23:36:55,841-INFO: Best test box ap: 0.328443291936, in iter: 46000
+2020-12-25 23:38:16,278-INFO: iter: 46100, lr: 0.000050, 'loss': '47.924416', 'loss_cls': '7.644831', 'loss_xy': '3.589875', 'loss_iou': '12.867294', 'loss_iou_aware': '0.002846', 'loss_wh': '3.616342', 'loss_obj': '19.380779', time: 2.724, eta: 2:57:01
+2020-12-25 23:39:36,542-INFO: iter: 46200, lr: 0.000050, 'loss': '47.029499', 'loss_cls': '7.270236', 'loss_xy': '3.409212', 'loss_iou': '12.518244', 'loss_iou_aware': '0.002788', 'loss_wh': '3.656344', 'loss_obj': '19.115328', time: 0.802, eta: 0:50:49
+2020-12-25 23:40:57,984-INFO: iter: 46300, lr: 0.000050, 'loss': '45.600445', 'loss_cls': '7.652485', 'loss_xy': '3.313060', 'loss_iou': '12.059546', 'loss_iou_aware': '0.002738', 'loss_wh': '3.643697', 'loss_obj': '19.914392', time: 0.814, eta: 0:50:13
+2020-12-25 23:42:18,179-INFO: iter: 46400, lr: 0.000050, 'loss': '44.779892', 'loss_cls': '7.148788', 'loss_xy': '3.306771', 'loss_iou': '11.774921', 'loss_iou_aware': '0.003002', 'loss_wh': '3.437172', 'loss_obj': '19.329508', time: 0.803, eta: 0:48:09
+2020-12-25 23:43:38,448-INFO: iter: 46500, lr: 0.000050, 'loss': '44.934933', 'loss_cls': '7.481267', 'loss_xy': '3.146447', 'loss_iou': '11.882447', 'loss_iou_aware': '0.002754', 'loss_wh': '3.531028', 'loss_obj': '19.233425', time: 0.802, eta: 0:46:47
+2020-12-25 23:44:58,904-INFO: iter: 46600, lr: 0.000050, 'loss': '45.294163', 'loss_cls': '7.431852', 'loss_xy': '3.318797', 'loss_iou': '11.823437', 'loss_iou_aware': '0.002786', 'loss_wh': '3.500424', 'loss_obj': '19.624395', time: 0.805, eta: 0:45:36
+2020-12-25 23:46:19,925-INFO: iter: 46700, lr: 0.000050, 'loss': '43.362396', 'loss_cls': '6.929120', 'loss_xy': '3.158349', 'loss_iou': '11.600925', 'loss_iou_aware': '0.002608', 'loss_wh': '3.295196', 'loss_obj': '18.988342', time: 0.807, eta: 0:44:21
+2020-12-25 23:47:40,969-INFO: iter: 46800, lr: 0.000050, 'loss': '44.750732', 'loss_cls': '7.060696', 'loss_xy': '3.404678', 'loss_iou': '12.074316', 'loss_iou_aware': '0.002648', 'loss_wh': '3.564692', 'loss_obj': '19.685249', time: 0.814, eta: 0:43:25
+2020-12-25 23:49:01,573-INFO: iter: 46900, lr: 0.000050, 'loss': '47.498161', 'loss_cls': '7.550192', 'loss_xy': '3.452699', 'loss_iou': '12.322711', 'loss_iou_aware': '0.002735', 'loss_wh': '3.656383', 'loss_obj': '19.765198', time: 0.805, eta: 0:41:36
+2020-12-25 23:50:21,835-INFO: iter: 47000, lr: 0.000050, 'loss': '48.287575', 'loss_cls': '8.031885', 'loss_xy': '3.532394', 'loss_iou': '12.789471', 'loss_iou_aware': '0.003081', 'loss_wh': '3.656799', 'loss_obj': '20.694092', time: 0.802, eta: 0:40:06
+2020-12-25 23:51:41,848-INFO: iter: 47100, lr: 0.000050, 'loss': '48.700447', 'loss_cls': '7.797639', 'loss_xy': '3.581753', 'loss_iou': '13.026546', 'loss_iou_aware': '0.002907', 'loss_wh': '3.788895', 'loss_obj': '20.452696', time: 0.802, eta: 0:38:45
+2020-12-25 23:53:01,912-INFO: iter: 47200, lr: 0.000050, 'loss': '45.714848', 'loss_cls': '7.188806', 'loss_xy': '3.458196', 'loss_iou': '12.392033', 'loss_iou_aware': '0.002984', 'loss_wh': '3.560880', 'loss_obj': '19.338104', time: 0.799, eta: 0:37:16
+2020-12-25 23:54:22,693-INFO: iter: 47300, lr: 0.000050, 'loss': '45.604881', 'loss_cls': '7.444788', 'loss_xy': '3.378981', 'loss_iou': '12.154660', 'loss_iou_aware': '0.002615', 'loss_wh': '3.420838', 'loss_obj': '18.564198', time: 0.808, eta: 0:36:22
+2020-12-25 23:55:42,418-INFO: iter: 47400, lr: 0.000050, 'loss': '45.107262', 'loss_cls': '7.101623', 'loss_xy': '3.274976', 'loss_iou': '12.115696', 'loss_iou_aware': '0.002690', 'loss_wh': '3.290331', 'loss_obj': '19.137236', time: 0.798, eta: 0:34:34
+2020-12-25 23:57:03,569-INFO: iter: 47500, lr: 0.000050, 'loss': '49.440765', 'loss_cls': '7.613996', 'loss_xy': '3.455426', 'loss_iou': '12.839413', 'loss_iou_aware': '0.002778', 'loss_wh': '3.839985', 'loss_obj': '20.290148', time: 0.811, eta: 0:33:47
+2020-12-25 23:58:23,460-INFO: iter: 47600, lr: 0.000050, 'loss': '46.522949', 'loss_cls': '7.439580', 'loss_xy': '3.347853', 'loss_iou': '12.278764', 'loss_iou_aware': '0.002526', 'loss_wh': '3.574042', 'loss_obj': '19.561672', time: 0.800, eta: 0:31:59
+2020-12-25 23:59:43,254-INFO: iter: 47700, lr: 0.000050, 'loss': '44.952625', 'loss_cls': '7.149026', 'loss_xy': '3.291676', 'loss_iou': '11.885431', 'loss_iou_aware': '0.002527', 'loss_wh': '3.477584', 'loss_obj': '18.519531', time: 0.797, eta: 0:30:32
+2020-12-26 00:01:02,829-INFO: iter: 47800, lr: 0.000050, 'loss': '44.212662', 'loss_cls': '7.454980', 'loss_xy': '3.259026', 'loss_iou': '11.519668', 'loss_iou_aware': '0.002624', 'loss_wh': '3.387347', 'loss_obj': '19.217300', time: 0.797, eta: 0:29:12
+2020-12-26 00:02:27,681-INFO: iter: 47900, lr: 0.000050, 'loss': '47.310913', 'loss_cls': '7.355051', 'loss_xy': '3.424900', 'loss_iou': '12.553818', 'loss_iou_aware': '0.002889', 'loss_wh': '3.533632', 'loss_obj': '19.490723', time: 0.851, eta: 0:29:46
+2020-12-26 00:03:48,520-INFO: iter: 48000, lr: 0.000050, 'loss': '44.445240', 'loss_cls': '7.043849', 'loss_xy': '3.226769', 'loss_iou': '11.666492', 'loss_iou_aware': '0.002855', 'loss_wh': '3.419183', 'loss_obj': '19.067062', time: 0.806, eta: 0:26:52
+2020-12-26 00:03:48,939-INFO: Save model to output/ppyolo_pan/48000.
+2020-12-26 00:03:52,429-INFO: Test iter 0
+2020-12-26 00:04:06,271-INFO: Test iter 100
+2020-12-26 00:04:19,935-INFO: Test iter 200
+2020-12-26 00:04:33,642-INFO: Test iter 300
+2020-12-26 00:04:47,397-INFO: Test iter 400
+2020-12-26 00:05:01,065-INFO: Test iter 500
+2020-12-26 00:05:14,818-INFO: Test iter 600
+2020-12-26 00:05:18,100-INFO: Test finish iter 625
+2020-12-26 00:05:18,100-INFO: Total number of images: 5000, inference time: 58.1969401057 fps.
+loading annotations into memory...
+Done (t=0.84s)
+creating index...
+index created!
+2020-12-26 00:05:31,967-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=7.07s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=66.51s).
+Accumulating evaluation results...
+DONE (t=7.23s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.329
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.532
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.352
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.187
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.357
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.424
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.274
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.468
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.517
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.309
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.549
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.661
+2020-12-26 00:06:55,349-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-26 00:06:58,494-INFO: Best test box ap: 0.32947119963, in iter: 48000
+2020-12-26 00:08:18,464-INFO: iter: 48100, lr: 0.000050, 'loss': '43.386696', 'loss_cls': '6.963383', 'loss_xy': '3.286175', 'loss_iou': '11.280029', 'loss_iou_aware': '0.002743', 'loss_wh': '3.214966', 'loss_obj': '18.569378', time: 2.698, eta: 1:25:26
+2020-12-26 00:09:38,722-INFO: iter: 48200, lr: 0.000050, 'loss': '43.993538', 'loss_cls': '6.973138', 'loss_xy': '3.286098', 'loss_iou': '11.408164', 'loss_iou_aware': '0.002795', 'loss_wh': '3.373345', 'loss_obj': '19.245604', time: 0.804, eta: 0:24:06
+2020-12-26 00:10:58,438-INFO: iter: 48300, lr: 0.000050, 'loss': '43.504112', 'loss_cls': '7.161492', 'loss_xy': '3.212855', 'loss_iou': '11.326006', 'loss_iou_aware': '0.002683', 'loss_wh': '3.325603', 'loss_obj': '18.210020', time: 0.797, eta: 0:22:35
+2020-12-26 00:12:17,703-INFO: iter: 48400, lr: 0.000050, 'loss': '46.004372', 'loss_cls': '7.554773', 'loss_xy': '3.353521', 'loss_iou': '12.497644', 'loss_iou_aware': '0.002542', 'loss_wh': '3.632522', 'loss_obj': '19.658075', time: 0.793, eta: 0:21:08
+2020-12-26 00:13:37,971-INFO: iter: 48500, lr: 0.000050, 'loss': '46.660717', 'loss_cls': '7.399643', 'loss_xy': '3.478259', 'loss_iou': '12.466087', 'loss_iou_aware': '0.002863', 'loss_wh': '3.763062', 'loss_obj': '19.739239', time: 0.802, eta: 0:20:02
+2020-12-26 00:14:58,876-INFO: iter: 48600, lr: 0.000050, 'loss': '42.609673', 'loss_cls': '6.865023', 'loss_xy': '3.189878', 'loss_iou': '11.478783', 'loss_iou_aware': '0.002714', 'loss_wh': '3.354691', 'loss_obj': '18.319824', time: 0.810, eta: 0:18:53
+2020-12-26 00:16:18,518-INFO: iter: 48700, lr: 0.000050, 'loss': '47.033997', 'loss_cls': '7.008738', 'loss_xy': '3.493826', 'loss_iou': '12.442072', 'loss_iou_aware': '0.002660', 'loss_wh': '3.535444', 'loss_obj': '20.512829', time: 0.797, eta: 0:17:15
+2020-12-26 00:17:39,055-INFO: iter: 48800, lr: 0.000050, 'loss': '42.646381', 'loss_cls': '7.145674', 'loss_xy': '3.210311', 'loss_iou': '11.380852', 'loss_iou_aware': '0.002676', 'loss_wh': '3.407991', 'loss_obj': '18.327305', time: 0.804, eta: 0:16:04
+2020-12-26 00:18:59,348-INFO: iter: 48900, lr: 0.000050, 'loss': '46.408531', 'loss_cls': '7.833843', 'loss_xy': '3.380059', 'loss_iou': '12.125614', 'loss_iou_aware': '0.002709', 'loss_wh': '3.638055', 'loss_obj': '19.736128', time: 0.806, eta: 0:14:46
+2020-12-26 00:20:19,177-INFO: iter: 49000, lr: 0.000050, 'loss': '41.658844', 'loss_cls': '6.716511', 'loss_xy': '3.070947', 'loss_iou': '11.214384', 'loss_iou_aware': '0.002505', 'loss_wh': '3.304982', 'loss_obj': '18.078999', time: 0.796, eta: 0:13:16
+2020-12-26 00:21:39,733-INFO: iter: 49100, lr: 0.000050, 'loss': '46.651848', 'loss_cls': '7.431703', 'loss_xy': '3.360302', 'loss_iou': '12.081240', 'loss_iou_aware': '0.002559', 'loss_wh': '3.734548', 'loss_obj': '19.285549', time: 0.805, eta: 0:12:04
+2020-12-26 00:23:00,665-INFO: iter: 49200, lr: 0.000050, 'loss': '47.080315', 'loss_cls': '7.498185', 'loss_xy': '3.256021', 'loss_iou': '11.973410', 'loss_iou_aware': '0.002830', 'loss_wh': '3.540497', 'loss_obj': '19.659611', time: 0.811, eta: 0:10:48
+2020-12-26 00:24:21,525-INFO: iter: 49300, lr: 0.000050, 'loss': '47.044357', 'loss_cls': '7.041256', 'loss_xy': '3.403241', 'loss_iou': '12.472411', 'loss_iou_aware': '0.002578', 'loss_wh': '3.696726', 'loss_obj': '19.881189', time: 0.808, eta: 0:09:25
+2020-12-26 00:25:42,412-INFO: iter: 49400, lr: 0.000050, 'loss': '45.716366', 'loss_cls': '7.034430', 'loss_xy': '3.260989', 'loss_iou': '11.988507', 'loss_iou_aware': '0.002676', 'loss_wh': '3.313736', 'loss_obj': '19.654079', time: 0.809, eta: 0:08:05
+2020-12-26 00:27:03,310-INFO: iter: 49500, lr: 0.000050, 'loss': '49.067055', 'loss_cls': '7.829738', 'loss_xy': '3.494402', 'loss_iou': '12.671122', 'loss_iou_aware': '0.002720', 'loss_wh': '3.628951', 'loss_obj': '21.146072', time: 0.809, eta: 0:06:44
+2020-12-26 00:28:22,404-INFO: iter: 49600, lr: 0.000050, 'loss': '44.547722', 'loss_cls': '7.195374', 'loss_xy': '3.322237', 'loss_iou': '12.248949', 'loss_iou_aware': '0.002683', 'loss_wh': '3.689032', 'loss_obj': '18.594513', time: 0.791, eta: 0:05:16
+2020-12-26 00:29:42,183-INFO: iter: 49700, lr: 0.000050, 'loss': '46.747650', 'loss_cls': '7.246928', 'loss_xy': '3.379552', 'loss_iou': '12.451834', 'loss_iou_aware': '0.002565', 'loss_wh': '3.517083', 'loss_obj': '19.121649', time: 0.797, eta: 0:03:59
+2020-12-26 00:31:03,355-INFO: iter: 49800, lr: 0.000050, 'loss': '46.615784', 'loss_cls': '7.282897', 'loss_xy': '3.399656', 'loss_iou': '12.582636', 'loss_iou_aware': '0.002620', 'loss_wh': '3.643296', 'loss_obj': '19.448025', time: 0.812, eta: 0:02:42
+2020-12-26 00:32:23,755-INFO: iter: 49900, lr: 0.000050, 'loss': '44.607006', 'loss_cls': '7.023485', 'loss_xy': '3.314515', 'loss_iou': '11.606424', 'loss_iou_aware': '0.002686', 'loss_wh': '3.323236', 'loss_obj': '19.333639', time: 0.804, eta: 0:01:20
+2020-12-26 00:33:48,075-INFO: Save model to output/ppyolo_pan/model_final.
+2020-12-26 00:33:52,499-INFO: Test iter 0
+2020-12-26 00:34:06,401-INFO: Test iter 100
+2020-12-26 00:34:20,002-INFO: Test iter 200
+2020-12-26 00:34:33,584-INFO: Test iter 300
+2020-12-26 00:34:47,148-INFO: Test iter 400
+2020-12-26 00:35:00,711-INFO: Test iter 500
+2020-12-26 00:35:14,276-INFO: Test iter 600
+2020-12-26 00:35:17,559-INFO: Test finish iter 625
+2020-12-26 00:35:17,559-INFO: Total number of images: 5000, inference time: 58.5949553054 fps.
+loading annotations into memory...
+Done (t=0.65s)
+creating index...
+index created!
+2020-12-26 00:35:31,189-INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=6.99s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=65.18s).
+Accumulating evaluation results...
+DONE (t=7.16s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.330
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.533
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.352
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.179
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.358
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.424
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.274
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.468
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.517
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.300
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.549
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.661
+2020-12-26 00:36:53,196-INFO: Save model to output/ppyolo_pan/best_model.
+2020-12-26 00:36:56,524-INFO: Best test box ap: 0.329741145739, in iter: 49999
