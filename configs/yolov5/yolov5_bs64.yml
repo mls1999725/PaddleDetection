@@ -1,12 +1,13 @@
 architecture: YOLOv5
 use_gpu: true
-max_iters: 550000
+max_iters: 1
 log_smooth_window: 1848
-log_iter: 100
+log_iter: 10
 save_dir: output
 snapshot_iter: 10000
 metric: COCO
-pretrain_weights: ''
+pretrain_weights: ./yolov5x.pdparams
+# pretrain_weights: ''
 weights: output/yolov3_r50vd_dcn_db_iouaware_obj365_pretrained_coco/model_final
 use_fine_grained_loss: true
 num_classes: 80
@@ -66,4 +67,4 @@ OptimizerBuilder:
     factor: 0.0005
     type: L2
 
-_READER_: 'yolov5_reader.yml'
+_READER_: 'yolov5_reader_bs1.yml'

@@ -185,7 +185,6 @@ def main():
 
     if FLAGS.eval:
         compiled_eval_prog = fluid.CompiledProgram(eval_prog)
-
     fuse_bn = getattr(model.backbone, 'norm_type', None) == 'affine_channel'
 
     ignore_params = cfg.finetune_exclude_pretrained_params \
@@ -235,6 +234,23 @@ def main():
         vdl_loss_step = 0
         vdl_mAP_step = 0
 
+    extra_keys = []                                                                                                 
+    #save_keys = []
+    #output                                                                                                
+    extra_keys += [                                                                                                 
+    'conv2d_139.tmp_1',                                                                                             
+    'conv2d_140.tmp_1',                                                                                             
+    'conv2d_141.tmp_1']                                                                                             
+                                                                                                                    
+    #    save_keys += [                                                                                             
+    #    'yolo_output.{}.conv.weights@GRAD'.format(i),                                                              
+    #    'yolo_output.{}.conv.bias@GRAD'.format(i)                                                                  
+    #                ]                                                                                              
+    #    extra_keys += ['tmp_181', 'tmp_373', 'tmp_565']                                                            
+    #    save_keys += ['iou_0', 'iou_1', 'iou_2']                                                                   
+    # input                                                                                                         
+    #extra_keys += ['image']                                                                                       
+    nk = len(extra_keys)
     for it in range(start_iter, cfg.max_iters):
         start_time = end_time
         end_time = time.time()
@@ -242,8 +258,19 @@ def main():
         time_cost = np.mean(time_stat)
         eta_sec = (cfg.max_iters - it) * time_cost
         eta = str(datetime.timedelta(seconds=int(eta_sec)))
-        outs = exe.run(compiled_train_prog, fetch_list=train_values)
-        stats = {k: np.array(v).mean() for k, v in zip(train_keys, outs[:-1])}
+        outs = exe.run(compiled_train_prog, fetch_list=train_values + extra_keys)
+        stats = {k: np.array(v).mean() for k, v in zip(train_keys, outs[:-nk - 1])}
+        res = {k: np.array(v) for k, v in zip(extra_keys, outs[-nk:])}
+
+        #output
+        for i, k in enumerate(extra_keys):                                                                          
+            res_tmp = res[k][0]
+            print(res_tmp.shape)                                                                           
+            np.save("output_{}_{}.npy".format(i, k), res_tmp)
+        
+        # image
+        #print(res['image'].shape)                                                                                                     
+        #np.save("img_391895_paddle.npy", res['image'])
 
         # use vdl-paddle to log loss
         if FLAGS.use_vdl:

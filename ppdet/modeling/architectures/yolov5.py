@@ -54,10 +54,33 @@ class YOLOv5(object):
         im = feed_vars['image']
         mixed_precision_enabled = mixed_precision_global_state() is not None
 
+        #fluid.layers.Print(im)                                                                                     
+        #im_tensor = fluid.global_scope().find_var("feed_vars").get_tensor()                                        
+        #print(im_tensor)                                                                                           
+        #im_np = np.array(im_tensor)                                                                                
+        #print(im_np)                                                                                               
+        #im_np = np.array(feed_tensor['image'])
         # cast inputs to FP16
         if mixed_precision_enabled:
             im = fluid.layers.cast(im, 'float16')
 
+        #fluid.layers.Print(im[0][0][0], summarize=-1)
+        '''
+        # assign from torch
+        im_np = np.load("img_391895_torch.npy")                                                                     
+        im_list = []                                                                                                
+        for i in range(3):                                                                                          
+            im_assign = fluid.layers.assign(im_np[0][i])                                                            
+            im_unsqueeze = fluid.layers.unsqueeze(im_assign, axes=[0])                                              
+            #im[0][i] = im_temp                                                                                     
+            #fluid.layers.Print(im_unsqueeze)                                                                       
+            im_list.append(im_unsqueeze)                                                                            
+        im_stack = fluid.layers.stack(im_list)                                                                      
+        im = fluid.layers.transpose(im_stack, perm=[1,0,2,3])                                                       
+        #fluid.layers.Print(im[0][0][0], summarize=-1)                                                              
+        #fluid.layers.Print(im[0][0][141], summarize=-1)
+        #fluid.layers.Print(im[0][0][141], summarize=-1)
+        '''
         body_feats = self.backbone(im)
         if isinstance(body_feats, OrderedDict):
             body_feat_names = list(body_feats.keys())
