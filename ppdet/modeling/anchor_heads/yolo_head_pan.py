@@ -65,7 +65,6 @@ class YOLOv3HeadPAN(object):
                  iou_aware_factor=0.4,
                  block_size=3,
                  keep_prob=0.9,
-                 act='leaky',
                  spp_stage=5,
                  yolo_loss="YOLOv3Loss",
                  spp=False,
@@ -94,7 +93,6 @@ class YOLOv3HeadPAN(object):
         self.iou_aware_factor = iou_aware_factor
         self.block_size = block_size
         self.keep_prob = keep_prob
-        self.act = act
         self.use_spp = spp
         self.spp_stage = spp_stage
         if isinstance(nms, dict):
@@ -192,18 +190,10 @@ class YOLOv3HeadPAN(object):
             moving_mean_name=bn_name + '.mean',
             moving_variance_name=bn_name + '.var')
 
-        if act == 'leaky':
-            out = fluid.layers.leaky_relu(x=out, alpha=0.1)
-        elif act == 'mish':
-            out = self._mish(out)
+        #if act == 'leaky':
+        #    out = self._mish(out)
+        out = fluid.layers.mish(out)
         return out
-
-    def _softplus(self, input):
-        expf = fluid.layers.exp(input)
-        return fluid.layers.log(1 + expf)
-
-    def _mish(self, input):
-        return input * fluid.layers.tanh(self._softplus(input))
 
     def _spp_module(self, input, name=""):
         output1 = input
@@ -247,7 +237,6 @@ class YOLOv3HeadPAN(object):
                 filter_size=f_size,
                 stride=stride,
                 padding=padding,
-                act=self.act,
                 name='{}.{}'.format(name, i))
             if i == 0:
                 short = conv
@@ -274,7 +263,6 @@ class YOLOv3HeadPAN(object):
                 filter_size=1,
                 stride=1,
                 padding=0,
-                act=self.act,
                 name='{}.{}.0'.format(name, j))
             if j == 0:
                 short = conv
@@ -291,7 +279,6 @@ class YOLOv3HeadPAN(object):
                     filter_size=1,
                     stride=1,
                     padding=0,
-                    act=self.act,
                     name='{}.{}.spp.conv'.format(name, j))
                 short = conv
             conv = self._conv_bn(
@@ -300,7 +287,6 @@ class YOLOv3HeadPAN(object):
                 filter_size=3,
                 stride=1,
                 padding=1,
-                act=self.act,
                 name='{}.{}.1'.format(name, j))
 
         conv = self._conv_bn(
@@ -309,7 +295,6 @@ class YOLOv3HeadPAN(object):
             filter_size=1,
             stride=1,
             padding=0,
-            act=self.act,
             name='{}.2'.format(name))
         residual = conv
         conv = fluid.layers.elementwise_add(
@@ -336,7 +321,6 @@ class YOLOv3HeadPAN(object):
                 filter_size=1,
                 stride=1,
                 padding=0,
-                act=self.act,
                 name=name + '.{}.right'.format(i))
             conv_right = self._upsample(conv_right)
             pan_out = fluid.layers.concat([conv_left, conv_right], axis=1)
@@ -415,7 +399,6 @@ class YOLOv3HeadPAN(object):
                     filter_size=3,
                     stride=2,
                     padding=1,
-                    act=self.act,
                     name=self.prefix_name + 'yolo_block.route.{}'.format(i))
                 block = fluid.layers.concat(input=[route, block], axis=1)
                 ch_list = [block.shape[1] // 2 * k for k in [1, 2, 1, 2, 1]]
@@ -432,7 +415,6 @@ class YOLOv3HeadPAN(object):
                 filter_size=3,
                 stride=1,
                 padding=1,
-                act=self.act,
                 name=self.prefix_name + 'yolo_output.{}.conv.0'.format(i))
 
             # out channel number = mask_num * (5 + class_num)
