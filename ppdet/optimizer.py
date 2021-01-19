@@ -174,6 +174,57 @@ class CosineDecayWithSkip(object):
             fluid.layers.cond(skipped, decay)
         return lr
 
+@serializable
+class CyclicalCosineDecay(object):
+    def __init__(self, decay_factor, total_step, cycle_step):
+        self.decay_factor = decay_factor
+        self.total_step = total_step
+        self.cycle_step = cycle_step
+
+    def __call__(self, base_lr, learning_rate=None):
+        def annealing_cos(start, end, pct):
+            "Cosine anneal from `start` to `end` as pct goes from 0.0 to 1.0."
+            #fluid.layers.Print(pct, message="pct: ")
+            cos_out = fluid.layers.cos(pct * np.pi) + 1.
+            return cos_out * (start - end) / 2. + end
+
+        decay_end_lr = base_lr * self.decay_factor
+        cycle_step = self.cycle_step
+
+        global_step = _decay_step_counter()
+        #fluid.layers.Print(global_step, message="global step: ")
+
+        lr = fluid.layers.create_global_var(
+            shape=[1],
+            value=float(base_lr),
+            dtype='float32',
+            persistable=True,
+            name="learning_rate")                                                                                                                                               
+        cycle_step_var = fluid.layers.fill_constant(                                                                                                       
+            shape=[1],                                                                                                                                     
+            dtype='float32',                                                                                                                               
+            value=float(cycle_step),                                                                                                                       
+            force_cpu=True)                                                                                                                                
+                                                                                                                                                           
+        start_step_var = fluid.layers.fill_constant(                                                                                                       
+            shape=[1],                                                                                                                                     
+            dtype='float32',                                                                                                                               
+            value=float(450000),                                                                                                                           
+            force_cpu=True)                                                                                                                                
+        #fluid.layers.Print(cycle_step_var, message="cycle_step: ")                                                                                        
+        decay_pred = global_step >= start_step_var
+
+        def decay_lr():                                                                                                                                    
+            #fluid.layers.Print((global_step - 450000) % cycle_step_var)                                                                                   
+            relative_step_var = (global_step - start_step_var) % cycle_step_var                                                                            
+            #fluid.layers.Print(relative_step_var / cycle_step_var)                                                                                        
+            return annealing_cos(base_lr, decay_end_lr,                                                                                                    
+                                     relative_step_var / cycle_step_var)                                                                                   
+                                                                                                                                                           
+        lr = fluid.layers.case(pred_fn_pairs=[(decay_pred, decay_lr)])                                                                                     
+        #fluid.layers.Print(lr, message="Learning Rate is: ")
+
+        return lr
 
 @serializable
 class LinearWarmup(object):
